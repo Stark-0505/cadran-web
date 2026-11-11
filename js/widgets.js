@@ -4,7 +4,6 @@ import { t, tp, LOCALE } from './i18n.js';
 import { getSettings } from './store.js';
 import { linkTile } from './grid.js';
 import { createAnalogClock } from './analog-clock.js';
-import { hasPlus } from './plus.js';
 
 // ---------- Horloge ----------
 let clockTimer = null;
@@ -29,8 +28,8 @@ function formatTime(now, hour12) {
 export function renderClock({ tick = false } = {}) {
   const c = getSettings().clock;
   const root = $('#clock');
-  // Horloge analogique : Cadran+ (sans lui, l'horloge numérique reprend sa place).
-  const analog = c.show && c.style === 'analog' && hasPlus();
+  // Analog and digital clock styles are available in the personal edition.
+  const analog = c.show && c.style === 'analog';
   root.hidden = !c.show;
   clearTimeout(clockTimer);
   if (!analog) dial?.stop();

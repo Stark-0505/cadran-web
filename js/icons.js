@@ -1,8 +1,5 @@
-// Icônes des tuiles. Ordre de priorité :
-//  1. icône personnalisée (image ou lettre/emoji choisie par l'utilisateur)
-//  2. icône haute définition récupérée sur le site (apple-touch-icon, manifeste…)
-//  3. favicon du cache de Brave (API _favicon)
-//  4. monogramme : première lettre sur un dégradé de couleur
+// Tile icons. Priority: custom icon, theSVG brand SVG through jsDelivr,
+// a site-published app icon, then a generated monogram.
 import { db } from './db.js';
 import { hash, hostOf, originOf, relLum, isWebUrl, idle } from './util.js';
 import { t, LOCALE } from './i18n.js';
@@ -10,10 +7,17 @@ import { t, LOCALE } from './i18n.js';
 const SITE_PERMS = { origins: ['https://*/*', 'http://*/*'] };
 const RETRY_MS = 7 * 864e5;
 const CONCURRENCY = 4;
+const THESVG_CDN = 'https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/';
+const THESVG_MANIFEST = 'https://cdn.jsdelivr.net/gh/glincker/thesvg@main/src/data/icons.json';
+let thesvgRegistryPromise = null;
+let thesvgRegistryRetryAfter = 0;
+const webIconCache = new Map(); // host -> a successfully loaded CDN or site icon URL
+const webIconMisses = new Map(); // host -> retry timestamp after all icon sources fail
+const WEB_ICON_MISS_TTL = 60 * 60 * 1000;
 
 const site = new Map(); // origine -> { ok, src, full, bg, small, at }
 const custom = new Map(); // url -> { type: 'image', src, … } | { type: 'mono', text, color }
-let favStatus = {}; // url -> 1 (favicon présent dans Brave) | 0
+let favStatus = {}; // Extension-only: whether Brave exposes a saved favicon.
 const checked = new Set();
 let permitted = false;
 let fetchEnabled = true;
@@ -82,9 +86,9 @@ export function paintPlate(plate, item) {
   const c = custom.get(url);
   if (c) return c.type === 'mono' ? paintMono(plate, c.text, c.color) : paintImage(plate, c, item);
 
-  // A hosted web app cannot request Chrome extension host permissions. Use a
-  // high-resolution favicon endpoint by default instead of showing a dead permission prompt.
-  if (window.CADRAN_WEB_MODE && isWebUrl(url)) return paintWebFavicon(plate, item);
+  // The hosted web app uses theSVG brand logos first. It does not call a remote
+  // favicon aggregator or require site-access permissions.
+  if (window.CADRAN_WEB_MODE && isWebUrl(url)) return paintWebBrandIcon(plate, item);
 
   const origin = originOf(url);
   const s = origin ? site.get(origin) : null;
@@ -132,21 +136,290 @@ function paintImage(plate, rec, item) {
 }
 
 
-function paintWebFavicon(plate, item) {
-  plate.classList.add('web-favicon');
-  plate.style.background = '#fff';
+const DOMAIN_BRANDS = Object.freeze({
+  'google.com': 'google', 'google.co.in': 'google', 'google.co.uk': 'google', 'google.ca': 'google',
+  'gmail.com': 'gmail', 'mail.google.com': 'gmail',
+  'youtube.com': 'youtube', 'youtu.be': 'youtube', 'm.youtube.com': 'youtube',
+  'github.com': 'github', 'github.io': 'github', 'githubusercontent.com': 'github', 'raw.githubusercontent.com': 'github',
+  'gitlab.com': 'gitlab', 'bitbucket.org': 'bitbucket',
+  'stackoverflow.com': 'stackoverflow', 'superuser.com': 'superuser', 'askubuntu.com': 'askubuntu',
+  'reddit.com': 'reddit', 'old.reddit.com': 'reddit', 'redd.it': 'reddit',
+  'discord.com': 'discord', 'discord.gg': 'discord',
+  'facebook.com': 'facebook', 'fb.com': 'facebook', 'instagram.com': 'instagram', 'threads.net': 'threads',
+  'x.com': 'x', 'twitter.com': 'twitter', 'tiktok.com': 'tiktok', 'linkedin.com': 'linkedin',
+  'whatsapp.com': 'whatsapp', 'web.whatsapp.com': 'whatsapp', 'telegram.org': 'telegram', 't.me': 'telegram',
+  'amazon.com': 'amazon', 'amazon.in': 'amazon', 'flipkart.com': 'flipkart', 'myntra.com': 'myntra',
+  'netflix.com': 'netflix', 'primevideo.com': 'prime-video', 'spotify.com': 'spotify', 'music.youtube.com': 'youtube-music',
+  'twitch.tv': 'twitch', 'steamcommunity.com': 'steam', 'steampowered.com': 'steam',
+  'openai.com': 'openai', 'chatgpt.com': 'chatgpt', 'claude.ai': 'claude', 'anthropic.com': 'anthropic',
+  'notion.so': 'notion', 'notion.site': 'notion', 'figma.com': 'figma', 'canva.com': 'canva',
+  'microsoft.com': 'microsoft', 'microsoft365.com': 'microsoft-365', 'office.com': 'microsoft-office',
+  'outlook.com': 'outlook', 'live.com': 'outlook', 'copilot.microsoft.com': 'microsoft-copilot',
+  'apple.com': 'apple', 'icloud.com': 'icloud', 'developer.apple.com': 'apple',
+  'cloudflare.com': 'cloudflare', 'vercel.com': 'vercel', 'netlify.com': 'netlify',
+  'docker.com': 'docker', 'kubernetes.io': 'kubernetes', 'react.dev': 'react', 'vuejs.org': 'vue',
+  'npmjs.com': 'npm', 'pypi.org': 'pypi', 'huggingface.co': 'hugging-face', 'wikipedia.org': 'wikipedia',
+  'medium.com': 'medium', 'substack.com': 'substack', 'zoom.us': 'zoom', 'meet.google.com': 'google-meet',
+  'drive.google.com': 'google-drive', 'docs.google.com': 'google-docs', 'sheets.google.com': 'google-sheets',
+  'slides.google.com': 'google-slides', 'calendar.google.com': 'google-calendar', 'maps.google.com': 'google-maps',
+  'play.google.com': 'google-play', 'gemini.google.com': 'google-gemini', 'bard.google.com': 'google-gemini',
+});
+
+function normalizedHost(pageUrl) {
+  try { return new URL(pageUrl).hostname.toLowerCase().replace(/^www\./, '').replace(/\.$/, ''); }
+  catch { return ''; }
+}
+
+function hostParents(host) {
+  const parts = host.split('.').filter(Boolean);
+  const out = [];
+  for (let i = 0; i < parts.length - 1; i++) out.push(parts.slice(i).join('.'));
+  return out;
+}
+
+function registrableDomain(host) {
+  const parts = host.split('.').filter(Boolean);
+  if (parts.length <= 2) return host;
+  const commonSecondLevel = new Set([
+    'co.in', 'co.uk', 'com.au', 'co.nz', 'com.br', 'com.mx', 'co.za', 'co.jp', 'co.kr', 'com.sg', 'com.tr', 'com.cn',
+  ]);
+  const lastTwo = parts.slice(-2).join('.');
+  return commonSecondLevel.has(lastTwo) ? parts.slice(-3).join('.') : parts.slice(-2).join('.');
+}
+
+function brandSlugCandidates(pageUrl) {
+  const host = normalizedHost(pageUrl);
+  if (!host) return [];
+  const out = [];
+  const add = (slug) => {
+    if (slug && /^[a-z0-9-]+$/.test(slug) && !out.includes(slug)) out.push(slug);
+  };
+  for (const candidateHost of [host, ...hostParents(host)]) add(DOMAIN_BRANDS[candidateHost]);
+  const root = registrableDomain(host);
+  const rootParts = root.split('.');
+  add(rootParts[0]);
+  const first = host.split('.')[0];
+  if (!['www', 'm', 'mobile', 'app', 'web', 'mail', 'accounts', 'login', 'auth', 'support', 'help', 'blog', 'store'].includes(first)) add(first);
+  return out;
+}
+
+function iconCdnUrl(slug, file = 'default.svg') {
+  const safeFile = /^[a-zA-Z0-9-]+\.svg$/.test(file) ? file : 'default.svg';
+  return `${THESVG_CDN}${encodeURIComponent(slug)}/${safeFile}`;
+}
+
+function sitePublishedIconUrls(pageUrl) {
+  try {
+    const origin = new URL(pageUrl).origin;
+    return [
+      `${origin}/apple-touch-icon.png`,
+      `${origin}/apple-touch-icon-precomposed.png`,
+      `${origin}/apple-touch-icon-180x180.png`,
+      `${origin}/android-chrome-192x192.png`,
+      `${origin}/icon.svg`,
+      `${origin}/icon.png`,
+      `${origin}/logo.svg`,
+    ];
+  } catch { return []; }
+}
+
+function readRegistryEntries(data) {
+  if (Array.isArray(data)) return data;
+  if (Array.isArray(data?.icons)) return data.icons;
+  if (Array.isArray(data?.brands)) return data.brands;
+  if (data && typeof data === 'object') {
+    return Object.values(data).filter((entry) => entry && typeof entry === 'object' && typeof entry.slug === 'string');
+  }
+  return [];
+}
+
+function manifestEntry(entry) {
+  const slug = typeof entry?.slug === 'string' ? entry.slug : '';
+  if (!/^[a-z0-9-]+$/.test(slug)) return null;
+  const rawVariant = typeof entry?.variants?.default === 'string' ? entry.variants.default : '';
+  const file = rawVariant.split('/').pop() || 'default.svg';
+  return { slug, file: /^[a-zA-Z0-9-]+\.svg$/.test(file) ? file : 'default.svg' };
+}
+
+function registryPriority(entry) {
+  if (entry.collection === 'brands') return 0;
+  if (entry.collection === 'community') return 1;
+  return 2;
+}
+
+async function loadTheSvgRegistry() {
+  if (Date.now() < thesvgRegistryRetryAfter) return null;
+  if (!thesvgRegistryPromise) {
+    thesvgRegistryPromise = (async () => {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 4500);
+      try {
+        const res = await fetch(THESVG_MANIFEST, {
+          credentials: 'omit',
+          referrerPolicy: 'no-referrer',
+          cache: 'force-cache',
+          signal: controller.signal,
+        });
+        if (!res.ok) {
+          thesvgRegistryRetryAfter = Date.now() + 60_000;
+          thesvgRegistryPromise = null;
+          return null;
+        }
+        const entries = readRegistryEntries(await res.json());
+        const byHost = new Map();
+        const bySlug = new Map();
+        const hostPriority = new Map();
+        for (const entry of entries) {
+          const icon = manifestEntry(entry);
+          if (!icon) continue;
+          bySlug.set(icon.slug, icon);
+          if (!entry.url || entry.collection === 'auth-badges') continue;
+          try {
+            const host = normalizedHost(entry.url);
+            if (!host) continue;
+            const priority = registryPriority(entry);
+            if (!hostPriority.has(host) || priority < hostPriority.get(host)) {
+              byHost.set(host, icon);
+              hostPriority.set(host, priority);
+            }
+          } catch { /* Ignore malformed manifest entries. */ }
+        }
+        return { byHost, bySlug };
+      } catch {
+        thesvgRegistryRetryAfter = Date.now() + 60_000;
+        thesvgRegistryPromise = null;
+        return null;
+      } finally {
+        clearTimeout(timer);
+      }
+    })();
+  }
+  return thesvgRegistryPromise;
+}
+async function lookupTheSvgIcon(pageUrl) {
+  const host = normalizedHost(pageUrl);
+  if (!host) return null;
+  const registry = await loadTheSvgRegistry();
+  if (!registry) return null;
+  for (const candidateHost of [host, ...hostParents(host)]) {
+    if (registry.byHost.has(candidateHost)) return registry.byHost.get(candidateHost);
+  }
+  return null;
+}
+
+function paintWebBrandIcon(plate, item) {
+  const host = normalizedHost(item.url);
+  const placeholder = monogram(item.title, item.url);
+  paintMono(plate, placeholder.text, placeholder.color);
+  plate.classList.add('web-svg-icon', 'web-svg-loading');
+
   const img = new Image();
   img.alt = '';
   img.draggable = false;
   img.decoding = 'async';
   img.loading = 'lazy';
   img.referrerPolicy = 'no-referrer';
-  img.onerror = () => fallbackToMono(plate, item);
-  // Google S2 supports larger requested sizes where the origin has them.
-  img.src = faviconUrl(item.url, 256);
   plate.append(img);
-}
 
+  const slugs = brandSlugCandidates(item.url);
+  const triedIconUrls = new Set();
+  const siteUrls = sitePublishedIconUrls(item.url);
+  let slugIndex = 0;
+  let siteIndex = 0;
+  let registryChecked = false;
+  let advancing = false;
+
+  const stillCurrent = () => plate.dataset.url === item.url && plate.contains(img) && plate.isConnected;
+  const commitImage = () => {
+    if (!stillCurrent()) return;
+    const src = img.currentSrc || img.src;
+    if (host && src) {
+      webIconCache.set(host, src);
+      webIconMisses.delete(host);
+    }
+    plate.className = [...plate.classList].filter((c) => KEEP.has(c)).concat('web-svg-icon').join(' ');
+    plate.style.background = '#fff';
+    plate.replaceChildren(img);
+  };
+  const setSlug = (slug, file = 'default.svg') => {
+    const src = iconCdnUrl(slug, file);
+    triedIconUrls.add(src);
+    img.src = src;
+  };
+
+  const advance = async () => {
+    if (advancing || !stillCurrent()) return;
+    advancing = true;
+    try {
+      while (slugIndex < slugs.length) {
+        const slug = slugs[slugIndex++];
+        const src = iconCdnUrl(slug);
+        if (!triedIconUrls.has(src)) {
+          advancing = false;
+          setSlug(slug);
+          return;
+        }
+      }
+      if (!registryChecked) {
+        registryChecked = true;
+        const registry = await loadTheSvgRegistry();
+        if (!stillCurrent()) return;
+        if (registry) {
+          // Resolve guessed slugs against the manifest too. Some default variants
+          // use filenames such as color.svg instead of default.svg.
+          const candidateIcon = slugs
+            .map((slug) => registry.bySlug.get(slug))
+            .find((entry) => entry && !triedIconUrls.has(iconCdnUrl(entry.slug, entry.file)));
+          if (candidateIcon) {
+            advancing = false;
+            setSlug(candidateIcon.slug, candidateIcon.file);
+            return;
+          }
+        }
+        const exactIcon = await lookupTheSvgIcon(item.url);
+        if (!stillCurrent()) return;
+        if (exactIcon) {
+          const exactSrc = iconCdnUrl(exactIcon.slug, exactIcon.file);
+          if (!triedIconUrls.has(exactSrc)) {
+            advancing = false;
+            setSlug(exactIcon.slug, exactIcon.file);
+            return;
+          }
+        }
+      }
+      if (siteIndex < siteUrls.length) {
+        const url = siteUrls[siteIndex++];
+        advancing = false;
+        img.src = url;
+        return;
+      }
+      if (host) webIconMisses.set(host, Date.now() + WEB_ICON_MISS_TTL);
+      fallbackToMono(plate, item);
+    } finally {
+      advancing = false;
+    }
+  };
+
+  img.onload = commitImage;
+  img.onerror = () => {
+    if (host && webIconCache.get(host) === img.src) webIconCache.delete(host);
+    void advance();
+  };
+
+  const cached = host && webIconCache.get(host);
+  if (cached) {
+    img.src = cached;
+    return;
+  }
+  const missUntil = host && webIconMisses.get(host);
+  if (missUntil && missUntil > Date.now()) {
+    fallbackToMono(plate, item);
+    return;
+  }
+  if (missUntil) webIconMisses.delete(host);
+  if (slugs.length) setSlug(slugs[slugIndex++]);
+  else void advance();
+}
 function paintFavicon(plate, item) {
   plate.classList.add('fav');
   plate.style.background = '#fff';
@@ -164,16 +437,16 @@ function repaint(pred) {
     if (pred(p.dataset.url)) paintPlate(p, { url: p.dataset.url, title: p.dataset.title });
   }
 }
-export const repaintAll = () => repaint(() => true);
+export function repaintAll() {
+  webIconMisses.clear();
+  thesvgRegistryRetryAfter = 0;
+  repaint(() => true);
+}
 
 // ---------- Cache de favicons de Brave ----------
 export function faviconUrl(pageUrl, size = 32) {
-  if (window.CADRAN_WEB_MODE) {
-    const u = new URL('https://www.google.com/s2/favicons');
-    u.searchParams.set('domain_url', pageUrl);
-    u.searchParams.set('sz', String(size));
-    return u.href;
-  }
+  // This helper is retained only for the original browser-extension mode.
+  if (window.CADRAN_WEB_MODE) return '';
   const u = new URL(chrome.runtime.getURL('/_favicon/'));
   u.searchParams.set('pageUrl', pageUrl);
   u.searchParams.set('size', String(size));

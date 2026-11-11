@@ -8,7 +8,6 @@ import {
 } from './bookmarks.js';
 import { initIcons, setFetchEnabled, isPermitted, requestSitePermission } from './icons.js';
 import { applyWallpaper, importImage, onGalleryChange, pinSessionImage, systemScheme, variantOf } from './wallpaper.js';
-import { loadPlus, onPlusChange, hasPlus, isPreviewing, ownWallpaper, shownWallpaper } from './plus.js';
 import { linkTile, folderTile, addTile, enableSorting, makeDropTarget } from './grid.js';
 import { createPager, prefersReducedMotion } from './pager.js';
 import { initSearch, applySearchSettings, focusSearch, hasQuery, clearSearch } from './search.js';
@@ -22,6 +21,7 @@ import {
 } from './actions.js';
 
 const S = getSettings;
+const ownWallpaper = (group) => group?.wallpaper || null;
 /** Onglet affiché, et dossier ouvert dans chaque onglet (absent = sa racine). */
 const view = { groupId: null, folders: {} };
 /** Variante de fond montrée pendant son réglage dans le panneau ('light' | 'dark'), sinon celle du système. */
@@ -66,7 +66,7 @@ main().catch((e) => {
 });
 
 async function main() {
-  await Promise.all([loadSettings(), loadPlus()]);
+  await loadSettings();
   await Promise.all([loadTree(), initIcons({ fetchSites: S().icons.fetchSites })]);
   watchBookmarks();
   resolveGroups();
@@ -92,10 +92,6 @@ async function main() {
   });
   onSettingsChange(onSettings);
   onGalleryChange(syncWallpaper);
-  onPlusChange(() => {
-    syncWallpaper();
-    renderClock();
-  });
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
     applyAppearance();
     syncWallpaper();
@@ -112,7 +108,7 @@ function previewWallScheme(scheme) {
 }
 
 /**
- * Affiche le fond de l'onglet actif : le sien s'il en a un (Cadran+), sinon le fond par défaut ;
+ * Affiche le fond de l'onglet actif : le sien s'il en a un, sinon le fond par défaut ;
  * dans sa variante sombre s'il en a une et que le système est en thème sombre.
  */
 function syncWallpaper() {
@@ -121,13 +117,12 @@ function syncWallpaper() {
   const own = ownWallpaper(g);
   const ws = own || s.wallpaper;
   const scheme = ws.dark ? wallScheme() : null;
-  applyWallpaper(shownWallpaper(variantOf(ws, scheme)), s.appearance.textColor, {
+  applyWallpaper(variantOf(ws, scheme), s.appearance.textColor, {
     // La variante sombre tire ses images au sort de son côté.
     scope: (own ? g.id : 'default') + (scheme === 'dark' ? ':dark' : ''),
     scheme,
-    // Le prochain onglet s'ouvrira sur l'onglet actif : c'est son fond qu'on mémorise
-    // (sauf pendant un essai de Cadran+, qui ne vaut que pour cette page).
-    persist: !isPreviewing() && (!g || g.id === s.activeGroup),
+    // Store the background of the active group for the next page load.
+    persist: !g || g.id === s.activeGroup,
   }).catch(() => {});
 }
 
@@ -736,7 +731,7 @@ function groupMenu(g) {
     { label: t('chooseAnotherFolderMenu'), icon: 'folder', onClick: () => changeGroupFolder(g.id) },
     {
       label: t('tabWallpaperMenu'), icon: 'image',
-      hint: ownWallpaper(g) ? t('ownHint') : hasPlus() ? null : 'Cadran+',
+      hint: ownWallpaper(g) ? t('ownHint') : null,
       onClick: () => openPanel('wall', { scope: g.id }),
     },
     { label: t('moveLeft'), icon: 'back', disabled: i === 0, onClick: () => moveGroup(i, -1) },

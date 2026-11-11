@@ -140,7 +140,7 @@ button { cursor: pointer; }
 }
 #clock .greeting:not(:empty) + .date:not(:empty)::before { content: " · "; }
 
-/* Horloge analogique (js/analog-clock.js, Cadran+) : un calque par aiguille, que l'on fait tourner en entier */
+/* Horloge analogique : un calque par aiguille, que l'on fait tourner en entier */
 #clock .analog {
   position: relative;
   width: clamp(118px, 13vw, 168px);
@@ -356,25 +356,74 @@ body.panel-open #corner { opacity: 0; pointer-events: none; }
 @media (max-width: 640px) {
   :root { --gutter: 12px; --icon-base: 58px; --cols: 4; }
   body { font-size: 14px; padding-bottom: env(safe-area-inset-bottom); }
-  #page { padding-top: max(8px, env(safe-area-inset-top)); }
-  #top { padding-inline: 4px; }
+  #page { min-height: 100svh; padding-top: max(8px, env(safe-area-inset-top)); padding-bottom: max(88px, calc(88px + env(safe-area-inset-bottom))); }
+  #top { gap: 16px; margin-bottom: 20px; padding-inline: 4px; }
   #clock .time { font-size: clamp(38px, 12vw, 58px); letter-spacing: -.045em; }
   #clock .subline { font-size: 12px; flex-wrap: wrap; gap: 4px 8px; }
+  #search { width: 100%; }
+  .search-box { height: 46px; }
   .notice { flex-wrap: wrap; gap: 8px; padding: 12px; }
   .welcome { padding: 20px 16px; border-radius: 18px; }
   .welcome h1 { font-size: 21px; }
   .welcome .actions { display: grid; grid-template-columns: 1fr; }
   .welcome .actions .btn { width: 100%; min-height: 44px; }
-  #groups { gap: 6px; padding: 8px 2px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .group-tab { min-height: 40px; flex: 0 0 auto; }
+  #groups { gap: 6px; padding: 8px 2px; margin-bottom: 2px; overflow-x: auto; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  #groups::-webkit-scrollbar { display: none; }
+  .group-tab { min-height: 40px; flex: 0 0 auto; max-width: 72vw; }
   .page-inner { padding: 10px var(--gutter) 20px; }
-  .grid { --tile-w: minmax(0, 1fr); grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 6px; row-gap: 12px; max-width: 100%; }
-  .grid.compact { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .tile { gap: 6px; padding: 4px 2px; min-height: 84px; touch-action: manipulation; }
-  .tile .label { width: 100%; font-size: 11px; line-height: 1.2; white-space: normal; overflow-wrap: anywhere; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-  .plate { width: min(var(--icon), 58px); height: min(var(--icon), 58px); }
-  :root[data-tile-style="cards"] .grid:not(.compact) { --tile-w: auto; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  :root[data-tile-style="cards"] .grid:not(.compact) .tile { padding: 12px 5px 10px; gap: 8px; border-radius: 14px; min-height: 100px; }
+  .grid, .grid.compact {
+    --mobile-min-tile: clamp(64px, 20.5vw, 92px);
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(var(--mobile-min-tile), 1fr));
+    justify-content: stretch;
+    column-gap: clamp(4px, 1.8vw, 10px);
+    row-gap: clamp(12px, 3vw, 18px);
+  }
+  .tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 7px;
+    min-width: 0;
+    min-height: 94px;
+    padding: 5px 2px 3px;
+    touch-action: manipulation;
+  }
+  .tile > .plate { order: 0; flex: none; width: clamp(44px, min(14.5vw, var(--icon)), 58px); height: clamp(44px, min(14.5vw, var(--icon)), 58px); }
+  :root .tile > .label {
+    order: 1;
+    display: block;
+    align-self: stretch;
+    width: 100%;
+    min-width: 0;
+    min-height: 2.35em;
+    padding: 0 1px;
+    font-size: clamp(10px, 2.8vw, 12px);
+    line-height: 1.18;
+    text-align: center;
+    white-space: normal;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .tile.folder .count { top: 0; }
+  :root[data-tile-style="cards"] .grid:not(.compact) {
+    --mobile-min-tile: clamp(88px, 25vw, 132px);
+    grid-template-columns: repeat(auto-fill, minmax(var(--mobile-min-tile), 1fr));
+    column-gap: 8px;
+    row-gap: 12px;
+  }
+  :root[data-tile-style="cards"] .grid:not(.compact) .tile {
+    min-height: 118px;
+    padding: 12px 5px 9px;
+    gap: 8px;
+    border-radius: 14px;
+  }
+  :root[data-tile-style="cards"] .grid:not(.compact) .tile > .label { min-height: 2.35em; white-space: normal; font-size: clamp(10px, 2.8vw, 12px); }
   #corner { right: max(12px, env(safe-area-inset-right)); bottom: max(12px, env(safe-area-inset-bottom)); }
   .round-btn { width: 46px; height: 46px; }
   .glass-panel { max-width: calc(100vw - 16px); }
@@ -382,9 +431,13 @@ body.panel-open #corner { opacity: 0; pointer-events: none; }
 }
 @media (max-width: 380px) {
   :root { --gutter: 8px; --icon-base: 50px; }
-  .grid, .grid.compact { grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 3px; }
-  .tile .label { font-size: 10px; }
-  :root[data-tile-style="cards"] .grid:not(.compact) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tile { gap: 6px; }
+  .tile > .label { font-size: 10px; }
+  :root[data-tile-style="cards"] .grid:not(.compact) { --mobile-min-tile: 88px; }
+}
+@media (hover: none) {
+  .tile:hover .plate { transform: none; box-shadow: 0 1px 2px rgba(0, 0, 0, .16), 0 6px 18px rgba(0, 0, 0, .16); }
+  :root[data-tile-style="cards"] .grid:not(.compact) .tile:hover { background: var(--glass); transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

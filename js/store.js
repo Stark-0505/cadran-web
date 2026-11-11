@@ -31,7 +31,7 @@ export const DEFAULTS = {
   },
   /**
    * hour12 : null = format de la langue, true = 12 h, false = 24 h
-   * style : 'digital' (chiffres) | 'analog' (aiguilles, Cadran+) ; seconds : trotteuse de l'horloge analogique
+   * style : 'digital' (digits) | 'analog' (hands) ; seconds : second hand on the analog clock
    */
   clock: { show: true, hour12: null, showDate: true, greeting: true, name: '', style: 'digital', seconds: true },
   search: { show: true, engine: 'browser' },

@@ -6,15 +6,8 @@ import { getNode, pathTitles } from './bookmarks.js';
 import { GRADIENTS, COLORS, listImages, deleteImage, putImages, onGalleryChange, systemScheme, variantOf, newDarkVariant } from './wallpaper.js';
 import { ENGINES, engineName } from './search.js';
 import { TOP_SITES_PERMS, RECENT_PERMS } from './widgets.js';
-import {
-  hasSitePermission, requestSitePermission, removeSitePermission, siteIconCount,
-  clearSiteIcons, exportCustomIcons, importCustomIcons,
-} from './icons.js';
+import { exportCustomIcons, importCustomIcons, repaintAll } from './icons.js';
 import { toast, confirmDialog } from './ui.js';
-import {
-  hasPlus, plusStatus, isPreviewing, onPlusChange, ownWallpaper, priceLabel, openCheckout, portalUrl,
-  licenseLabel, activateLicense, removeLicense, startPreview, plusBackup, restorePlusBackup,
-} from './plus.js';
 
 const TABS = [
   ['folders', 'tabFolders'],
@@ -32,9 +25,7 @@ let ctx;
 let thumbUrls = [];
 let wallScope = 'default'; // fond en cours de réglage : 'default' ou l'identifiant d'un onglet
 let wallScheme = 'light'; // variante réglée quand ce fond a une variante sombre : 'light' | 'dark'
-let plusPill;
-let plusFrom = 'folders'; // onglet où revient le bouton « Retour » de la page Cadran+
-let plusReason = null; // fonction qui a mené à la page Cadran+ : 'tabWallpaper', 'rotation' ou 'analogClock'
+const ownWallpaper = (group) => group?.wallpaper || null;
 const set = (fn) => updateSettings(fn);
 
 const groupLabel = (g) => g.label || getNode(g.folderId)?.title || g.path?.at(-1) || t('defaultFolderName');
@@ -67,17 +58,14 @@ export function initPanel(context) {
   panel = $('#panel');
   tabsEl = h('div', { class: 'panel-tabs', role: 'tablist' });
   body = h('div', { class: 'panel-body' });
-  plusPill = h('button', { class: 'plus-pill', type: 'button', onclick: () => showPlus() }, icon('sparkle', 13, 2), 'Cadran+');
   panel.append(
     h('div', { class: 'panel-head' },
       h('h2', null, t('panelTitle')),
-      plusPill,
       h('button', { class: 'icon-btn', type: 'button', title: t('close'), 'aria-label': t('close'), onclick: closePanel }, icon('close', 18))),
     tabsEl,
     body,
   );
   onGalleryChange(() => { if (isPanelOpen() && tab === 'wall') render(); });
-  onPlusChange(() => { if (isPanelOpen()) render(); });
   onSettingsChange((s, prev, source) => {
     if (!isPanelOpen()) return;
     // On ne redessine pas pendant un réglage continu (curseur, couleur) : seulement si la structure change.
@@ -112,20 +100,8 @@ export function closePanel() {
 export const togglePanel = () => (isPanelOpen() ? closePanel() : openPanel());
 export function refreshPanel() { if (isPanelOpen()) render(); }
 
-/** Affiche la page Cadran+ ; reason : la fonction qui y a mené, mise en avant. */
-function showPlus(reason = null) {
-  if (tab !== 'plus') plusFrom = tab;
-  plusReason = reason;
-  tab = 'plus';
-  body.scrollTop = 0;
-  render();
-}
-
 function render() {
   syncPreview();
-  plusPill.classList.toggle('on', hasPlus() && !isPreviewing());
-  plusPill.setAttribute('aria-pressed', String(tab === 'plus'));
-  plusPill.title = plusStatusText();
   tabsEl.replaceChildren(...TABS.map(([id, key]) => h('button', {
     type: 'button',
     role: 'tab',
@@ -139,7 +115,7 @@ function render() {
   const scroll = body.scrollTop;
   for (const u of thumbUrls) URL.revokeObjectURL(u);
   thumbUrls = [];
-  const build = { folders: foldersTab, look: lookTab, wall: wallTab, home: homeTab, more: moreTab, plus: plusTab }[tab];
+  const build = { folders: foldersTab, look: lookTab, wall: wallTab, home: homeTab, more: moreTab }[tab] || foldersTab;
   body.replaceChildren(...build());
   body.scrollTop = scroll;
 }
@@ -260,13 +236,11 @@ function lookTab() {
 // ---------- Onglet « Fond » ----------
 function wallTab() {
   const s = getSettings();
-  const plus = hasPlus();
   if (wallScope !== 'default' && !s.groups.some((g) => g.id === wallScope)) wallScope = 'default';
   const group = s.groups.find((g) => g.id === wallScope) || null;
   const out = [];
-  if (isPreviewing()) out.push(previewNote());
 
-  // Portée : fond par défaut, ou fond propre à un onglet (Cadran+).
+  // Scope: default wallpaper, or an independent wallpaper for one tab.
   if (s.groups.length) {
     const select = h('select', {
       class: 'input',
@@ -280,21 +254,17 @@ function wallTab() {
     h('option', { value: 'default', selected: wallScope === 'default' }, t('defaultWallpaperAllTabs')),
     s.groups.map((g) => h('option', { value: g.id, selected: g.id === wallScope }, ownWallpaper(g) ? t('tabWithOwnWallpaper', groupLabel(g)) : groupLabel(g))));
     out.push(
-      h('h3', null, t('tabSection'), !plus && plusMark()),
+      h('h3', null, t('tabSection')),
       h('div', { class: 'card' },
         h('div', { class: 'row stack' },
           h('div', { class: 'row-label' }, h('span', null, t('setWallpaperOf')), h('small', null, t('setWallpaperOfHint'))),
           select),
-        group && row(t('ownWallpaper'), toggle(!!group.wallpaper, (on, e) => {
-          if (on && !hasPlus()) {
-            e.target.checked = false;
-            return showPlus('tabWallpaper');
-          }
+        group && row(t('ownWallpaper'), toggle(!!group.wallpaper, (on) => {
           set((st) => {
             const g = st.groups.find((x) => x.id === group.id);
             if (g) g.wallpaper = on ? structuredClone(st.wallpaper) : null;
           });
-        }), !group.wallpaper ? t('usesDefaultForNow') : plus ? null : t('plusInactive'))),
+        }), !group.wallpaper ? t('usesDefaultForNow') : null)),
     );
     if (group && !ownWallpaper(group)) return out;
   }
@@ -317,8 +287,7 @@ function wallTab() {
       }))));
 
   const w = scopedWallpaper(s);
-  // Sans Cadran+, l'image ne change pas toute seule (le réglage enregistré est conservé).
-  const rotate = plus ? w.rotate : 'off';
+  const rotate = w.rotate;
   const setW = (patch) => set((st) => {
     const target = scopedWallpaper(st);
     if (target) Object.assign(target, patch);
@@ -390,11 +359,8 @@ function wallTab() {
       h('p', { class: 'hint' }, t('dropImagesHint')),
       h('div', { class: 'card' },
         h('div', { class: 'row stack' },
-          h('div', { class: 'row-label' }, h('span', null, t('rotateImages'), !plus && plusMark())),
-          segmented([['off', t('rotateNever')], ['tab', t('rotateEachOpening')], ['day', t('rotateDaily')]], rotate, (v) => {
-            if (v !== 'off' && !hasPlus()) return showPlus('rotation');
-            setW({ rotate: v });
-          }))));
+          h('div', { class: 'row-label' }, h('span', null, t('rotateImages'))),
+          segmented([['off', t('rotateNever')], ['tab', t('rotateEachOpening')], ['day', t('rotateDaily')]], rotate, (v) => setW({ rotate: v })))));
   }
 
   out.push(
@@ -416,23 +382,20 @@ async function withPermission(on, e, perms) {
 
 function homeTab() {
   const s = getSettings();
+  const webMode = !!window.CADRAN_WEB_MODE;
   const setC = (k) => (v) => set((st) => { st.clock[k] = v; });
   const engineSelect = h('select', { class: 'input', onchange: (e) => set((st) => { st.search.engine = e.target.value; }) },
     ENGINES.map((en) => h('option', { value: en.id, selected: en.id === s.search.engine }, engineName(en))));
   // Format de l'heure : null = celui de la langue.
   const hourFormat = s.clock.hour12 == null ? 'auto' : s.clock.hour12 ? '12' : '24';
-  // Horloge analogique : Cadran+ (sans lui, le réglage enregistré est conservé mais l'horloge reste numérique).
-  const plus = hasPlus();
-  const analog = plus && s.clock.style === 'analog';
+  // Both clock styles are available in the personal edition.
+  const analog = s.clock.style === 'analog';
   return [
     h('h3', null, t('clock')),
     h('div', { class: 'card' },
       row(t('showTime'), toggle(s.clock.show, setC('show'))),
-      row(t('clockStyle'), segmented([['digital', t('clockDigital')], ['analog', [t('clockAnalog'), !plus && plusMark()]]],
-        analog ? 'analog' : 'digital', (v) => {
-          if (v === 'analog' && !hasPlus()) return showPlus('analogClock');
-          set((st) => { st.clock.style = v; });
-        })),
+      row(t('clockStyle'), segmented([['digital', t('clockDigital')], ['analog', t('clockAnalog')]],
+        analog ? 'analog' : 'digital', (v) => set((st) => { st.clock.style = v; })),
       // Le format 12 h / 24 h ne concerne que l'horloge numérique ; la trotteuse, que l'analogique.
       analog
         ? row(t('clockSeconds'), toggle(s.clock.seconds, setC('seconds')), t('clockSecondsHint'))
@@ -448,62 +411,42 @@ function homeTab() {
     h('div', { class: 'card' },
       row(t('searchBar'), toggle(s.search.show, (v) => set((st) => { st.search.show = v; })), t('searchBarHint')),
       row(t('searchEngine'), engineSelect)),
-    h('h3', null, t('sections')),
-    h('div', { class: 'card' },
-      row(t('topSites'), toggle(s.sections.topSites, async (on, e) => {
-        if (await withPermission(on, e, TOP_SITES_PERMS)) set((st) => { st.sections.topSites = on; });
-      }), t('topSitesHint')),
-      row(t('recentlyClosed'), toggle(s.sections.recentlyClosed, async (on, e) => {
-        if (await withPermission(on, e, RECENT_PERMS)) set((st) => { st.sections.recentlyClosed = on; });
-      }), t('recentlyClosedHint'))),
-    h('p', { class: 'hint' }, t('sectionsPermissionHint')),
+    ...(!webMode ? [
+      h('h3', null, t('sections')),
+      h('div', { class: 'card' },
+        row(t('topSites'), toggle(s.sections.topSites, async (on, e) => {
+          if (await withPermission(on, e, TOP_SITES_PERMS)) set((st) => { st.sections.topSites = on; });
+        }), t('topSitesHint')),
+        row(t('recentlyClosed'), toggle(s.sections.recentlyClosed, async (on, e) => {
+          if (await withPermission(on, e, RECENT_PERMS)) set((st) => { st.sections.recentlyClosed = on; });
+        }), t('recentlyClosedHint'))),
+      h('p', { class: 'hint' }, t('sectionsPermissionHint')),
+    ] : []),
   ];
 }
 
-// ---------- Onglet « Plus » ----------
+// ---------- Onglet « Autres options » ----------
 function moreTab() {
-  const s = getSettings();
-  const status = h('span', null, '…');
-  const permBox = h('div', { class: 'button-row' });
-  const count = h('small', null, tp('iconsCached', siteIconCount()));
   const webMode = !!window.CADRAN_WEB_MODE;
-
-  if (!webMode) hasSitePermission().then((ok) => {
-    status.replaceChildren(h('i', { class: 'status-dot' + (ok ? ' on' : '') }), ok ? t('siteAccessGranted') : t('siteAccessNotGranted'));
-    permBox.replaceChildren(ok
-      ? h('button', {
-        class: 'btn small', type: 'button',
-        onclick: async () => { await removeSitePermission(); render(); },
-      }, t('revokeSiteAccess'))
-      : h('button', {
-        class: 'btn small primary', type: 'button',
-        onclick: () => requestSitePermission().then((granted) => { if (granted) toast(t('fetchingIcons')); render(); }),
-      }, t('allowSiteAccess')));
-  });
-
   const importInput = h('input', { type: 'file', accept: 'application/json,.json', hidden: true });
   importInput.addEventListener('change', async () => {
-    const f = importInput.files[0];
+    const file = importInput.files?.[0];
     importInput.value = '';
-    if (f) await importBackup(f);
+    if (file) await importBackup(file);
   });
   const withImages = h('input', { type: 'checkbox', checked: true });
 
   return [
-    ...(webMode ? [
-      h('h3', null, t('hdIcons')),
-      h('div', { class: 'card' }, h('p', null, 'High-resolution speed-dial icons are enabled automatically. Cadran uses a public favicon service where available. No site-access permission or toggle is needed.')),
-      h('p', { class: 'hint' }, 'Some sites only publish small favicons, so a high-resolution version may not exist.'),
-    ] : [
-      h('h3', null, t('hdIcons')),
-      h('div', { class: 'card' },
-        row(status, toggle(s.icons.fetchSites, (v) => set((st) => { st.icons.fetchSites = v; })), t('fetchSiteIconsHint')),
-        h('div', { class: 'row stack' }, permBox,
-          h('div', { class: 'button-row' },
-            count,
-            h('button', { class: 'btn small', type: 'button', onclick: async () => { await clearSiteIcons(); toast(t('iconsWillRedownload')); render(); } }, icon('refresh', 14), t('redownloadAll'))))),
-      h('p', { class: 'hint' }, t('hdIconsHint')),
-    ]),
+    h('h3', null, t('hdIcons')),
+    h('div', { class: 'card' },
+      h('p', null, webMode
+        ? 'Brand logos are loaded as SVG files from the theSVG catalogue through jsDelivr. For brands that are not listed, Cadran tries app icons published by the site, then uses a generated letter.'
+        : 'Cadran uses the theSVG brand catalogue for web icons and the browser icon cache when it is available.'),
+      h('div', { class: 'button-row' },
+        h('button', {
+          class: 'btn small', type: 'button',
+          onclick: () => { repaintAll(); toast(t('iconsWillRedownload')); },
+        }, icon('refresh', 14), t('redownloadAll')))),
 
     h('h3', null, t('backup')),
     h('div', { class: 'card' },
@@ -519,11 +462,6 @@ function moreTab() {
       }, t('reset')))),
     importInput,
 
-    h('h3', null, 'Cadran+'),
-    h('div', { class: 'card' },
-      row(plusStatusText(), h('button', { class: 'btn small', type: 'button', onclick: () => showPlus() },
-        ['free', 'preview'].includes(plusStatus()) ? t('plusDiscover') : t('plusManage')))),
-
     h('h3', null, t('shortcuts')),
     h('div', { class: 'kbd-list' },
       h('kbd', null, '/'), t('kbSearch'),
@@ -533,122 +471,8 @@ function moreTab() {
       h('kbd', null, t('kbCmdClick')), t('openInNewTab'),
       h('kbd', null, t('kbRightClick')), t('kbActions')),
     h('p', { class: 'hint' }, t('footer', chrome.runtime.getManifest?.().version || ''), h('br'),
-      // Signature, la même dans toutes les langues.
       'Made in 🇨🇭 with ❤️'),
   ];
-}
-
-// ---------- Page « Cadran+ » ----------
-const plusMark = () => h('span', { class: 'plus-mark', title: 'Cadran+', 'aria-label': 'Cadran+' }, '+');
-const previewNote = () => h('div', { class: 'plus-note' }, icon('sparkle', 16), h('span', null, t('plusPreviewNote')));
-
-function plusStatusText() {
-  return {
-    licensed: t('plusStatusActive'),
-    founder: t('plusFounderTitle'),
-    preview: t('plusStatusPreview'),
-    free: t('plusStatusFree'),
-  }[plusStatus()];
-}
-
-function plusErrorText(e) {
-  if (e?.code === 'invalid') return t('plusErrorInvalid');
-  if (e?.code === 'limit') return t('plusErrorLimit');
-  return t('plusErrorNetwork');
-}
-
-function plusTab() {
-  const status = plusStatus();
-  const out = [
-    h('button', { class: 'btn small ghost back-btn', type: 'button', onclick: () => { tab = plusFrom; render(); } }, icon('back', 14, 2.2), t('back')),
-    h('div', { class: 'plus-hero' },
-      h('div', { class: 'plus-title' }, icon('sparkle', 20, 2), 'Cadran+'),
-      plusReason === 'tabWallpaper' && h('p', { class: 'plus-reason' }, t('plusReasonTabWallpaper')),
-      plusReason === 'rotation' && h('p', { class: 'plus-reason' }, t('plusReasonRotation')),
-      plusReason === 'analogClock' && h('p', { class: 'plus-reason' }, t('plusReasonAnalogClock')),
-      h('p', null, t('plusIntro')),
-      h('ul', { class: 'plus-features' },
-        h('li', null, icon('layers', 16), t('plusFeatureTabWallpapers')),
-        h('li', null, icon('refresh', 16), t('plusFeatureRotation')),
-        h('li', null, icon('clock', 16), t('plusFeatureAnalogClock')),
-        h('li', null, icon('sparkle', 16), t('plusFeatureFuture'))),
-      h('p', { class: 'plus-support' }, t('plusSupport'))),
-  ];
-
-  if (status === 'founder') {
-    out.push(h('div', { class: 'card' },
-      row(h('span', null, h('i', { class: 'status-dot on' }), t('plusFounderTitle')), null, t('plusFounderText'))));
-    return out;
-  }
-  if (status === 'licensed') {
-    out.push(
-      h('div', { class: 'card' },
-        row(h('span', null, h('i', { class: 'status-dot on' }), t('plusActiveTitle')),
-          h('button', { class: 'btn small', type: 'button', onclick: removeFromDevice }, t('plusRemove')),
-          t('plusKeyShown', licenseLabel()))),
-      h('p', { class: 'hint' }, t('plusPrivacy')));
-    return out;
-  }
-
-  // Pas encore acheté (éventuellement en essai sur cette page).
-  const portal = portalUrl();
-  if (status === 'preview') out.push(previewNote());
-  out.push(
-    h('div', { class: 'button-row plus-actions' },
-      h('button', { class: 'btn primary', type: 'button', onclick: openCheckout }, t('plusBuy', priceLabel())),
-      status === 'free' && h('button', { class: 'btn', type: 'button', onclick: tryPlus }, t('plusTry'))),
-    h('p', { class: 'hint' }, t('plusOneTime')),
-    h('h3', null, t('plusHaveKey')),
-    keyForm(),
-    h('p', { class: 'hint' }, t('plusKeyHint'), portal && [' ', h('a', { href: portal, target: '_blank', rel: 'noreferrer' }, t('plusFindKey'))]),
-    h('p', { class: 'hint' }, t('plusPrivacy')),
-  );
-  return out;
-}
-
-function keyForm() {
-  const input = h('input', {
-    class: 'input', type: 'text', placeholder: t('plusKeyPlaceholder'), 'aria-label': t('plusKeyLabel'),
-    autocomplete: 'off', spellcheck: 'false',
-  });
-  const submit = h('button', { class: 'btn', type: 'submit' }, t('plusActivate'));
-  const error = h('p', { class: 'plus-error', role: 'alert', hidden: true });
-  const form = h('form', { class: 'plus-key' }, input, submit);
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (!input.value.trim()) return input.focus();
-    error.hidden = true;
-    submit.disabled = true;
-    submit.textContent = t('plusChecking');
-    try {
-      await activateLicense(input.value);
-      toast(t('plusActivated'));
-    } catch (err) {
-      error.textContent = plusErrorText(err);
-      error.hidden = false;
-      submit.disabled = false;
-      submit.textContent = t('plusActivate');
-    }
-  });
-  return h('div', { class: 'card' }, h('div', { class: 'row stack' }, form, error));
-}
-
-/** Essai : Cadran+ s'applique sur cette page ; on revient là où l'utilisateur était. */
-function tryPlus() {
-  startPreview();
-  toast(t('plusPreviewStarted'));
-  tab = plusFrom;
-  render();
-}
-
-async function removeFromDevice() {
-  if (!(await confirmDialog({ title: t('plusRemoveConfirm'), text: t('plusRemoveText'), confirmLabel: t('plusRemove') }))) return;
-  try {
-    await removeLicense();
-    toast(t('plusRemoved'));
-  } catch (e) {
-    toast(plusErrorText(e));
-  }
 }
 
 // ---------- Sauvegarde ----------
@@ -661,7 +485,6 @@ async function exportBackup(includeImages) {
     exportedAt: new Date().toISOString(),
     settings,
     customIcons: await exportCustomIcons(blobToDataURL),
-    plus: plusBackup(),
   };
   if (includeImages) {
     data.wallpapers = await Promise.all((await listImages()).map(async (r) => ({
@@ -686,7 +509,6 @@ async function importBackup(file) {
       }))));
     }
     await importCustomIcons(data.customIcons, dataURLToBlob);
-    await restorePlusBackup(data.plus);
     replaceSettings(data.settings);
     ctx.afterImport?.();
     toast(t('backupImported'));

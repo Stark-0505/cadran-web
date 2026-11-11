@@ -249,8 +249,9 @@ body.is-dragging .tile:hover .plate { transform: none; }
 }
 
 /* Remote high-resolution favicons used by the GitHub Pages edition. */
-.plate.web-favicon img { width: 78%; height: 78%; object-fit: contain; }
+.plate.web-svg-icon img { width: 78%; height: 78%; object-fit: contain; }
+.plate.web-svg-loading img { position: absolute; inset: 0; margin: auto; }
 @media (max-width: 640px) {
-  .plate.web-favicon img { width: 82%; height: 82%; }
+  .plate.web-svg-icon img { width: 82%; height: 82%; }
   .tile, .group-tab, .round-btn, .btn { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 }

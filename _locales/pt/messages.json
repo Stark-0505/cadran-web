@@ -1,992 +1,872 @@
 {
-   "actionFailed": {
-      "message": "Não foi possível concluir a ação"
-   },
-   "actionTitle": {
-      "message": "Abrir o Cadran"
-   },
-   "add": {
-      "message": "Adicionar"
-   },
-   "addFolders": {
-      "message": "Adicionar pastas…"
-   },
-   "addSiteMenu": {
-      "message": "Adicionar um site…"
-   },
-   "addSiteOrFolder": {
-      "message": "Adicionar um site ou uma pasta"
-   },
-   "addSiteTitle": {
-      "message": "Adicionar um site"
-   },
-   "addTileSetting": {
-      "message": "Bloco “Adicionar”"
-   },
-   "addToFolder": {
-      "message": "Adicionar a “$1”"
-   },
-   "addedToBookmarks": {
-      "message": "Adicionado aos favoritos"
-   },
-   "address": {
-      "message": "Endereço"
-   },
-   "addressPlaceholder": {
-      "message": "exemplo.com"
-   },
-   "allow": {
-      "message": "Permitir"
-   },
-   "allowSiteAccess": {
-      "message": "Permitir o acesso aos sites"
-   },
-   "allowSiteAccessFirst": {
-      "message": "Primeiro, permita o acesso aos sites (Configurações › Mais › Ícones em alta resolução)."
-   },
-   "alreadyShown": {
-      "message": "Já exibida"
-   },
-   "alreadyShownAsTab": {
-      "message": "Já exibida como aba"
-   },
-   "auto": {
-      "message": "Auto"
-   },
-   "automatic": {
-      "message": "Automático"
-   },
-   "back": {
-      "message": "Voltar"
-   },
-   "backup": {
-      "message": "Backup"
-   },
-   "backupImported": {
-      "message": "Backup importado"
-   },
-   "behavior": {
-      "message": "Comportamento"
-   },
-   "blur": {
-      "message": "Desfoque"
-   },
-   "bookmarkletsBlocked": {
-      "message": "Bookmarklets não podem ser executados a partir desta página."
-   },
-   "bookmarks": {
-      "message": "Favoritos"
-   },
-   "browseAllFolders": {
-      "message": "Ver todas as pastas…"
-   },
-   "cancel": {
-      "message": "Cancelar"
-   },
-   "cantMoveIntoItself": {
-      "message": "Não é possível mover uma pasta para dentro dela mesma."
-   },
-   "cantOpenLink": {
-      "message": "Não foi possível abrir este link."
-   },
-   "cantOpenPrivate": {
-      "message": "Não foi possível abrir uma janela privada."
-   },
-   "cantUndo": {
-      "message": "Não foi possível desfazer."
-   },
-   "changeIconMenu": {
-      "message": "Alterar o ícone…"
-   },
-   "changeWallpaperMenu": {
-      "message": "Alterar o papel de parede…"
-   },
-   "choose": {
-      "message": "Escolher"
-   },
-   "chooseAnotherFolder": {
-      "message": "Escolher outra pasta"
-   },
-   "chooseAnotherFolderMenu": {
-      "message": "Escolher outra pasta…"
-   },
-   "chooseEngine": {
-      "message": "Escolher o mecanismo de pesquisa"
-   },
-   "chooseFolderForTab": {
-      "message": "Escolher a pasta desta aba"
-   },
-   "chooseFolders": {
-      "message": "Escolher pastas"
-   },
-   "clock": {
-      "message": "Relógio"
-   },
-   "clockAnalog": {
-      "message": "Analógico"
-   },
-   "clockDigital": {
-      "message": "Digital"
-   },
-   "clockSeconds": {
-      "message": "Ponteiro dos segundos"
-   },
-   "clockSecondsHint": {
-      "message": "Dá a volta em pouco menos de um minuto, faz uma pausa e recomeça no minuto exato."
-   },
-   "clockStyle": {
-      "message": "Estilo"
-   },
-   "close": {
-      "message": "Fechar"
-   },
-   "colorN": {
-      "message": "Cor $1"
-   },
-   "colors": {
-      "message": "Cores"
-   },
-   "confirm": {
-      "message": "Confirmar"
-   },
-   "copyFailed": {
-      "message": "Não foi possível copiar"
-   },
-   "copyLink": {
-      "message": "Copiar link"
-   },
-   "create": {
-      "message": "Criar"
-   },
-   "customColor": {
-      "message": "Cor personalizada"
-   },
-   "dark": {
-      "message": "Escuro"
-   },
-   "darkWallpaper": {
-      "message": "Fundo diferente no modo escuro"
-   },
-   "darkWallpaperHint": {
-      "message": "Muda sozinho conforme o tema claro ou escuro do sistema"
-   },
-   "date": {
-      "message": "Data"
-   },
-   "defaultEngineShort": {
-      "message": "Mecanismo padrão"
-   },
-   "defaultFolderName": {
-      "message": "Pasta"
-   },
-   "defaultWallpaperAllTabs": {
-      "message": "Papel de parede padrão (todas as abas)"
-   },
-   "delete": {
-      "message": "Excluir"
-   },
-   "deleteConfirmTitle": {
-      "message": "Excluir “$1”?"
-   },
-   "deleteFailed": {
-      "message": "Não foi possível excluir: $1"
-   },
-   "deleteFolderMenu": {
-      "message": "Excluir a pasta…"
-   },
-   "deleteFolderText_one": {
-      "message": "A pasta e o link que ela contém serão removidos dos seus favoritos."
-   },
-   "deleteFolderText_other": {
-      "message": "A pasta e os $1 links que ela contém serão removidos dos seus favoritos."
-   },
-   "deleteImage": {
-      "message": "Excluir esta imagem"
-   },
-   "deleteImageConfirm": {
-      "message": "Excluir esta imagem?"
-   },
-   "deletedToast": {
-      "message": "“$1” excluído"
-   },
-   "dim": {
-      "message": "Escurecer"
-   },
-   "displayedName": {
-      "message": "Nome exibido"
-   },
-   "done": {
-      "message": "Concluído"
-   },
-   "dropImageHint": {
-      "message": "Solte uma imagem (JPEG, PNG, WebP…) para usá-la como papel de parede."
-   },
-   "dropImagesHint": {
-      "message": "Dica: arraste uma ou mais imagens direto para a página."
-   },
-   "editBookmarkTitle": {
-      "message": "Editar o favorito"
-   },
-   "editMenu": {
-      "message": "Editar…"
-   },
-   "emptyFolderShort": {
-      "message": "vazia"
-   },
-   "emptyFolderText": {
-      "message": "Adicione um site com o bloco “+” ou arraste um link para cá."
-   },
-   "emptyFolderTitle": {
-      "message": "Esta pasta está vazia"
-   },
-   "engineBrowserDefault": {
-      "message": "Mecanismo padrão do navegador"
-   },
-   "errorTitle": {
-      "message": "Ocorreu um problema"
-   },
-   "expand": {
-      "message": "Expandir"
-   },
-   "export": {
-      "message": "Exportar"
-   },
-   "exportHint": {
-      "message": "Abas, aparência, ícones personalizados"
-   },
-   "exportSettings": {
-      "message": "Exportar as configurações"
-   },
-   "extDescription": {
-      "message": "Página de nova aba no estilo do Safari / Vivaldi: suas pastas de favoritos em grades de ícones, com papel de parede personalizável."
-   },
-   "extName": {
-      "message": "Cadran — Speed Dial para seus favoritos"
-   },
-   "fetchSiteIconsHint": {
-      "message": "Obter o ícone de cada site"
-   },
-   "fetchingIcons": {
-      "message": "Obtendo os ícones…"
-   },
-   "fieldRequired": {
-      "message": "O campo “$1” é obrigatório."
-   },
-   "filterFolders": {
-      "message": "Filtrar pastas…"
-   },
-   "folderMissingText": {
-      "message": "A pasta “$1” não existe mais nos seus favoritos."
-   },
-   "folderName": {
-      "message": "Nome da pasta"
-   },
-   "folderNotFound": {
-      "message": "Pasta não encontrada"
-   },
-   "folderPreview": {
-      "message": "Prévia das pastas"
-   },
-   "foldersAsTabs": {
-      "message": "Pastas exibidas como abas"
-   },
-   "foldersHint": {
-      "message": "Cada pasta vira uma aba no topo da página. Adições, exclusões e arrastar e soltar são salvos direto nos favoritos do navegador: tudo continua sincronizado."
-   },
-   "footer": {
-      "message": "Cadran $1 — seus dados ficam no seu navegador."
-   },
-   "format12h": {
-      "message": "12 h"
-   },
-   "format24h": {
-      "message": "24 h"
-   },
-   "fromImageAddress": {
-      "message": "A partir do endereço de uma imagem"
-   },
-   "goTo": {
-      "message": "Ir para $1"
-   },
-   "grad_aurore": {
-      "message": "Aurora"
-   },
-   "grad_brume": {
-      "message": "Bruma"
-   },
-   "grad_crepuscule": {
-      "message": "Crepúsculo"
-   },
-   "grad_foret": {
-      "message": "Floresta"
-   },
-   "grad_graphite": {
-      "message": "Grafite"
-   },
-   "grad_lagon": {
-      "message": "Lagoa"
-   },
-   "grad_lavande": {
-      "message": "Lavanda"
-   },
-   "grad_menthe": {
-      "message": "Menta"
-   },
-   "grad_nuit": {
-      "message": "Noite"
-   },
-   "grad_ocean": {
-      "message": "Oceano"
-   },
-   "grad_peche": {
-      "message": "Pêssego"
-   },
-   "grad_sierra": {
-      "message": "Serra"
-   },
-   "gradients": {
-      "message": "Degradês"
-   },
-   "greeting": {
-      "message": "Saudação"
-   },
-   "greetingAfternoon": {
-      "message": "Boa tarde"
-   },
-   "greetingEvening": {
-      "message": "Boa noite"
-   },
-   "greetingHint": {
-      "message": "Bom dia, Boa tarde, Boa noite…"
-   },
-   "greetingMorning": {
-      "message": "Bom dia"
-   },
-   "greetingNight": {
-      "message": "Boa noite"
-   },
-   "greetingWithName": {
-      "message": "$1, $2"
-   },
-   "hdIcons": {
-      "message": "Ícones em alta resolução"
-   },
-   "hdIconsHint": {
-      "message": "O Cadran baixa o ícone oficial de cada site (o usado pelo Safari e pelo iPhone) direto do site, sem cookies nem serviços de terceiros. A permissão serve só para isso. Caso contrário, o Cadran usa os favicons que o navegador já conhece, ou uma letra."
-   },
-   "hoverFolderTabs": {
-      "message": "Abas de pastas ao passar o mouse"
-   },
-   "hoverFolderTabsHint": {
-      "message": "As abas só aparecem quando o mouse passa por cima ou durante um arrastar e soltar."
-   },
-   "iconOfTitle": {
-      "message": "Ícone de “$1”"
-   },
-   "iconSize": {
-      "message": "Tamanho dos ícones"
-   },
-   "iconsCached_one": {
-      "message": "$1 ícone em cache"
-   },
-   "iconsCached_other": {
-      "message": "$1 ícones em cache"
-   },
-   "iconsNoticeText": {
-      "message": "Permita que o Cadran obtenha o ícone oficial de cada site. O acesso serve apenas para baixar esses ícones."
-   },
-   "iconsNoticeTitle": {
-      "message": "Ícones nítidos, como no Safari"
-   },
-   "iconsWillRedownload": {
-      "message": "Os ícones serão baixados novamente."
-   },
-   "imageAddress": {
-      "message": "Endereço de uma imagem"
-   },
-   "imageDownloadFailed": {
-      "message": "Não foi possível baixar esta imagem. Salve-a e depois importe-a."
-   },
-   "imageUnreadable": {
-      "message": "Não foi possível ler esta imagem."
-   },
-   "images": {
-      "message": "Imagens"
-   },
-   "imagesAdded_one": {
-      "message": "Papel de parede atualizado"
-   },
-   "imagesAdded_other": {
-      "message": "$1 imagens adicionadas"
-   },
-   "imagesFailed_one": {
-      "message": "Não foi possível importar $1 imagem."
-   },
-   "imagesFailed_other": {
-      "message": "Não foi possível importar $1 imagens."
-   },
-   "importBackup": {
-      "message": "Importar um backup"
-   },
-   "importEllipsis": {
-      "message": "Importar…"
-   },
-   "importFailed": {
-      "message": "Não foi possível importar"
-   },
-   "importImageEllipsis": {
-      "message": "Importar uma imagem…"
-   },
-   "importImages": {
-      "message": "Importar imagens"
-   },
-   "importedTag": {
-      "message": "importada"
-   },
-   "importingImages_one": {
-      "message": "Importando a imagem…"
-   },
-   "importingImages_other": {
-      "message": "Importando $1 imagens…"
-   },
-   "includeWallpapers": {
-      "message": "Incluir as imagens de fundo"
-   },
-   "invalidAddress": {
-      "message": "Endereço inválido."
-   },
-   "kbActions": {
-      "message": "Ações (editar, ícone, excluir…)"
-   },
-   "kbCmdClick": {
-      "message": "⌘ / Ctrl + clique"
-   },
-   "kbEscape": {
-      "message": "Esc"
-   },
-   "kbParentFolder": {
-      "message": "Voltar para a pasta superior"
-   },
-   "kbPrevNextTab": {
-      "message": "Aba anterior / seguinte"
-   },
-   "kbRightClick": {
-      "message": "Clique direito"
-   },
-   "kbSearch": {
-      "message": "Pesquisar"
-   },
-   "kbSwipeTabs": {
-      "message": "Deslizar entre as abas (trackpad)"
-   },
-   "kbTwoFingers": {
-      "message": "Dois dedos ↔"
-   },
-   "lang": {
-      "message": "pt"
-   },
-   "later": {
-      "message": "Mais tarde"
-   },
-   "letterOrEmoji": {
-      "message": "Letra ou emoji"
-   },
-   "light": {
-      "message": "Claro"
-   },
-   "lightAndDark": {
-      "message": "Claro e escuro"
-   },
-   "linkAdded": {
-      "message": "“$1” adicionado"
-   },
-   "linkCopied": {
-      "message": "Link copiado"
-   },
-   "links_one": {
-      "message": "$1 link"
-   },
-   "links_other": {
-      "message": "$1 links"
-   },
-   "location": {
-      "message": "Local"
-   },
-   "maxColumns": {
-      "message": "Colunas (máx.)"
-   },
-   "menusAndPanels": {
-      "message": "Menus e painéis"
-   },
-   "moveDown": {
-      "message": "Mover para baixo"
-   },
-   "moveLeft": {
-      "message": "Mover para a esquerda"
-   },
-   "moveRight": {
-      "message": "Mover para a direita"
-   },
-   "moveUp": {
-      "message": "Mover para cima"
-   },
-   "movedInto": {
-      "message": "Movido para “$1”"
-   },
-   "name": {
-      "message": "Nome"
-   },
-   "namePlaceholder": {
-      "message": "Opcional — obtido da página"
-   },
-   "newFolderMenu": {
-      "message": "Nova pasta…"
-   },
-   "newFolderTitle": {
-      "message": "Nova pasta"
-   },
-   "newTabTitle": {
-      "message": "Nova aba"
-   },
-   "noBookmarkFolders": {
-      "message": "Nenhuma pasta de favoritos encontrada. Importe seus favoritos no navegador (menu Favoritos › Importar) e volte aqui."
-   },
-   "noDirectLinks": {
-      "message": "Esta pasta não contém links diretos."
-   },
-   "noFoldersYet": {
-      "message": "Nenhuma pasta por enquanto."
-   },
-   "noMatchingFolder": {
-      "message": "Nenhuma pasta corresponde."
-   },
-   "notABackup": {
-      "message": "Este arquivo não é um backup do Cadran."
-   },
-   "open": {
-      "message": "Abrir"
-   },
-   "openAllInGroup": {
-      "message": "Abrir tudo em um grupo de abas"
-   },
-   "openAllInTabs": {
-      "message": "Abrir tudo em abas"
-   },
-   "openAllInWindow": {
-      "message": "Abrir tudo em uma nova janela"
-   },
-   "openAllText": {
-      "message": "Todos os links da pasta “$1” serão abertos."
-   },
-   "openInNewTab": {
-      "message": "Abrir em uma nova aba"
-   },
-   "openInNewWindow": {
-      "message": "Abrir em uma nova janela"
-   },
-   "openInPrivateWindow": {
-      "message": "Abrir em uma janela privada"
-   },
-   "openLinks": {
-      "message": "Abrir os links"
-   },
-   "openLinksHint": {
-      "message": "⌘/Ctrl + clique sempre abre uma nova aba"
-   },
-   "openNewTab": {
-      "message": "Nova aba"
-   },
-   "openSameTab": {
-      "message": "Mesma aba"
-   },
-   "openTabsConfirm_one": {
-      "message": "Abrir $1 aba?"
-   },
-   "openTabsConfirm_other": {
-      "message": "Abrir $1 abas?"
-   },
-   "openThisAddress": {
-      "message": "Abrir este endereço"
-   },
-   "optional": {
-      "message": "Opcional"
-   },
-   "ownHint": {
-      "message": "próprio"
-   },
-   "ownWallpaper": {
-      "message": "Papel de parede próprio para esta aba"
-   },
-   "panelTitle": {
-      "message": "Configurações"
-   },
-   "parentFolder": {
-      "message": "Pasta superior"
-   },
-   "parentFolderHint": {
-      "message": "Pasta superior (Esc)"
-   },
-   "plusActivate": {
-      "message": "Ativar"
-   },
-   "plusActivated": {
-      "message": "O Cadran+ está ativado. Obrigado!"
-   },
-   "plusActiveTitle": {
-      "message": "O Cadran+ está ativado"
-   },
-   "plusBuy": {
-      "message": "Comprar o Cadran+ · $1"
-   },
-   "plusChecking": {
-      "message": "Verificando…"
-   },
-   "plusDiscover": {
-      "message": "Conhecer"
-   },
-   "plusErrorInvalid": {
-      "message": "Esta chave não é válida. Verifique se ela está completa."
-   },
-   "plusErrorLimit": {
-      "message": "Esta chave já está ativa no número máximo de dispositivos. Remova-a de outro dispositivo e tente de novo."
-   },
-   "plusErrorNetwork": {
-      "message": "Não foi possível acessar o serviço de verificação. Verifique sua conexão e tente de novo."
-   },
-   "plusFeatureAnalogClock": {
-      "message": "Um relógio analógico, com o ponteiro dos segundos que para a cada minuto"
-   },
-   "plusFeatureFuture": {
-      "message": "Os próximos recursos do Cadran+, sem custo adicional"
-   },
-   "plusFeatureRotation": {
-      "message": "Imagens que mudam sozinhas, a cada nova aba ou todo dia"
-   },
-   "plusFeatureTabWallpapers": {
-      "message": "Um papel de parede diferente para cada aba, com uma transição suave ao passar de uma para outra"
-   },
-   "plusFindKey": {
-      "message": "Encontrar minha chave"
-   },
-   "plusFounderText": {
-      "message": "Você adotou o Cadran antes da abertura das vendas: o Cadran+ é seu de graça, para sempre. Obrigado!"
-   },
-   "plusFounderTitle": {
-      "message": "Grátis para sempre"
-   },
-   "plusHaveKey": {
-      "message": "Tem uma chave?"
-   },
-   "plusInactive": {
-      "message": "Salvo, aparece com o Cadran+"
-   },
-   "plusIntro": {
-      "message": "O Cadran continua totalmente gratuito. O Cadran+ acrescenta alguns requintes, com um único pagamento."
-   },
-   "plusKeyHint": {
-      "message": "Após o pagamento, sua chave estará no seu portal de cliente da Polar."
-   },
-   "plusKeyLabel": {
-      "message": "Chave de licença"
-   },
-   "plusKeyPlaceholder": {
-      "message": "Cole sua chave aqui"
-   },
-   "plusKeyShown": {
-      "message": "Chave $1"
-   },
-   "plusManage": {
-      "message": "Gerenciar"
-   },
-   "plusOneTime": {
-      "message": "Pagamento único, sem assinatura, em uma nova aba."
-   },
-   "plusPreviewNote": {
-      "message": "Teste do Cadran+: suas configurações ficam salvas, mas só aparecem nesta página."
-   },
-   "plusPreviewStarted": {
-      "message": "O Cadran+ está ativo nesta página até você fechá-la"
-   },
-   "plusPrivacy": {
-      "message": "A chave é verificada uma única vez, na ativação, junto à Polar, que cuida dos pagamentos. Nada mais sai do seu navegador."
-   },
-   "plusReasonAnalogClock": {
-      "message": "O relógio analógico faz parte do Cadran+."
-   },
-   "plusReasonRotation": {
-      "message": "A troca automática de imagem faz parte do Cadran+."
-   },
-   "plusReasonTabWallpaper": {
-      "message": "Um papel de parede próprio para cada aba faz parte do Cadran+."
-   },
-   "plusRemove": {
-      "message": "Remover deste dispositivo"
-   },
-   "plusRemoveConfirm": {
-      "message": "Remover o Cadran+ deste dispositivo?"
-   },
-   "plusRemoveText": {
-      "message": "A chave fica livre para outro dispositivo. Suas configurações são mantidas."
-   },
-   "plusRemoved": {
-      "message": "O Cadran+ foi removido deste dispositivo"
-   },
-   "plusStatusActive": {
-      "message": "Ativado neste dispositivo"
-   },
-   "plusStatusFree": {
-      "message": "Um papel de parede por aba, um relógio analógico…"
-   },
-   "plusStatusPreview": {
-      "message": "Teste nesta página"
-   },
-   "plusSupport": {
-      "message": "Ao comprar o Cadran+, você apoia um desenvolvimento independente."
-   },
-   "plusTry": {
-      "message": "Testar nesta página"
-   },
-   "recentlyClosed": {
-      "message": "Fechadas recentemente"
-   },
-   "recentlyClosedHint": {
-      "message": "Abas e janelas para reabrir"
-   },
-   "redownload": {
-      "message": "Baixar novamente"
-   },
-   "redownloadAll": {
-      "message": "Baixar tudo novamente"
-   },
-   "removeTab": {
-      "message": "Remover a aba"
-   },
-   "removeTabHint": {
-      "message": "Remover a aba (a pasta não é excluída)"
-   },
-   "renameFolderTitle": {
-      "message": "Renomear a pasta"
-   },
-   "renameMenu": {
-      "message": "Renomear…"
-   },
-   "renameTabHelp": {
-      "message": "A pasta de favoritos não é renomeada. Deixe em branco para usar o nome dela."
-   },
-   "renameTabMenu": {
-      "message": "Renomear a aba…"
-   },
-   "renameTabTitle": {
-      "message": "Renomear a aba"
-   },
-   "reopenWindow": {
-      "message": "Reabrir a janela ($1)"
-   },
-   "reset": {
-      "message": "Redefinir"
-   },
-   "resetConfirmText": {
-      "message": "Seus favoritos não são alterados: só as configurações do Cadran voltam ao padrão."
-   },
-   "resetConfirmTitle": {
-      "message": "Redefinir as configurações?"
-   },
-   "revokeSiteAccess": {
-      "message": "Revogar a permissão"
-   },
-   "rotateDaily": {
-      "message": "Todo dia"
-   },
-   "rotateEachOpening": {
-      "message": "A cada nova aba"
-   },
-   "rotateImages": {
-      "message": "Trocar de imagem automaticamente"
-   },
-   "rotateNever": {
-      "message": "Nunca"
-   },
-   "save": {
-      "message": "Salvar"
-   },
-   "search": {
-      "message": "Pesquisa"
-   },
-   "searchBar": {
-      "message": "Barra de pesquisa"
-   },
-   "searchBarHint": {
-      "message": "Também filtra todos os seus favoritos"
-   },
-   "searchEngine": {
-      "message": "Mecanismo"
-   },
-   "searchEngineHeader": {
-      "message": "Mecanismo de pesquisa"
-   },
-   "searchFor": {
-      "message": "Pesquisar “$1”"
-   },
-   "searchPlaceholder": {
-      "message": "Pesquisar na Web ou nos seus favoritos"
-   },
-   "searchPlaceholderWith": {
-      "message": "Pesquisar com $1 ou nos seus favoritos"
-   },
-   "sections": {
-      "message": "Seções"
-   },
-   "sectionsPermissionHint": {
-      "message": "Estas duas seções precisam de uma permissão extra, pedida apenas quando você as ativa."
-   },
-   "selectAFolder": {
-      "message": "Selecione uma pasta."
-   },
-   "selectAtLeastOneFolder": {
-      "message": "Selecione pelo menos uma pasta."
-   },
-   "setWallpaperOf": {
-      "message": "Definir o papel de parede de"
-   },
-   "setWallpaperOfHint": {
-      "message": "Cada aba pode manter o papel de parede padrão ou ter o seu"
-   },
-   "shortcut": {
-      "message": "Atalho"
-   },
-   "shortcuts": {
-      "message": "Atalhos"
-   },
-   "show": {
-      "message": "Exibir"
-   },
-   "showAnotherFolder": {
-      "message": "Exibir outra pasta"
-   },
-   "showAsTab": {
-      "message": "Exibir como aba"
-   },
-   "showFoldersTitle": {
-      "message": "Exibir pastas"
-   },
-   "showFolders_one": {
-      "message": "Exibir esta pasta"
-   },
-   "showFolders_other": {
-      "message": "Exibir estas $1 pastas"
-   },
-   "showNames": {
-      "message": "Mostrar nome de sites / pastas"
-   },
-   "showTime": {
-      "message": "Mostrar a hora"
-   },
-   "siteAccessGranted": {
-      "message": "Acesso aos sites permitido"
-   },
-   "siteAccessNotGranted": {
-      "message": "Acesso aos sites não permitido"
-   },
-   "styleCards": {
-      "message": "Cartões"
-   },
-   "styleIcons": {
-      "message": "Ícones"
-   },
-   "tabAppearance": {
-      "message": "Aparência"
-   },
-   "tabFolders": {
-      "message": "Pastas"
-   },
-   "tabHome": {
-      "message": "Início"
-   },
-   "tabMore": {
-      "message": "Mais"
-   },
-   "tabName": {
-      "message": "Nome da aba"
-   },
-   "tabNameHint": {
-      "message": "Nome exibido na aba (a pasta não é renomeada)"
-   },
-   "tabRemoved": {
-      "message": "Aba “$1” removida"
-   },
-   "tabSection": {
-      "message": "Aba"
-   },
-   "tabWallpaper": {
-      "message": "Fundo"
-   },
-   "tabWallpaperMenu": {
-      "message": "Papel de parede desta aba…"
-   },
-   "tabWallpaperStillDefault": {
-      "message": "Papel de parede desta aba (padrão por enquanto)"
-   },
-   "tabWithOwnWallpaper": {
-      "message": "$1 — fundo próprio"
-   },
-   "tabsCount_one": {
-      "message": "$1 aba"
-   },
-   "tabsCount_other": {
-      "message": "$1 abas"
-   },
-   "textOnWallpaper": {
-      "message": "Texto sobre o fundo"
-   },
-   "tileStyle": {
-      "message": "Estilo"
-   },
-   "tiles": {
-      "message": "Blocos"
-   },
-   "timeFormat": {
-      "message": "Formato da hora"
-   },
-   "topSites": {
-      "message": "Sites frequentes"
-   },
-   "topSitesHint": {
-      "message": "Com base no seu histórico de navegação"
-   },
-   "undo": {
-      "message": "Desfazer"
-   },
-   "unsupportedFormat": {
-      "message": "Formato não compatível: $1"
-   },
-   "untitled": {
-      "message": "Sem título"
-   },
-   "use": {
-      "message": "Usar"
-   },
-   "usesDefaultForNow": {
-      "message": "Por enquanto, ela usa o papel de parede padrão"
-   },
-   "variantToSet": {
-      "message": "Fundo a definir"
-   },
-   "wallpaper": {
-      "message": "Papel de parede"
-   },
-   "wallpaperSettings": {
-      "message": "Ajustes do fundo"
-   },
-   "wallpaperToSet": {
-      "message": "Fundo a definir"
-   },
-   "welcomeText": {
-      "message": "Escolha as pastas de favoritos que você quer exibir: cada pasta vira uma aba, com seus sites em ícones e uma prévia das subpastas."
-   },
-   "welcomeTitle": {
-      "message": "Boas-vindas ao Cadran"
-   },
-   "yourName": {
-      "message": "Seu nome"
-   }
+  "actionFailed": {
+    "message": "Não foi possível concluir a ação"
+  },
+  "actionTitle": {
+    "message": "Abrir o Cadran"
+  },
+  "add": {
+    "message": "Adicionar"
+  },
+  "addFolders": {
+    "message": "Adicionar pastas…"
+  },
+  "addSiteMenu": {
+    "message": "Adicionar um site…"
+  },
+  "addSiteOrFolder": {
+    "message": "Adicionar um site ou uma pasta"
+  },
+  "addSiteTitle": {
+    "message": "Adicionar um site"
+  },
+  "addTileSetting": {
+    "message": "Bloco “Adicionar”"
+  },
+  "addToFolder": {
+    "message": "Adicionar a “$1”"
+  },
+  "addedToBookmarks": {
+    "message": "Adicionado aos favoritos"
+  },
+  "address": {
+    "message": "Endereço"
+  },
+  "addressPlaceholder": {
+    "message": "exemplo.com"
+  },
+  "allow": {
+    "message": "Permitir"
+  },
+  "allowSiteAccess": {
+    "message": "Permitir o acesso aos sites"
+  },
+  "allowSiteAccessFirst": {
+    "message": "Primeiro, permita o acesso aos sites (Configurações › Mais › Ícones em alta resolução)."
+  },
+  "alreadyShown": {
+    "message": "Já exibida"
+  },
+  "alreadyShownAsTab": {
+    "message": "Já exibida como aba"
+  },
+  "auto": {
+    "message": "Auto"
+  },
+  "automatic": {
+    "message": "Automático"
+  },
+  "back": {
+    "message": "Voltar"
+  },
+  "backup": {
+    "message": "Backup"
+  },
+  "backupImported": {
+    "message": "Backup importado"
+  },
+  "behavior": {
+    "message": "Comportamento"
+  },
+  "blur": {
+    "message": "Desfoque"
+  },
+  "bookmarkletsBlocked": {
+    "message": "Bookmarklets não podem ser executados a partir desta página."
+  },
+  "bookmarks": {
+    "message": "Favoritos"
+  },
+  "browseAllFolders": {
+    "message": "Ver todas as pastas…"
+  },
+  "cancel": {
+    "message": "Cancelar"
+  },
+  "cantMoveIntoItself": {
+    "message": "Não é possível mover uma pasta para dentro dela mesma."
+  },
+  "cantOpenLink": {
+    "message": "Não foi possível abrir este link."
+  },
+  "cantOpenPrivate": {
+    "message": "Não foi possível abrir uma janela privada."
+  },
+  "cantUndo": {
+    "message": "Não foi possível desfazer."
+  },
+  "changeIconMenu": {
+    "message": "Alterar o ícone…"
+  },
+  "changeWallpaperMenu": {
+    "message": "Alterar o papel de parede…"
+  },
+  "choose": {
+    "message": "Escolher"
+  },
+  "chooseAnotherFolder": {
+    "message": "Escolher outra pasta"
+  },
+  "chooseAnotherFolderMenu": {
+    "message": "Escolher outra pasta…"
+  },
+  "chooseEngine": {
+    "message": "Escolher o mecanismo de pesquisa"
+  },
+  "chooseFolderForTab": {
+    "message": "Escolher a pasta desta aba"
+  },
+  "chooseFolders": {
+    "message": "Escolher pastas"
+  },
+  "clock": {
+    "message": "Relógio"
+  },
+  "clockAnalog": {
+    "message": "Analógico"
+  },
+  "clockDigital": {
+    "message": "Digital"
+  },
+  "clockSeconds": {
+    "message": "Ponteiro dos segundos"
+  },
+  "clockSecondsHint": {
+    "message": "Dá a volta em pouco menos de um minuto, faz uma pausa e recomeça no minuto exato."
+  },
+  "clockStyle": {
+    "message": "Estilo"
+  },
+  "close": {
+    "message": "Fechar"
+  },
+  "colorN": {
+    "message": "Cor $1"
+  },
+  "colors": {
+    "message": "Cores"
+  },
+  "confirm": {
+    "message": "Confirmar"
+  },
+  "copyFailed": {
+    "message": "Não foi possível copiar"
+  },
+  "copyLink": {
+    "message": "Copiar link"
+  },
+  "create": {
+    "message": "Criar"
+  },
+  "customColor": {
+    "message": "Cor personalizada"
+  },
+  "dark": {
+    "message": "Escuro"
+  },
+  "darkWallpaper": {
+    "message": "Fundo diferente no modo escuro"
+  },
+  "darkWallpaperHint": {
+    "message": "Muda sozinho conforme o tema claro ou escuro do sistema"
+  },
+  "date": {
+    "message": "Data"
+  },
+  "defaultEngineShort": {
+    "message": "Mecanismo padrão"
+  },
+  "defaultFolderName": {
+    "message": "Pasta"
+  },
+  "defaultWallpaperAllTabs": {
+    "message": "Papel de parede padrão (todas as abas)"
+  },
+  "delete": {
+    "message": "Excluir"
+  },
+  "deleteConfirmTitle": {
+    "message": "Excluir “$1”?"
+  },
+  "deleteFailed": {
+    "message": "Não foi possível excluir: $1"
+  },
+  "deleteFolderMenu": {
+    "message": "Excluir a pasta…"
+  },
+  "deleteFolderText_one": {
+    "message": "A pasta e o link que ela contém serão removidos dos seus favoritos."
+  },
+  "deleteFolderText_other": {
+    "message": "A pasta e os $1 links que ela contém serão removidos dos seus favoritos."
+  },
+  "deleteImage": {
+    "message": "Excluir esta imagem"
+  },
+  "deleteImageConfirm": {
+    "message": "Excluir esta imagem?"
+  },
+  "deletedToast": {
+    "message": "“$1” excluído"
+  },
+  "dim": {
+    "message": "Escurecer"
+  },
+  "displayedName": {
+    "message": "Nome exibido"
+  },
+  "done": {
+    "message": "Concluído"
+  },
+  "dropImageHint": {
+    "message": "Solte uma imagem (JPEG, PNG, WebP…) para usá-la como papel de parede."
+  },
+  "dropImagesHint": {
+    "message": "Dica: arraste uma ou mais imagens direto para a página."
+  },
+  "editBookmarkTitle": {
+    "message": "Editar o favorito"
+  },
+  "editMenu": {
+    "message": "Editar…"
+  },
+  "emptyFolderShort": {
+    "message": "vazia"
+  },
+  "emptyFolderText": {
+    "message": "Adicione um site com o bloco “+” ou arraste um link para cá."
+  },
+  "emptyFolderTitle": {
+    "message": "Esta pasta está vazia"
+  },
+  "engineBrowserDefault": {
+    "message": "Mecanismo padrão do navegador"
+  },
+  "errorTitle": {
+    "message": "Ocorreu um problema"
+  },
+  "expand": {
+    "message": "Expandir"
+  },
+  "export": {
+    "message": "Exportar"
+  },
+  "exportHint": {
+    "message": "Abas, aparência, ícones personalizados"
+  },
+  "exportSettings": {
+    "message": "Exportar as configurações"
+  },
+  "extDescription": {
+    "message": "Página de nova aba no estilo do Safari / Vivaldi: suas pastas de favoritos em grades de ícones, com papel de parede personalizável."
+  },
+  "extName": {
+    "message": "Cadran — Speed Dial para seus favoritos"
+  },
+  "fetchSiteIconsHint": {
+    "message": "Obter o ícone de cada site"
+  },
+  "fetchingIcons": {
+    "message": "Obtendo os ícones…"
+  },
+  "fieldRequired": {
+    "message": "O campo “$1” é obrigatório."
+  },
+  "filterFolders": {
+    "message": "Filtrar pastas…"
+  },
+  "folderMissingText": {
+    "message": "A pasta “$1” não existe mais nos seus favoritos."
+  },
+  "folderName": {
+    "message": "Nome da pasta"
+  },
+  "folderNotFound": {
+    "message": "Pasta não encontrada"
+  },
+  "folderPreview": {
+    "message": "Prévia das pastas"
+  },
+  "foldersAsTabs": {
+    "message": "Pastas exibidas como abas"
+  },
+  "foldersHint": {
+    "message": "Cada pasta vira uma aba no topo da página. Adições, exclusões e arrastar e soltar são salvos direto nos favoritos do navegador: tudo continua sincronizado."
+  },
+  "footer": {
+    "message": "Cadran $1 — seus dados ficam no seu navegador."
+  },
+  "format12h": {
+    "message": "12 h"
+  },
+  "format24h": {
+    "message": "24 h"
+  },
+  "fromImageAddress": {
+    "message": "A partir do endereço de uma imagem"
+  },
+  "goTo": {
+    "message": "Ir para $1"
+  },
+  "grad_aurore": {
+    "message": "Aurora"
+  },
+  "grad_brume": {
+    "message": "Bruma"
+  },
+  "grad_crepuscule": {
+    "message": "Crepúsculo"
+  },
+  "grad_foret": {
+    "message": "Floresta"
+  },
+  "grad_graphite": {
+    "message": "Grafite"
+  },
+  "grad_lagon": {
+    "message": "Lagoa"
+  },
+  "grad_lavande": {
+    "message": "Lavanda"
+  },
+  "grad_menthe": {
+    "message": "Menta"
+  },
+  "grad_nuit": {
+    "message": "Noite"
+  },
+  "grad_ocean": {
+    "message": "Oceano"
+  },
+  "grad_peche": {
+    "message": "Pêssego"
+  },
+  "grad_sierra": {
+    "message": "Serra"
+  },
+  "gradients": {
+    "message": "Degradês"
+  },
+  "greeting": {
+    "message": "Saudação"
+  },
+  "greetingAfternoon": {
+    "message": "Boa tarde"
+  },
+  "greetingEvening": {
+    "message": "Boa noite"
+  },
+  "greetingHint": {
+    "message": "Bom dia, Boa tarde, Boa noite…"
+  },
+  "greetingMorning": {
+    "message": "Bom dia"
+  },
+  "greetingNight": {
+    "message": "Boa noite"
+  },
+  "greetingWithName": {
+    "message": "$1, $2"
+  },
+  "hdIcons": {
+    "message": "Ícones em alta resolução"
+  },
+  "hdIconsHint": {
+    "message": "O Cadran baixa o ícone oficial de cada site (o usado pelo Safari e pelo iPhone) direto do site, sem cookies nem serviços de terceiros. A permissão serve só para isso. Caso contrário, o Cadran usa os favicons que o navegador já conhece, ou uma letra."
+  },
+  "hoverFolderTabs": {
+    "message": "Abas de pastas ao passar o mouse"
+  },
+  "hoverFolderTabsHint": {
+    "message": "As abas só aparecem quando o mouse passa por cima ou durante um arrastar e soltar."
+  },
+  "iconOfTitle": {
+    "message": "Ícone de “$1”"
+  },
+  "iconSize": {
+    "message": "Tamanho dos ícones"
+  },
+  "iconsCached_one": {
+    "message": "$1 ícone em cache"
+  },
+  "iconsCached_other": {
+    "message": "$1 ícones em cache"
+  },
+  "iconsNoticeText": {
+    "message": "Permita que o Cadran obtenha o ícone oficial de cada site. O acesso serve apenas para baixar esses ícones."
+  },
+  "iconsNoticeTitle": {
+    "message": "Ícones nítidos, como no Safari"
+  },
+  "iconsWillRedownload": {
+    "message": "Os ícones serão baixados novamente."
+  },
+  "imageAddress": {
+    "message": "Endereço de uma imagem"
+  },
+  "imageDownloadFailed": {
+    "message": "Não foi possível baixar esta imagem. Salve-a e depois importe-a."
+  },
+  "imageUnreadable": {
+    "message": "Não foi possível ler esta imagem."
+  },
+  "images": {
+    "message": "Imagens"
+  },
+  "imagesAdded_one": {
+    "message": "Papel de parede atualizado"
+  },
+  "imagesAdded_other": {
+    "message": "$1 imagens adicionadas"
+  },
+  "imagesFailed_one": {
+    "message": "Não foi possível importar $1 imagem."
+  },
+  "imagesFailed_other": {
+    "message": "Não foi possível importar $1 imagens."
+  },
+  "importBackup": {
+    "message": "Importar um backup"
+  },
+  "importEllipsis": {
+    "message": "Importar…"
+  },
+  "importFailed": {
+    "message": "Não foi possível importar"
+  },
+  "importImageEllipsis": {
+    "message": "Importar uma imagem…"
+  },
+  "importImages": {
+    "message": "Importar imagens"
+  },
+  "importedTag": {
+    "message": "importada"
+  },
+  "importingImages_one": {
+    "message": "Importando a imagem…"
+  },
+  "importingImages_other": {
+    "message": "Importando $1 imagens…"
+  },
+  "includeWallpapers": {
+    "message": "Incluir as imagens de fundo"
+  },
+  "invalidAddress": {
+    "message": "Endereço inválido."
+  },
+  "kbActions": {
+    "message": "Ações (editar, ícone, excluir…)"
+  },
+  "kbCmdClick": {
+    "message": "⌘ / Ctrl + clique"
+  },
+  "kbEscape": {
+    "message": "Esc"
+  },
+  "kbParentFolder": {
+    "message": "Voltar para a pasta superior"
+  },
+  "kbPrevNextTab": {
+    "message": "Aba anterior / seguinte"
+  },
+  "kbRightClick": {
+    "message": "Clique direito"
+  },
+  "kbSearch": {
+    "message": "Pesquisar"
+  },
+  "kbSwipeTabs": {
+    "message": "Deslizar entre as abas (trackpad)"
+  },
+  "kbTwoFingers": {
+    "message": "Dois dedos ↔"
+  },
+  "lang": {
+    "message": "pt"
+  },
+  "later": {
+    "message": "Mais tarde"
+  },
+  "letterOrEmoji": {
+    "message": "Letra ou emoji"
+  },
+  "light": {
+    "message": "Claro"
+  },
+  "lightAndDark": {
+    "message": "Claro e escuro"
+  },
+  "linkAdded": {
+    "message": "“$1” adicionado"
+  },
+  "linkCopied": {
+    "message": "Link copiado"
+  },
+  "links_one": {
+    "message": "$1 link"
+  },
+  "links_other": {
+    "message": "$1 links"
+  },
+  "location": {
+    "message": "Local"
+  },
+  "maxColumns": {
+    "message": "Colunas (máx.)"
+  },
+  "menusAndPanels": {
+    "message": "Menus e painéis"
+  },
+  "moveDown": {
+    "message": "Mover para baixo"
+  },
+  "moveLeft": {
+    "message": "Mover para a esquerda"
+  },
+  "moveRight": {
+    "message": "Mover para a direita"
+  },
+  "moveUp": {
+    "message": "Mover para cima"
+  },
+  "movedInto": {
+    "message": "Movido para “$1”"
+  },
+  "name": {
+    "message": "Nome"
+  },
+  "namePlaceholder": {
+    "message": "Opcional — obtido da página"
+  },
+  "newFolderMenu": {
+    "message": "Nova pasta…"
+  },
+  "newFolderTitle": {
+    "message": "Nova pasta"
+  },
+  "newTabTitle": {
+    "message": "Nova aba"
+  },
+  "noBookmarkFolders": {
+    "message": "Nenhuma pasta de favoritos encontrada. Importe seus favoritos no navegador (menu Favoritos › Importar) e volte aqui."
+  },
+  "noDirectLinks": {
+    "message": "Esta pasta não contém links diretos."
+  },
+  "noFoldersYet": {
+    "message": "Nenhuma pasta por enquanto."
+  },
+  "noMatchingFolder": {
+    "message": "Nenhuma pasta corresponde."
+  },
+  "notABackup": {
+    "message": "Este arquivo não é um backup do Cadran."
+  },
+  "open": {
+    "message": "Abrir"
+  },
+  "openAllInGroup": {
+    "message": "Abrir tudo em um grupo de abas"
+  },
+  "openAllInTabs": {
+    "message": "Abrir tudo em abas"
+  },
+  "openAllInWindow": {
+    "message": "Abrir tudo em uma nova janela"
+  },
+  "openAllText": {
+    "message": "Todos os links da pasta “$1” serão abertos."
+  },
+  "openInNewTab": {
+    "message": "Abrir em uma nova aba"
+  },
+  "openInNewWindow": {
+    "message": "Abrir em uma nova janela"
+  },
+  "openInPrivateWindow": {
+    "message": "Abrir em uma janela privada"
+  },
+  "openLinks": {
+    "message": "Abrir os links"
+  },
+  "openLinksHint": {
+    "message": "⌘/Ctrl + clique sempre abre uma nova aba"
+  },
+  "openNewTab": {
+    "message": "Nova aba"
+  },
+  "openSameTab": {
+    "message": "Mesma aba"
+  },
+  "openTabsConfirm_one": {
+    "message": "Abrir $1 aba?"
+  },
+  "openTabsConfirm_other": {
+    "message": "Abrir $1 abas?"
+  },
+  "openThisAddress": {
+    "message": "Abrir este endereço"
+  },
+  "optional": {
+    "message": "Opcional"
+  },
+  "ownHint": {
+    "message": "próprio"
+  },
+  "ownWallpaper": {
+    "message": "Papel de parede próprio para esta aba"
+  },
+  "panelTitle": {
+    "message": "Configurações"
+  },
+  "parentFolder": {
+    "message": "Pasta superior"
+  },
+  "parentFolderHint": {
+    "message": "Pasta superior (Esc)"
+  },
+  "recentlyClosed": {
+    "message": "Fechadas recentemente"
+  },
+  "recentlyClosedHint": {
+    "message": "Abas e janelas para reabrir"
+  },
+  "redownload": {
+    "message": "Baixar novamente"
+  },
+  "redownloadAll": {
+    "message": "Baixar tudo novamente"
+  },
+  "removeTab": {
+    "message": "Remover a aba"
+  },
+  "removeTabHint": {
+    "message": "Remover a aba (a pasta não é excluída)"
+  },
+  "renameFolderTitle": {
+    "message": "Renomear a pasta"
+  },
+  "renameMenu": {
+    "message": "Renomear…"
+  },
+  "renameTabHelp": {
+    "message": "A pasta de favoritos não é renomeada. Deixe em branco para usar o nome dela."
+  },
+  "renameTabMenu": {
+    "message": "Renomear a aba…"
+  },
+  "renameTabTitle": {
+    "message": "Renomear a aba"
+  },
+  "reopenWindow": {
+    "message": "Reabrir a janela ($1)"
+  },
+  "reset": {
+    "message": "Redefinir"
+  },
+  "resetConfirmText": {
+    "message": "Seus favoritos não são alterados: só as configurações do Cadran voltam ao padrão."
+  },
+  "resetConfirmTitle": {
+    "message": "Redefinir as configurações?"
+  },
+  "revokeSiteAccess": {
+    "message": "Revogar a permissão"
+  },
+  "rotateDaily": {
+    "message": "Todo dia"
+  },
+  "rotateEachOpening": {
+    "message": "A cada nova aba"
+  },
+  "rotateImages": {
+    "message": "Trocar de imagem automaticamente"
+  },
+  "rotateNever": {
+    "message": "Nunca"
+  },
+  "save": {
+    "message": "Salvar"
+  },
+  "search": {
+    "message": "Pesquisa"
+  },
+  "searchBar": {
+    "message": "Barra de pesquisa"
+  },
+  "searchBarHint": {
+    "message": "Também filtra todos os seus favoritos"
+  },
+  "searchEngine": {
+    "message": "Mecanismo"
+  },
+  "searchEngineHeader": {
+    "message": "Mecanismo de pesquisa"
+  },
+  "searchFor": {
+    "message": "Pesquisar “$1”"
+  },
+  "searchPlaceholder": {
+    "message": "Pesquisar na Web ou nos seus favoritos"
+  },
+  "searchPlaceholderWith": {
+    "message": "Pesquisar com $1 ou nos seus favoritos"
+  },
+  "sections": {
+    "message": "Seções"
+  },
+  "sectionsPermissionHint": {
+    "message": "Estas duas seções precisam de uma permissão extra, pedida apenas quando você as ativa."
+  },
+  "selectAFolder": {
+    "message": "Selecione uma pasta."
+  },
+  "selectAtLeastOneFolder": {
+    "message": "Selecione pelo menos uma pasta."
+  },
+  "setWallpaperOf": {
+    "message": "Definir o papel de parede de"
+  },
+  "setWallpaperOfHint": {
+    "message": "Cada aba pode manter o papel de parede padrão ou ter o seu"
+  },
+  "shortcut": {
+    "message": "Atalho"
+  },
+  "shortcuts": {
+    "message": "Atalhos"
+  },
+  "show": {
+    "message": "Exibir"
+  },
+  "showAnotherFolder": {
+    "message": "Exibir outra pasta"
+  },
+  "showAsTab": {
+    "message": "Exibir como aba"
+  },
+  "showFoldersTitle": {
+    "message": "Exibir pastas"
+  },
+  "showFolders_one": {
+    "message": "Exibir esta pasta"
+  },
+  "showFolders_other": {
+    "message": "Exibir estas $1 pastas"
+  },
+  "showNames": {
+    "message": "Mostrar nome de sites / pastas"
+  },
+  "showTime": {
+    "message": "Mostrar a hora"
+  },
+  "siteAccessGranted": {
+    "message": "Acesso aos sites permitido"
+  },
+  "siteAccessNotGranted": {
+    "message": "Acesso aos sites não permitido"
+  },
+  "styleCards": {
+    "message": "Cartões"
+  },
+  "styleIcons": {
+    "message": "Ícones"
+  },
+  "tabAppearance": {
+    "message": "Aparência"
+  },
+  "tabFolders": {
+    "message": "Pastas"
+  },
+  "tabHome": {
+    "message": "Início"
+  },
+  "tabMore": {
+    "message": "Mais"
+  },
+  "tabName": {
+    "message": "Nome da aba"
+  },
+  "tabNameHint": {
+    "message": "Nome exibido na aba (a pasta não é renomeada)"
+  },
+  "tabRemoved": {
+    "message": "Aba “$1” removida"
+  },
+  "tabSection": {
+    "message": "Aba"
+  },
+  "tabWallpaper": {
+    "message": "Fundo"
+  },
+  "tabWallpaperMenu": {
+    "message": "Papel de parede desta aba…"
+  },
+  "tabWallpaperStillDefault": {
+    "message": "Papel de parede desta aba (padrão por enquanto)"
+  },
+  "tabWithOwnWallpaper": {
+    "message": "$1 — fundo próprio"
+  },
+  "tabsCount_one": {
+    "message": "$1 aba"
+  },
+  "tabsCount_other": {
+    "message": "$1 abas"
+  },
+  "textOnWallpaper": {
+    "message": "Texto sobre o fundo"
+  },
+  "tileStyle": {
+    "message": "Estilo"
+  },
+  "tiles": {
+    "message": "Blocos"
+  },
+  "timeFormat": {
+    "message": "Formato da hora"
+  },
+  "topSites": {
+    "message": "Sites frequentes"
+  },
+  "topSitesHint": {
+    "message": "Com base no seu histórico de navegação"
+  },
+  "undo": {
+    "message": "Desfazer"
+  },
+  "unsupportedFormat": {
+    "message": "Formato não compatível: $1"
+  },
+  "untitled": {
+    "message": "Sem título"
+  },
+  "use": {
+    "message": "Usar"
+  },
+  "usesDefaultForNow": {
+    "message": "Por enquanto, ela usa o papel de parede padrão"
+  },
+  "variantToSet": {
+    "message": "Fundo a definir"
+  },
+  "wallpaper": {
+    "message": "Papel de parede"
+  },
+  "wallpaperSettings": {
+    "message": "Ajustes do fundo"
+  },
+  "wallpaperToSet": {
+    "message": "Fundo a definir"
+  },
+  "welcomeText": {
+    "message": "Escolha as pastas de favoritos que você quer exibir: cada pasta vira uma aba, com seus sites em ícones e uma prévia das subpastas."
+  },
+  "welcomeTitle": {
+    "message": "Boas-vindas ao Cadran"
+  },
+  "yourName": {
+    "message": "Seu nome"
+  }
 }

@@ -1,4 +1,4 @@
-// Horloge analogique (Cadran+) : index en bâtons, aiguilles noires, et trotteuse rouge qui fait
+// Horloge analogique : index en bâtons, aiguilles noires, et trotteuse rouge qui fait
 // le tour en 58,5 s puis attend la minute pile pour repartir, au moment où l'aiguille des minutes
 // saute d'un cran.
 import { h } from './util.js';

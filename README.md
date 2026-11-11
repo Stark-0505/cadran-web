@@ -21,4 +21,8 @@ Settings and bookmarks stay in the current browser profile and origin. They do n
 
 ## Privacy
 
-Cadran stores its settings and bookmarks locally in browser storage. Search queries go to the search engine selected in the app. Favicon requests use Google's public favicon service, with a 256 px size request where the service has a larger source icon. The web version requests these icons automatically and does not show an extension-permission toggle. GitHub Pages serves the static files over HTTPS.
+Cadran stores its settings and bookmarks locally in browser storage. Search queries go to the search engine selected in the app. Brand icons load as SVGs from the theSVG catalogue through jsDelivr. Cadran resolves common domains directly and consults the theSVG brand registry only when a domain needs an exact match. If the catalogue has no matching brand, Cadran tries icon images published by that site and then generates a coloured-letter icon. The web edition does not use Google's favicon service and does not require site-access permissions for icons. GitHub Pages serves the static files over HTTPS.
+
+## Personal edition
+
+All features are available without a premium tier or licence check. This includes independent wallpapers for tabs, automatic wallpaper rotation, and the analog clock. Payment links, licence activation, and premium gating are removed from the web edition.

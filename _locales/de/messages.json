@@ -1,992 +1,872 @@
 {
-   "actionFailed": {
-      "message": "Aktion nicht möglich"
-   },
-   "actionTitle": {
-      "message": "Cadran öffnen"
-   },
-   "add": {
-      "message": "Hinzufügen"
-   },
-   "addFolders": {
-      "message": "Ordner hinzufügen…"
-   },
-   "addSiteMenu": {
-      "message": "Website hinzufügen…"
-   },
-   "addSiteOrFolder": {
-      "message": "Website oder Ordner hinzufügen"
-   },
-   "addSiteTitle": {
-      "message": "Website hinzufügen"
-   },
-   "addTileSetting": {
-      "message": "Kachel „Hinzufügen“"
-   },
-   "addToFolder": {
-      "message": "Zu „$1“ hinzufügen"
-   },
-   "addedToBookmarks": {
-      "message": "Zu den Lesezeichen hinzugefügt"
-   },
-   "address": {
-      "message": "Adresse"
-   },
-   "addressPlaceholder": {
-      "message": "beispiel.de"
-   },
-   "allow": {
-      "message": "Erlauben"
-   },
-   "allowSiteAccess": {
-      "message": "Zugriff auf Websites erlauben"
-   },
-   "allowSiteAccessFirst": {
-      "message": "Erlaube zuerst den Zugriff auf Websites (Einstellungen › Mehr › Hochauflösende Symbole)."
-   },
-   "alreadyShown": {
-      "message": "Bereits angezeigt"
-   },
-   "alreadyShownAsTab": {
-      "message": "Bereits als Tab angezeigt"
-   },
-   "auto": {
-      "message": "Auto"
-   },
-   "automatic": {
-      "message": "Automatisch"
-   },
-   "back": {
-      "message": "Zurück"
-   },
-   "backup": {
-      "message": "Sicherung"
-   },
-   "backupImported": {
-      "message": "Sicherung importiert"
-   },
-   "behavior": {
-      "message": "Verhalten"
-   },
-   "blur": {
-      "message": "Unschärfe"
-   },
-   "bookmarkletsBlocked": {
-      "message": "Bookmarklets können auf dieser Seite nicht ausgeführt werden."
-   },
-   "bookmarks": {
-      "message": "Lesezeichen"
-   },
-   "browseAllFolders": {
-      "message": "Alle Ordner durchsuchen…"
-   },
-   "cancel": {
-      "message": "Abbrechen"
-   },
-   "cantMoveIntoItself": {
-      "message": "Ein Ordner kann nicht in sich selbst verschoben werden."
-   },
-   "cantOpenLink": {
-      "message": "Dieser Link konnte nicht geöffnet werden."
-   },
-   "cantOpenPrivate": {
-      "message": "Es konnte kein privates Fenster geöffnet werden."
-   },
-   "cantUndo": {
-      "message": "Rückgängig machen nicht möglich."
-   },
-   "changeIconMenu": {
-      "message": "Symbol ändern…"
-   },
-   "changeWallpaperMenu": {
-      "message": "Hintergrundbild ändern…"
-   },
-   "choose": {
-      "message": "Auswählen"
-   },
-   "chooseAnotherFolder": {
-      "message": "Anderen Ordner wählen"
-   },
-   "chooseAnotherFolderMenu": {
-      "message": "Anderen Ordner wählen…"
-   },
-   "chooseEngine": {
-      "message": "Suchmaschine wählen"
-   },
-   "chooseFolderForTab": {
-      "message": "Ordner für diesen Tab wählen"
-   },
-   "chooseFolders": {
-      "message": "Ordner auswählen"
-   },
-   "clock": {
-      "message": "Uhr"
-   },
-   "clockAnalog": {
-      "message": "Analog"
-   },
-   "clockDigital": {
-      "message": "Digital"
-   },
-   "clockSeconds": {
-      "message": "Sekundenzeiger"
-   },
-   "clockSecondsHint": {
-      "message": "Er dreht seine Runde in knapp einer Minute, hält kurz inne und startet zur vollen Minute neu."
-   },
-   "clockStyle": {
-      "message": "Stil"
-   },
-   "close": {
-      "message": "Schließen"
-   },
-   "colorN": {
-      "message": "Farbe $1"
-   },
-   "colors": {
-      "message": "Farben"
-   },
-   "confirm": {
-      "message": "Bestätigen"
-   },
-   "copyFailed": {
-      "message": "Kopieren nicht möglich"
-   },
-   "copyLink": {
-      "message": "Link kopieren"
-   },
-   "create": {
-      "message": "Erstellen"
-   },
-   "customColor": {
-      "message": "Eigene Farbe"
-   },
-   "dark": {
-      "message": "Dunkel"
-   },
-   "darkWallpaper": {
-      "message": "Anderer Hintergrund im dunklen Modus"
-   },
-   "darkWallpaperHint": {
-      "message": "Wechselt automatisch mit dem hellen oder dunklen Design des Systems"
-   },
-   "date": {
-      "message": "Datum"
-   },
-   "defaultEngineShort": {
-      "message": "Standardsuchmaschine"
-   },
-   "defaultFolderName": {
-      "message": "Ordner"
-   },
-   "defaultWallpaperAllTabs": {
-      "message": "Standard-Hintergrund (alle Tabs)"
-   },
-   "delete": {
-      "message": "Löschen"
-   },
-   "deleteConfirmTitle": {
-      "message": "„$1“ löschen?"
-   },
-   "deleteFailed": {
-      "message": "Löschen nicht möglich: $1"
-   },
-   "deleteFolderMenu": {
-      "message": "Ordner löschen…"
-   },
-   "deleteFolderText_one": {
-      "message": "Der Ordner und der darin enthaltene Link werden aus deinen Lesezeichen gelöscht."
-   },
-   "deleteFolderText_other": {
-      "message": "Der Ordner und die $1 darin enthaltenen Links werden aus deinen Lesezeichen gelöscht."
-   },
-   "deleteImage": {
-      "message": "Dieses Bild löschen"
-   },
-   "deleteImageConfirm": {
-      "message": "Dieses Bild löschen?"
-   },
-   "deletedToast": {
-      "message": "„$1“ gelöscht"
-   },
-   "dim": {
-      "message": "Abdunkeln"
-   },
-   "displayedName": {
-      "message": "Angezeigter Name"
-   },
-   "done": {
-      "message": "Fertig"
-   },
-   "dropImageHint": {
-      "message": "Lege ein Bild (JPEG, PNG, WebP…) ab, um es als Hintergrundbild zu verwenden."
-   },
-   "dropImagesHint": {
-      "message": "Tipp: Zieh ein oder mehrere Bilder direkt auf die Seite."
-   },
-   "editBookmarkTitle": {
-      "message": "Lesezeichen bearbeiten"
-   },
-   "editMenu": {
-      "message": "Bearbeiten…"
-   },
-   "emptyFolderShort": {
-      "message": "leer"
-   },
-   "emptyFolderText": {
-      "message": "Füge mit der Kachel „+“ eine Website hinzu oder zieh einen Link hierher."
-   },
-   "emptyFolderTitle": {
-      "message": "Dieser Ordner ist leer"
-   },
-   "engineBrowserDefault": {
-      "message": "Standardsuchmaschine des Browsers"
-   },
-   "errorTitle": {
-      "message": "Ein Problem ist aufgetreten"
-   },
-   "expand": {
-      "message": "Aufklappen"
-   },
-   "export": {
-      "message": "Exportieren"
-   },
-   "exportHint": {
-      "message": "Tabs, Darstellung, eigene Symbole"
-   },
-   "exportSettings": {
-      "message": "Einstellungen exportieren"
-   },
-   "extDescription": {
-      "message": "Neuer-Tab-Seite im Stil von Safari / Vivaldi: deine Lesezeichenordner als Symbolraster, mit anpassbarem Hintergrundbild."
-   },
-   "extName": {
-      "message": "Cadran — Speed Dial für deine Lesezeichen"
-   },
-   "fetchSiteIconsHint": {
-      "message": "Symbol jeder Website abrufen"
-   },
-   "fetchingIcons": {
-      "message": "Symbole werden abgerufen…"
-   },
-   "fieldRequired": {
-      "message": "Das Feld „$1“ ist erforderlich."
-   },
-   "filterFolders": {
-      "message": "Ordner filtern…"
-   },
-   "folderMissingText": {
-      "message": "Der Ordner „$1“ existiert nicht mehr in deinen Lesezeichen."
-   },
-   "folderName": {
-      "message": "Ordnername"
-   },
-   "folderNotFound": {
-      "message": "Ordner nicht gefunden"
-   },
-   "folderPreview": {
-      "message": "Ordnervorschau"
-   },
-   "foldersAsTabs": {
-      "message": "Als Tabs angezeigte Ordner"
-   },
-   "foldersHint": {
-      "message": "Jeder Ordner wird zu einem Tab oben auf der Seite. Hinzufügen, Löschen und Verschieben per Drag & Drop werden direkt in den Lesezeichen des Browsers gespeichert: Alles bleibt synchron."
-   },
-   "footer": {
-      "message": "Cadran $1 — deine Daten bleiben in deinem Browser."
-   },
-   "format12h": {
-      "message": "12 Std."
-   },
-   "format24h": {
-      "message": "24 Std."
-   },
-   "fromImageAddress": {
-      "message": "Von einer Bildadresse"
-   },
-   "goTo": {
-      "message": "Gehe zu $1"
-   },
-   "grad_aurore": {
-      "message": "Polarlicht"
-   },
-   "grad_brume": {
-      "message": "Nebel"
-   },
-   "grad_crepuscule": {
-      "message": "Dämmerung"
-   },
-   "grad_foret": {
-      "message": "Wald"
-   },
-   "grad_graphite": {
-      "message": "Graphit"
-   },
-   "grad_lagon": {
-      "message": "Lagune"
-   },
-   "grad_lavande": {
-      "message": "Lavendel"
-   },
-   "grad_menthe": {
-      "message": "Minze"
-   },
-   "grad_nuit": {
-      "message": "Nacht"
-   },
-   "grad_ocean": {
-      "message": "Ozean"
-   },
-   "grad_peche": {
-      "message": "Pfirsich"
-   },
-   "grad_sierra": {
-      "message": "Sierra"
-   },
-   "gradients": {
-      "message": "Verläufe"
-   },
-   "greeting": {
-      "message": "Begrüßung"
-   },
-   "greetingAfternoon": {
-      "message": "Guten Tag"
-   },
-   "greetingEvening": {
-      "message": "Guten Abend"
-   },
-   "greetingHint": {
-      "message": "Guten Morgen, Guten Tag, Guten Abend…"
-   },
-   "greetingMorning": {
-      "message": "Guten Morgen"
-   },
-   "greetingNight": {
-      "message": "Gute Nacht"
-   },
-   "greetingWithName": {
-      "message": "$1, $2"
-   },
-   "hdIcons": {
-      "message": "Hochauflösende Symbole"
-   },
-   "hdIconsHint": {
-      "message": "Cadran lädt das offizielle Symbol jeder Website (das von Safari und dem iPhone verwendete) direkt von der Website herunter, ohne Cookies und ohne Drittanbieter. Die Berechtigung dient nur diesem Zweck. Andernfalls verwendet Cadran die Favicons, die der Browser bereits kennt, oder einen Buchstaben."
-   },
-   "hoverFolderTabs": {
-      "message": "Ordner-Tabs beim Darüberfahren"
-   },
-   "hoverFolderTabsHint": {
-      "message": "Die Tabs erscheinen nur beim Darüberfahren mit der Maus oder beim Ziehen."
-   },
-   "iconOfTitle": {
-      "message": "Symbol für „$1“"
-   },
-   "iconSize": {
-      "message": "Symbolgröße"
-   },
-   "iconsCached_one": {
-      "message": "$1 Symbol im Cache"
-   },
-   "iconsCached_other": {
-      "message": "$1 Symbole im Cache"
-   },
-   "iconsNoticeText": {
-      "message": "Erlaube Cadran, das offizielle Symbol jeder Website abzurufen. Der Zugriff dient nur zum Herunterladen dieser Symbole."
-   },
-   "iconsNoticeTitle": {
-      "message": "Scharfe Symbole wie in Safari"
-   },
-   "iconsWillRedownload": {
-      "message": "Die Symbole werden erneut heruntergeladen."
-   },
-   "imageAddress": {
-      "message": "Bildadresse"
-   },
-   "imageDownloadFailed": {
-      "message": "Dieses Bild konnte nicht heruntergeladen werden. Speichere es und importiere es dann."
-   },
-   "imageUnreadable": {
-      "message": "Dieses Bild konnte nicht gelesen werden."
-   },
-   "images": {
-      "message": "Bilder"
-   },
-   "imagesAdded_one": {
-      "message": "Hintergrundbild aktualisiert"
-   },
-   "imagesAdded_other": {
-      "message": "$1 Bilder hinzugefügt"
-   },
-   "imagesFailed_one": {
-      "message": "$1 Bild konnte nicht importiert werden."
-   },
-   "imagesFailed_other": {
-      "message": "$1 Bilder konnten nicht importiert werden."
-   },
-   "importBackup": {
-      "message": "Sicherung importieren"
-   },
-   "importEllipsis": {
-      "message": "Importieren…"
-   },
-   "importFailed": {
-      "message": "Import nicht möglich"
-   },
-   "importImageEllipsis": {
-      "message": "Bild importieren…"
-   },
-   "importImages": {
-      "message": "Bilder importieren"
-   },
-   "importedTag": {
-      "message": "importiert"
-   },
-   "importingImages_one": {
-      "message": "Bild wird importiert…"
-   },
-   "importingImages_other": {
-      "message": "$1 Bilder werden importiert…"
-   },
-   "includeWallpapers": {
-      "message": "Hintergrundbilder einschließen"
-   },
-   "invalidAddress": {
-      "message": "Ungültige Adresse."
-   },
-   "kbActions": {
-      "message": "Aktionen (bearbeiten, Symbol, löschen…)"
-   },
-   "kbCmdClick": {
-      "message": "⌘ / Strg + Klick"
-   },
-   "kbEscape": {
-      "message": "Esc"
-   },
-   "kbParentFolder": {
-      "message": "Zum übergeordneten Ordner"
-   },
-   "kbPrevNextTab": {
-      "message": "Vorheriger / nächster Tab"
-   },
-   "kbRightClick": {
-      "message": "Rechtsklick"
-   },
-   "kbSearch": {
-      "message": "Suchen"
-   },
-   "kbSwipeTabs": {
-      "message": "Zwischen Tabs wischen (Trackpad)"
-   },
-   "kbTwoFingers": {
-      "message": "Zwei Finger ↔"
-   },
-   "lang": {
-      "message": "de"
-   },
-   "later": {
-      "message": "Später"
-   },
-   "letterOrEmoji": {
-      "message": "Buchstabe oder Emoji"
-   },
-   "light": {
-      "message": "Hell"
-   },
-   "lightAndDark": {
-      "message": "Hell und dunkel"
-   },
-   "linkAdded": {
-      "message": "„$1“ hinzugefügt"
-   },
-   "linkCopied": {
-      "message": "Link kopiert"
-   },
-   "links_one": {
-      "message": "$1 Link"
-   },
-   "links_other": {
-      "message": "$1 Links"
-   },
-   "location": {
-      "message": "Speicherort"
-   },
-   "maxColumns": {
-      "message": "Spalten (max.)"
-   },
-   "menusAndPanels": {
-      "message": "Menüs und Bereiche"
-   },
-   "moveDown": {
-      "message": "Nach unten"
-   },
-   "moveLeft": {
-      "message": "Nach links verschieben"
-   },
-   "moveRight": {
-      "message": "Nach rechts verschieben"
-   },
-   "moveUp": {
-      "message": "Nach oben"
-   },
-   "movedInto": {
-      "message": "Nach „$1“ verschoben"
-   },
-   "name": {
-      "message": "Name"
-   },
-   "namePlaceholder": {
-      "message": "Optional – wird von der Seite übernommen"
-   },
-   "newFolderMenu": {
-      "message": "Neuer Ordner…"
-   },
-   "newFolderTitle": {
-      "message": "Neuer Ordner"
-   },
-   "newTabTitle": {
-      "message": "Neuer Tab"
-   },
-   "noBookmarkFolders": {
-      "message": "Keine Lesezeichenordner gefunden. Importiere deine Lesezeichen in den Browser (Menü Lesezeichen › Importieren) und komm dann hierher zurück."
-   },
-   "noDirectLinks": {
-      "message": "Dieser Ordner enthält keine direkten Links."
-   },
-   "noFoldersYet": {
-      "message": "Noch keine Ordner."
-   },
-   "noMatchingFolder": {
-      "message": "Kein passender Ordner."
-   },
-   "notABackup": {
-      "message": "Diese Datei ist keine Cadran-Sicherung."
-   },
-   "open": {
-      "message": "Öffnen"
-   },
-   "openAllInGroup": {
-      "message": "Alle in einer Tabgruppe öffnen"
-   },
-   "openAllInTabs": {
-      "message": "Alle in Tabs öffnen"
-   },
-   "openAllInWindow": {
-      "message": "Alle in neuem Fenster öffnen"
-   },
-   "openAllText": {
-      "message": "Alle Links im Ordner „$1“ werden geöffnet."
-   },
-   "openInNewTab": {
-      "message": "In neuem Tab öffnen"
-   },
-   "openInNewWindow": {
-      "message": "In neuem Fenster öffnen"
-   },
-   "openInPrivateWindow": {
-      "message": "In privatem Fenster öffnen"
-   },
-   "openLinks": {
-      "message": "Links öffnen in"
-   },
-   "openLinksHint": {
-      "message": "⌘/Strg + Klick öffnet immer einen neuen Tab"
-   },
-   "openNewTab": {
-      "message": "Neuer Tab"
-   },
-   "openSameTab": {
-      "message": "Selber Tab"
-   },
-   "openTabsConfirm_one": {
-      "message": "$1 Tab öffnen?"
-   },
-   "openTabsConfirm_other": {
-      "message": "$1 Tabs öffnen?"
-   },
-   "openThisAddress": {
-      "message": "Diese Adresse öffnen"
-   },
-   "optional": {
-      "message": "Optional"
-   },
-   "ownHint": {
-      "message": "eigener"
-   },
-   "ownWallpaper": {
-      "message": "Eigener Hintergrund für diesen Tab"
-   },
-   "panelTitle": {
-      "message": "Einstellungen"
-   },
-   "parentFolder": {
-      "message": "Übergeordneter Ordner"
-   },
-   "parentFolderHint": {
-      "message": "Übergeordneter Ordner (Esc)"
-   },
-   "plusActivate": {
-      "message": "Aktivieren"
-   },
-   "plusActivated": {
-      "message": "Cadran+ ist aktiviert. Danke!"
-   },
-   "plusActiveTitle": {
-      "message": "Cadran+ ist aktiviert"
-   },
-   "plusBuy": {
-      "message": "Cadran+ kaufen · $1"
-   },
-   "plusChecking": {
-      "message": "Wird geprüft…"
-   },
-   "plusDiscover": {
-      "message": "Entdecken"
-   },
-   "plusErrorInvalid": {
-      "message": "Dieser Schlüssel ist ungültig. Prüfe, ob er vollständig ist."
-   },
-   "plusErrorLimit": {
-      "message": "Dieser Schlüssel ist schon auf der maximalen Anzahl von Geräten aktiv. Entferne ihn von einem anderen Gerät und versuche es erneut."
-   },
-   "plusErrorNetwork": {
-      "message": "Der Prüfdienst ist nicht erreichbar. Prüfe deine Verbindung und versuche es erneut."
-   },
-   "plusFeatureAnalogClock": {
-      "message": "Eine analoge Uhr, deren Sekundenzeiger zu jeder vollen Minute kurz innehält"
-   },
-   "plusFeatureFuture": {
-      "message": "Künftige Cadran+-Funktionen ohne Aufpreis"
-   },
-   "plusFeatureRotation": {
-      "message": "Bilder, die von selbst wechseln: bei jedem neuen Tab oder jeden Tag"
-   },
-   "plusFeatureTabWallpapers": {
-      "message": "Ein eigener Hintergrund für jeden Tab, mit sanfter Überblendung beim Wechseln"
-   },
-   "plusFindKey": {
-      "message": "Meinen Schlüssel finden"
-   },
-   "plusFounderText": {
-      "message": "Du hast Cadran vor dem Verkaufsstart genutzt: Cadran+ ist für dich für immer kostenlos. Danke!"
-   },
-   "plusFounderTitle": {
-      "message": "Für immer geschenkt"
-   },
-   "plusHaveKey": {
-      "message": "Du hast einen Schlüssel?"
-   },
-   "plusInactive": {
-      "message": "Gespeichert, sichtbar mit Cadran+"
-   },
-   "plusIntro": {
-      "message": "Cadran bleibt komplett kostenlos. Cadran+ fügt ein paar Feinheiten hinzu, mit einer einmaligen Zahlung."
-   },
-   "plusKeyHint": {
-      "message": "Nach der Zahlung findest du deinen Schlüssel in deinem Polar-Kundenportal."
-   },
-   "plusKeyLabel": {
-      "message": "Lizenzschlüssel"
-   },
-   "plusKeyPlaceholder": {
-      "message": "Schlüssel hier einfügen"
-   },
-   "plusKeyShown": {
-      "message": "Schlüssel $1"
-   },
-   "plusManage": {
-      "message": "Verwalten"
-   },
-   "plusOneTime": {
-      "message": "Einmalzahlung ohne Abo, in einem neuen Tab."
-   },
-   "plusPreviewNote": {
-      "message": "Cadran+-Test: Deine Einstellungen werden gespeichert, sind aber nur auf dieser Seite sichtbar."
-   },
-   "plusPreviewStarted": {
-      "message": "Cadran+ ist auf dieser Seite aktiv, bis du sie schließt"
-   },
-   "plusPrivacy": {
-      "message": "Der Schlüssel wird nur einmal, bei der Aktivierung, bei Polar geprüft, das die Zahlungen abwickelt. Sonst verlässt nichts deinen Browser."
-   },
-   "plusReasonAnalogClock": {
-      "message": "Die analoge Uhr gehört zu Cadran+."
-   },
-   "plusReasonRotation": {
-      "message": "Der automatische Bildwechsel gehört zu Cadran+."
-   },
-   "plusReasonTabWallpaper": {
-      "message": "Ein eigener Hintergrund pro Tab gehört zu Cadran+."
-   },
-   "plusRemove": {
-      "message": "Von diesem Gerät entfernen"
-   },
-   "plusRemoveConfirm": {
-      "message": "Cadran+ von diesem Gerät entfernen?"
-   },
-   "plusRemoveText": {
-      "message": "Der Schlüssel wird für ein anderes Gerät frei. Deine Einstellungen bleiben erhalten."
-   },
-   "plusRemoved": {
-      "message": "Cadran+ wurde von diesem Gerät entfernt"
-   },
-   "plusStatusActive": {
-      "message": "Auf diesem Gerät aktiviert"
-   },
-   "plusStatusFree": {
-      "message": "Ein Hintergrund pro Tab, eine analoge Uhr…"
-   },
-   "plusStatusPreview": {
-      "message": "Test auf dieser Seite"
-   },
-   "plusSupport": {
-      "message": "Mit dem Kauf von Cadran+ unterstützt du unabhängige Entwicklung."
-   },
-   "plusTry": {
-      "message": "Auf dieser Seite testen"
-   },
-   "recentlyClosed": {
-      "message": "Kürzlich geschlossen"
-   },
-   "recentlyClosedHint": {
-      "message": "Tabs und Fenster zum erneuten Öffnen"
-   },
-   "redownload": {
-      "message": "Erneut herunterladen"
-   },
-   "redownloadAll": {
-      "message": "Alle erneut herunterladen"
-   },
-   "removeTab": {
-      "message": "Tab entfernen"
-   },
-   "removeTabHint": {
-      "message": "Tab entfernen (der Ordner wird nicht gelöscht)"
-   },
-   "renameFolderTitle": {
-      "message": "Ordner umbenennen"
-   },
-   "renameMenu": {
-      "message": "Umbenennen…"
-   },
-   "renameTabHelp": {
-      "message": "Der Lesezeichenordner wird nicht umbenannt. Leer lassen, um seinen Namen zu verwenden."
-   },
-   "renameTabMenu": {
-      "message": "Tab umbenennen…"
-   },
-   "renameTabTitle": {
-      "message": "Tab umbenennen"
-   },
-   "reopenWindow": {
-      "message": "Fenster erneut öffnen ($1)"
-   },
-   "reset": {
-      "message": "Zurücksetzen"
-   },
-   "resetConfirmText": {
-      "message": "Deine Lesezeichen bleiben unverändert, nur die Einstellungen von Cadran werden zurückgesetzt."
-   },
-   "resetConfirmTitle": {
-      "message": "Einstellungen zurücksetzen?"
-   },
-   "revokeSiteAccess": {
-      "message": "Berechtigung entziehen"
-   },
-   "rotateDaily": {
-      "message": "Jeden Tag"
-   },
-   "rotateEachOpening": {
-      "message": "Bei jedem neuen Tab"
-   },
-   "rotateImages": {
-      "message": "Bild automatisch wechseln"
-   },
-   "rotateNever": {
-      "message": "Nie"
-   },
-   "save": {
-      "message": "Speichern"
-   },
-   "search": {
-      "message": "Suche"
-   },
-   "searchBar": {
-      "message": "Suchleiste"
-   },
-   "searchBarHint": {
-      "message": "Filtert auch alle deine Lesezeichen"
-   },
-   "searchEngine": {
-      "message": "Suchmaschine"
-   },
-   "searchEngineHeader": {
-      "message": "Suchmaschine"
-   },
-   "searchFor": {
-      "message": "Nach „$1“ suchen"
-   },
-   "searchPlaceholder": {
-      "message": "Im Web oder in deinen Lesezeichen suchen"
-   },
-   "searchPlaceholderWith": {
-      "message": "Mit $1 oder in deinen Lesezeichen suchen"
-   },
-   "sections": {
-      "message": "Bereiche"
-   },
-   "sectionsPermissionHint": {
-      "message": "Diese beiden Bereiche benötigen eine zusätzliche Berechtigung, die erst beim Aktivieren angefragt wird."
-   },
-   "selectAFolder": {
-      "message": "Wähle einen Ordner aus."
-   },
-   "selectAtLeastOneFolder": {
-      "message": "Wähle mindestens einen Ordner aus."
-   },
-   "setWallpaperOf": {
-      "message": "Hintergrund festlegen für"
-   },
-   "setWallpaperOfHint": {
-      "message": "Jeder Tab kann den Standard-Hintergrund behalten oder einen eigenen haben"
-   },
-   "shortcut": {
-      "message": "Tastenkürzel"
-   },
-   "shortcuts": {
-      "message": "Tastenkürzel"
-   },
-   "show": {
-      "message": "Anzeigen"
-   },
-   "showAnotherFolder": {
-      "message": "Weiteren Ordner anzeigen"
-   },
-   "showAsTab": {
-      "message": "Als Tab anzeigen"
-   },
-   "showFoldersTitle": {
-      "message": "Ordner anzeigen"
-   },
-   "showFolders_one": {
-      "message": "Diesen Ordner anzeigen"
-   },
-   "showFolders_other": {
-      "message": "Diese $1 Ordner anzeigen"
-   },
-   "showNames": {
-      "message": "Namen von Websites / Ordnern anzeigen"
-   },
-   "showTime": {
-      "message": "Uhrzeit anzeigen"
-   },
-   "siteAccessGranted": {
-      "message": "Zugriff auf Websites erlaubt"
-   },
-   "siteAccessNotGranted": {
-      "message": "Zugriff auf Websites nicht erlaubt"
-   },
-   "styleCards": {
-      "message": "Karten"
-   },
-   "styleIcons": {
-      "message": "Symbole"
-   },
-   "tabAppearance": {
-      "message": "Darstellung"
-   },
-   "tabFolders": {
-      "message": "Ordner"
-   },
-   "tabHome": {
-      "message": "Start"
-   },
-   "tabMore": {
-      "message": "Mehr"
-   },
-   "tabName": {
-      "message": "Name des Tabs"
-   },
-   "tabNameHint": {
-      "message": "Auf dem Tab angezeigter Name (der Ordner wird nicht umbenannt)"
-   },
-   "tabRemoved": {
-      "message": "Tab „$1“ entfernt"
-   },
-   "tabSection": {
-      "message": "Tab"
-   },
-   "tabWallpaper": {
-      "message": "Hintergrund"
-   },
-   "tabWallpaperMenu": {
-      "message": "Hintergrund dieses Tabs…"
-   },
-   "tabWallpaperStillDefault": {
-      "message": "Hintergrund dieses Tabs (vorerst Standard)"
-   },
-   "tabWithOwnWallpaper": {
-      "message": "$1 — eigener Hintergrund"
-   },
-   "tabsCount_one": {
-      "message": "$1 Tab"
-   },
-   "tabsCount_other": {
-      "message": "$1 Tabs"
-   },
-   "textOnWallpaper": {
-      "message": "Text auf dem Hintergrund"
-   },
-   "tileStyle": {
-      "message": "Stil"
-   },
-   "tiles": {
-      "message": "Kacheln"
-   },
-   "timeFormat": {
-      "message": "Zeitformat"
-   },
-   "topSites": {
-      "message": "Häufig besucht"
-   },
-   "topSitesHint": {
-      "message": "Anhand deines Browserverlaufs"
-   },
-   "undo": {
-      "message": "Rückgängig"
-   },
-   "unsupportedFormat": {
-      "message": "Nicht unterstütztes Format: $1"
-   },
-   "untitled": {
-      "message": "Ohne Titel"
-   },
-   "use": {
-      "message": "Verwenden"
-   },
-   "usesDefaultForNow": {
-      "message": "Verwendet vorerst den Standard-Hintergrund"
-   },
-   "variantToSet": {
-      "message": "Einzustellender Hintergrund"
-   },
-   "wallpaper": {
-      "message": "Hintergrundbild"
-   },
-   "wallpaperSettings": {
-      "message": "Hintergrundeinstellungen"
-   },
-   "wallpaperToSet": {
-      "message": "Festzulegender Hintergrund"
-   },
-   "welcomeText": {
-      "message": "Wähle die Lesezeichenordner aus, die angezeigt werden sollen: Jeder Ordner wird zu einem Tab, mit seinen Websites als Symbole und einer Vorschau seiner Unterordner."
-   },
-   "welcomeTitle": {
-      "message": "Willkommen bei Cadran"
-   },
-   "yourName": {
-      "message": "Dein Vorname"
-   }
+  "actionFailed": {
+    "message": "Aktion nicht möglich"
+  },
+  "actionTitle": {
+    "message": "Cadran öffnen"
+  },
+  "add": {
+    "message": "Hinzufügen"
+  },
+  "addFolders": {
+    "message": "Ordner hinzufügen…"
+  },
+  "addSiteMenu": {
+    "message": "Website hinzufügen…"
+  },
+  "addSiteOrFolder": {
+    "message": "Website oder Ordner hinzufügen"
+  },
+  "addSiteTitle": {
+    "message": "Website hinzufügen"
+  },
+  "addTileSetting": {
+    "message": "Kachel „Hinzufügen“"
+  },
+  "addToFolder": {
+    "message": "Zu „$1“ hinzufügen"
+  },
+  "addedToBookmarks": {
+    "message": "Zu den Lesezeichen hinzugefügt"
+  },
+  "address": {
+    "message": "Adresse"
+  },
+  "addressPlaceholder": {
+    "message": "beispiel.de"
+  },
+  "allow": {
+    "message": "Erlauben"
+  },
+  "allowSiteAccess": {
+    "message": "Zugriff auf Websites erlauben"
+  },
+  "allowSiteAccessFirst": {
+    "message": "Erlaube zuerst den Zugriff auf Websites (Einstellungen › Mehr › Hochauflösende Symbole)."
+  },
+  "alreadyShown": {
+    "message": "Bereits angezeigt"
+  },
+  "alreadyShownAsTab": {
+    "message": "Bereits als Tab angezeigt"
+  },
+  "auto": {
+    "message": "Auto"
+  },
+  "automatic": {
+    "message": "Automatisch"
+  },
+  "back": {
+    "message": "Zurück"
+  },
+  "backup": {
+    "message": "Sicherung"
+  },
+  "backupImported": {
+    "message": "Sicherung importiert"
+  },
+  "behavior": {
+    "message": "Verhalten"
+  },
+  "blur": {
+    "message": "Unschärfe"
+  },
+  "bookmarkletsBlocked": {
+    "message": "Bookmarklets können auf dieser Seite nicht ausgeführt werden."
+  },
+  "bookmarks": {
+    "message": "Lesezeichen"
+  },
+  "browseAllFolders": {
+    "message": "Alle Ordner durchsuchen…"
+  },
+  "cancel": {
+    "message": "Abbrechen"
+  },
+  "cantMoveIntoItself": {
+    "message": "Ein Ordner kann nicht in sich selbst verschoben werden."
+  },
+  "cantOpenLink": {
+    "message": "Dieser Link konnte nicht geöffnet werden."
+  },
+  "cantOpenPrivate": {
+    "message": "Es konnte kein privates Fenster geöffnet werden."
+  },
+  "cantUndo": {
+    "message": "Rückgängig machen nicht möglich."
+  },
+  "changeIconMenu": {
+    "message": "Symbol ändern…"
+  },
+  "changeWallpaperMenu": {
+    "message": "Hintergrundbild ändern…"
+  },
+  "choose": {
+    "message": "Auswählen"
+  },
+  "chooseAnotherFolder": {
+    "message": "Anderen Ordner wählen"
+  },
+  "chooseAnotherFolderMenu": {
+    "message": "Anderen Ordner wählen…"
+  },
+  "chooseEngine": {
+    "message": "Suchmaschine wählen"
+  },
+  "chooseFolderForTab": {
+    "message": "Ordner für diesen Tab wählen"
+  },
+  "chooseFolders": {
+    "message": "Ordner auswählen"
+  },
+  "clock": {
+    "message": "Uhr"
+  },
+  "clockAnalog": {
+    "message": "Analog"
+  },
+  "clockDigital": {
+    "message": "Digital"
+  },
+  "clockSeconds": {
+    "message": "Sekundenzeiger"
+  },
+  "clockSecondsHint": {
+    "message": "Er dreht seine Runde in knapp einer Minute, hält kurz inne und startet zur vollen Minute neu."
+  },
+  "clockStyle": {
+    "message": "Stil"
+  },
+  "close": {
+    "message": "Schließen"
+  },
+  "colorN": {
+    "message": "Farbe $1"
+  },
+  "colors": {
+    "message": "Farben"
+  },
+  "confirm": {
+    "message": "Bestätigen"
+  },
+  "copyFailed": {
+    "message": "Kopieren nicht möglich"
+  },
+  "copyLink": {
+    "message": "Link kopieren"
+  },
+  "create": {
+    "message": "Erstellen"
+  },
+  "customColor": {
+    "message": "Eigene Farbe"
+  },
+  "dark": {
+    "message": "Dunkel"
+  },
+  "darkWallpaper": {
+    "message": "Anderer Hintergrund im dunklen Modus"
+  },
+  "darkWallpaperHint": {
+    "message": "Wechselt automatisch mit dem hellen oder dunklen Design des Systems"
+  },
+  "date": {
+    "message": "Datum"
+  },
+  "defaultEngineShort": {
+    "message": "Standardsuchmaschine"
+  },
+  "defaultFolderName": {
+    "message": "Ordner"
+  },
+  "defaultWallpaperAllTabs": {
+    "message": "Standard-Hintergrund (alle Tabs)"
+  },
+  "delete": {
+    "message": "Löschen"
+  },
+  "deleteConfirmTitle": {
+    "message": "„$1“ löschen?"
+  },
+  "deleteFailed": {
+    "message": "Löschen nicht möglich: $1"
+  },
+  "deleteFolderMenu": {
+    "message": "Ordner löschen…"
+  },
+  "deleteFolderText_one": {
+    "message": "Der Ordner und der darin enthaltene Link werden aus deinen Lesezeichen gelöscht."
+  },
+  "deleteFolderText_other": {
+    "message": "Der Ordner und die $1 darin enthaltenen Links werden aus deinen Lesezeichen gelöscht."
+  },
+  "deleteImage": {
+    "message": "Dieses Bild löschen"
+  },
+  "deleteImageConfirm": {
+    "message": "Dieses Bild löschen?"
+  },
+  "deletedToast": {
+    "message": "„$1“ gelöscht"
+  },
+  "dim": {
+    "message": "Abdunkeln"
+  },
+  "displayedName": {
+    "message": "Angezeigter Name"
+  },
+  "done": {
+    "message": "Fertig"
+  },
+  "dropImageHint": {
+    "message": "Lege ein Bild (JPEG, PNG, WebP…) ab, um es als Hintergrundbild zu verwenden."
+  },
+  "dropImagesHint": {
+    "message": "Tipp: Zieh ein oder mehrere Bilder direkt auf die Seite."
+  },
+  "editBookmarkTitle": {
+    "message": "Lesezeichen bearbeiten"
+  },
+  "editMenu": {
+    "message": "Bearbeiten…"
+  },
+  "emptyFolderShort": {
+    "message": "leer"
+  },
+  "emptyFolderText": {
+    "message": "Füge mit der Kachel „+“ eine Website hinzu oder zieh einen Link hierher."
+  },
+  "emptyFolderTitle": {
+    "message": "Dieser Ordner ist leer"
+  },
+  "engineBrowserDefault": {
+    "message": "Standardsuchmaschine des Browsers"
+  },
+  "errorTitle": {
+    "message": "Ein Problem ist aufgetreten"
+  },
+  "expand": {
+    "message": "Aufklappen"
+  },
+  "export": {
+    "message": "Exportieren"
+  },
+  "exportHint": {
+    "message": "Tabs, Darstellung, eigene Symbole"
+  },
+  "exportSettings": {
+    "message": "Einstellungen exportieren"
+  },
+  "extDescription": {
+    "message": "Neuer-Tab-Seite im Stil von Safari / Vivaldi: deine Lesezeichenordner als Symbolraster, mit anpassbarem Hintergrundbild."
+  },
+  "extName": {
+    "message": "Cadran — Speed Dial für deine Lesezeichen"
+  },
+  "fetchSiteIconsHint": {
+    "message": "Symbol jeder Website abrufen"
+  },
+  "fetchingIcons": {
+    "message": "Symbole werden abgerufen…"
+  },
+  "fieldRequired": {
+    "message": "Das Feld „$1“ ist erforderlich."
+  },
+  "filterFolders": {
+    "message": "Ordner filtern…"
+  },
+  "folderMissingText": {
+    "message": "Der Ordner „$1“ existiert nicht mehr in deinen Lesezeichen."
+  },
+  "folderName": {
+    "message": "Ordnername"
+  },
+  "folderNotFound": {
+    "message": "Ordner nicht gefunden"
+  },
+  "folderPreview": {
+    "message": "Ordnervorschau"
+  },
+  "foldersAsTabs": {
+    "message": "Als Tabs angezeigte Ordner"
+  },
+  "foldersHint": {
+    "message": "Jeder Ordner wird zu einem Tab oben auf der Seite. Hinzufügen, Löschen und Verschieben per Drag & Drop werden direkt in den Lesezeichen des Browsers gespeichert: Alles bleibt synchron."
+  },
+  "footer": {
+    "message": "Cadran $1 — deine Daten bleiben in deinem Browser."
+  },
+  "format12h": {
+    "message": "12 Std."
+  },
+  "format24h": {
+    "message": "24 Std."
+  },
+  "fromImageAddress": {
+    "message": "Von einer Bildadresse"
+  },
+  "goTo": {
+    "message": "Gehe zu $1"
+  },
+  "grad_aurore": {
+    "message": "Polarlicht"
+  },
+  "grad_brume": {
+    "message": "Nebel"
+  },
+  "grad_crepuscule": {
+    "message": "Dämmerung"
+  },
+  "grad_foret": {
+    "message": "Wald"
+  },
+  "grad_graphite": {
+    "message": "Graphit"
+  },
+  "grad_lagon": {
+    "message": "Lagune"
+  },
+  "grad_lavande": {
+    "message": "Lavendel"
+  },
+  "grad_menthe": {
+    "message": "Minze"
+  },
+  "grad_nuit": {
+    "message": "Nacht"
+  },
+  "grad_ocean": {
+    "message": "Ozean"
+  },
+  "grad_peche": {
+    "message": "Pfirsich"
+  },
+  "grad_sierra": {
+    "message": "Sierra"
+  },
+  "gradients": {
+    "message": "Verläufe"
+  },
+  "greeting": {
+    "message": "Begrüßung"
+  },
+  "greetingAfternoon": {
+    "message": "Guten Tag"
+  },
+  "greetingEvening": {
+    "message": "Guten Abend"
+  },
+  "greetingHint": {
+    "message": "Guten Morgen, Guten Tag, Guten Abend…"
+  },
+  "greetingMorning": {
+    "message": "Guten Morgen"
+  },
+  "greetingNight": {
+    "message": "Gute Nacht"
+  },
+  "greetingWithName": {
+    "message": "$1, $2"
+  },
+  "hdIcons": {
+    "message": "Hochauflösende Symbole"
+  },
+  "hdIconsHint": {
+    "message": "Cadran lädt das offizielle Symbol jeder Website (das von Safari und dem iPhone verwendete) direkt von der Website herunter, ohne Cookies und ohne Drittanbieter. Die Berechtigung dient nur diesem Zweck. Andernfalls verwendet Cadran die Favicons, die der Browser bereits kennt, oder einen Buchstaben."
+  },
+  "hoverFolderTabs": {
+    "message": "Ordner-Tabs beim Darüberfahren"
+  },
+  "hoverFolderTabsHint": {
+    "message": "Die Tabs erscheinen nur beim Darüberfahren mit der Maus oder beim Ziehen."
+  },
+  "iconOfTitle": {
+    "message": "Symbol für „$1“"
+  },
+  "iconSize": {
+    "message": "Symbolgröße"
+  },
+  "iconsCached_one": {
+    "message": "$1 Symbol im Cache"
+  },
+  "iconsCached_other": {
+    "message": "$1 Symbole im Cache"
+  },
+  "iconsNoticeText": {
+    "message": "Erlaube Cadran, das offizielle Symbol jeder Website abzurufen. Der Zugriff dient nur zum Herunterladen dieser Symbole."
+  },
+  "iconsNoticeTitle": {
+    "message": "Scharfe Symbole wie in Safari"
+  },
+  "iconsWillRedownload": {
+    "message": "Die Symbole werden erneut heruntergeladen."
+  },
+  "imageAddress": {
+    "message": "Bildadresse"
+  },
+  "imageDownloadFailed": {
+    "message": "Dieses Bild konnte nicht heruntergeladen werden. Speichere es und importiere es dann."
+  },
+  "imageUnreadable": {
+    "message": "Dieses Bild konnte nicht gelesen werden."
+  },
+  "images": {
+    "message": "Bilder"
+  },
+  "imagesAdded_one": {
+    "message": "Hintergrundbild aktualisiert"
+  },
+  "imagesAdded_other": {
+    "message": "$1 Bilder hinzugefügt"
+  },
+  "imagesFailed_one": {
+    "message": "$1 Bild konnte nicht importiert werden."
+  },
+  "imagesFailed_other": {
+    "message": "$1 Bilder konnten nicht importiert werden."
+  },
+  "importBackup": {
+    "message": "Sicherung importieren"
+  },
+  "importEllipsis": {
+    "message": "Importieren…"
+  },
+  "importFailed": {
+    "message": "Import nicht möglich"
+  },
+  "importImageEllipsis": {
+    "message": "Bild importieren…"
+  },
+  "importImages": {
+    "message": "Bilder importieren"
+  },
+  "importedTag": {
+    "message": "importiert"
+  },
+  "importingImages_one": {
+    "message": "Bild wird importiert…"
+  },
+  "importingImages_other": {
+    "message": "$1 Bilder werden importiert…"
+  },
+  "includeWallpapers": {
+    "message": "Hintergrundbilder einschließen"
+  },
+  "invalidAddress": {
+    "message": "Ungültige Adresse."
+  },
+  "kbActions": {
+    "message": "Aktionen (bearbeiten, Symbol, löschen…)"
+  },
+  "kbCmdClick": {
+    "message": "⌘ / Strg + Klick"
+  },
+  "kbEscape": {
+    "message": "Esc"
+  },
+  "kbParentFolder": {
+    "message": "Zum übergeordneten Ordner"
+  },
+  "kbPrevNextTab": {
+    "message": "Vorheriger / nächster Tab"
+  },
+  "kbRightClick": {
+    "message": "Rechtsklick"
+  },
+  "kbSearch": {
+    "message": "Suchen"
+  },
+  "kbSwipeTabs": {
+    "message": "Zwischen Tabs wischen (Trackpad)"
+  },
+  "kbTwoFingers": {
+    "message": "Zwei Finger ↔"
+  },
+  "lang": {
+    "message": "de"
+  },
+  "later": {
+    "message": "Später"
+  },
+  "letterOrEmoji": {
+    "message": "Buchstabe oder Emoji"
+  },
+  "light": {
+    "message": "Hell"
+  },
+  "lightAndDark": {
+    "message": "Hell und dunkel"
+  },
+  "linkAdded": {
+    "message": "„$1“ hinzugefügt"
+  },
+  "linkCopied": {
+    "message": "Link kopiert"
+  },
+  "links_one": {
+    "message": "$1 Link"
+  },
+  "links_other": {
+    "message": "$1 Links"
+  },
+  "location": {
+    "message": "Speicherort"
+  },
+  "maxColumns": {
+    "message": "Spalten (max.)"
+  },
+  "menusAndPanels": {
+    "message": "Menüs und Bereiche"
+  },
+  "moveDown": {
+    "message": "Nach unten"
+  },
+  "moveLeft": {
+    "message": "Nach links verschieben"
+  },
+  "moveRight": {
+    "message": "Nach rechts verschieben"
+  },
+  "moveUp": {
+    "message": "Nach oben"
+  },
+  "movedInto": {
+    "message": "Nach „$1“ verschoben"
+  },
+  "name": {
+    "message": "Name"
+  },
+  "namePlaceholder": {
+    "message": "Optional – wird von der Seite übernommen"
+  },
+  "newFolderMenu": {
+    "message": "Neuer Ordner…"
+  },
+  "newFolderTitle": {
+    "message": "Neuer Ordner"
+  },
+  "newTabTitle": {
+    "message": "Neuer Tab"
+  },
+  "noBookmarkFolders": {
+    "message": "Keine Lesezeichenordner gefunden. Importiere deine Lesezeichen in den Browser (Menü Lesezeichen › Importieren) und komm dann hierher zurück."
+  },
+  "noDirectLinks": {
+    "message": "Dieser Ordner enthält keine direkten Links."
+  },
+  "noFoldersYet": {
+    "message": "Noch keine Ordner."
+  },
+  "noMatchingFolder": {
+    "message": "Kein passender Ordner."
+  },
+  "notABackup": {
+    "message": "Diese Datei ist keine Cadran-Sicherung."
+  },
+  "open": {
+    "message": "Öffnen"
+  },
+  "openAllInGroup": {
+    "message": "Alle in einer Tabgruppe öffnen"
+  },
+  "openAllInTabs": {
+    "message": "Alle in Tabs öffnen"
+  },
+  "openAllInWindow": {
+    "message": "Alle in neuem Fenster öffnen"
+  },
+  "openAllText": {
+    "message": "Alle Links im Ordner „$1“ werden geöffnet."
+  },
+  "openInNewTab": {
+    "message": "In neuem Tab öffnen"
+  },
+  "openInNewWindow": {
+    "message": "In neuem Fenster öffnen"
+  },
+  "openInPrivateWindow": {
+    "message": "In privatem Fenster öffnen"
+  },
+  "openLinks": {
+    "message": "Links öffnen in"
+  },
+  "openLinksHint": {
+    "message": "⌘/Strg + Klick öffnet immer einen neuen Tab"
+  },
+  "openNewTab": {
+    "message": "Neuer Tab"
+  },
+  "openSameTab": {
+    "message": "Selber Tab"
+  },
+  "openTabsConfirm_one": {
+    "message": "$1 Tab öffnen?"
+  },
+  "openTabsConfirm_other": {
+    "message": "$1 Tabs öffnen?"
+  },
+  "openThisAddress": {
+    "message": "Diese Adresse öffnen"
+  },
+  "optional": {
+    "message": "Optional"
+  },
+  "ownHint": {
+    "message": "eigener"
+  },
+  "ownWallpaper": {
+    "message": "Eigener Hintergrund für diesen Tab"
+  },
+  "panelTitle": {
+    "message": "Einstellungen"
+  },
+  "parentFolder": {
+    "message": "Übergeordneter Ordner"
+  },
+  "parentFolderHint": {
+    "message": "Übergeordneter Ordner (Esc)"
+  },
+  "recentlyClosed": {
+    "message": "Kürzlich geschlossen"
+  },
+  "recentlyClosedHint": {
+    "message": "Tabs und Fenster zum erneuten Öffnen"
+  },
+  "redownload": {
+    "message": "Erneut herunterladen"
+  },
+  "redownloadAll": {
+    "message": "Alle erneut herunterladen"
+  },
+  "removeTab": {
+    "message": "Tab entfernen"
+  },
+  "removeTabHint": {
+    "message": "Tab entfernen (der Ordner wird nicht gelöscht)"
+  },
+  "renameFolderTitle": {
+    "message": "Ordner umbenennen"
+  },
+  "renameMenu": {
+    "message": "Umbenennen…"
+  },
+  "renameTabHelp": {
+    "message": "Der Lesezeichenordner wird nicht umbenannt. Leer lassen, um seinen Namen zu verwenden."
+  },
+  "renameTabMenu": {
+    "message": "Tab umbenennen…"
+  },
+  "renameTabTitle": {
+    "message": "Tab umbenennen"
+  },
+  "reopenWindow": {
+    "message": "Fenster erneut öffnen ($1)"
+  },
+  "reset": {
+    "message": "Zurücksetzen"
+  },
+  "resetConfirmText": {
+    "message": "Deine Lesezeichen bleiben unverändert, nur die Einstellungen von Cadran werden zurückgesetzt."
+  },
+  "resetConfirmTitle": {
+    "message": "Einstellungen zurücksetzen?"
+  },
+  "revokeSiteAccess": {
+    "message": "Berechtigung entziehen"
+  },
+  "rotateDaily": {
+    "message": "Jeden Tag"
+  },
+  "rotateEachOpening": {
+    "message": "Bei jedem neuen Tab"
+  },
+  "rotateImages": {
+    "message": "Bild automatisch wechseln"
+  },
+  "rotateNever": {
+    "message": "Nie"
+  },
+  "save": {
+    "message": "Speichern"
+  },
+  "search": {
+    "message": "Suche"
+  },
+  "searchBar": {
+    "message": "Suchleiste"
+  },
+  "searchBarHint": {
+    "message": "Filtert auch alle deine Lesezeichen"
+  },
+  "searchEngine": {
+    "message": "Suchmaschine"
+  },
+  "searchEngineHeader": {
+    "message": "Suchmaschine"
+  },
+  "searchFor": {
+    "message": "Nach „$1“ suchen"
+  },
+  "searchPlaceholder": {
+    "message": "Im Web oder in deinen Lesezeichen suchen"
+  },
+  "searchPlaceholderWith": {
+    "message": "Mit $1 oder in deinen Lesezeichen suchen"
+  },
+  "sections": {
+    "message": "Bereiche"
+  },
+  "sectionsPermissionHint": {
+    "message": "Diese beiden Bereiche benötigen eine zusätzliche Berechtigung, die erst beim Aktivieren angefragt wird."
+  },
+  "selectAFolder": {
+    "message": "Wähle einen Ordner aus."
+  },
+  "selectAtLeastOneFolder": {
+    "message": "Wähle mindestens einen Ordner aus."
+  },
+  "setWallpaperOf": {
+    "message": "Hintergrund festlegen für"
+  },
+  "setWallpaperOfHint": {
+    "message": "Jeder Tab kann den Standard-Hintergrund behalten oder einen eigenen haben"
+  },
+  "shortcut": {
+    "message": "Tastenkürzel"
+  },
+  "shortcuts": {
+    "message": "Tastenkürzel"
+  },
+  "show": {
+    "message": "Anzeigen"
+  },
+  "showAnotherFolder": {
+    "message": "Weiteren Ordner anzeigen"
+  },
+  "showAsTab": {
+    "message": "Als Tab anzeigen"
+  },
+  "showFoldersTitle": {
+    "message": "Ordner anzeigen"
+  },
+  "showFolders_one": {
+    "message": "Diesen Ordner anzeigen"
+  },
+  "showFolders_other": {
+    "message": "Diese $1 Ordner anzeigen"
+  },
+  "showNames": {
+    "message": "Namen von Websites / Ordnern anzeigen"
+  },
+  "showTime": {
+    "message": "Uhrzeit anzeigen"
+  },
+  "siteAccessGranted": {
+    "message": "Zugriff auf Websites erlaubt"
+  },
+  "siteAccessNotGranted": {
+    "message": "Zugriff auf Websites nicht erlaubt"
+  },
+  "styleCards": {
+    "message": "Karten"
+  },
+  "styleIcons": {
+    "message": "Symbole"
+  },
+  "tabAppearance": {
+    "message": "Darstellung"
+  },
+  "tabFolders": {
+    "message": "Ordner"
+  },
+  "tabHome": {
+    "message": "Start"
+  },
+  "tabMore": {
+    "message": "Mehr"
+  },
+  "tabName": {
+    "message": "Name des Tabs"
+  },
+  "tabNameHint": {
+    "message": "Auf dem Tab angezeigter Name (der Ordner wird nicht umbenannt)"
+  },
+  "tabRemoved": {
+    "message": "Tab „$1“ entfernt"
+  },
+  "tabSection": {
+    "message": "Tab"
+  },
+  "tabWallpaper": {
+    "message": "Hintergrund"
+  },
+  "tabWallpaperMenu": {
+    "message": "Hintergrund dieses Tabs…"
+  },
+  "tabWallpaperStillDefault": {
+    "message": "Hintergrund dieses Tabs (vorerst Standard)"
+  },
+  "tabWithOwnWallpaper": {
+    "message": "$1 — eigener Hintergrund"
+  },
+  "tabsCount_one": {
+    "message": "$1 Tab"
+  },
+  "tabsCount_other": {
+    "message": "$1 Tabs"
+  },
+  "textOnWallpaper": {
+    "message": "Text auf dem Hintergrund"
+  },
+  "tileStyle": {
+    "message": "Stil"
+  },
+  "tiles": {
+    "message": "Kacheln"
+  },
+  "timeFormat": {
+    "message": "Zeitformat"
+  },
+  "topSites": {
+    "message": "Häufig besucht"
+  },
+  "topSitesHint": {
+    "message": "Anhand deines Browserverlaufs"
+  },
+  "undo": {
+    "message": "Rückgängig"
+  },
+  "unsupportedFormat": {
+    "message": "Nicht unterstütztes Format: $1"
+  },
+  "untitled": {
+    "message": "Ohne Titel"
+  },
+  "use": {
+    "message": "Verwenden"
+  },
+  "usesDefaultForNow": {
+    "message": "Verwendet vorerst den Standard-Hintergrund"
+  },
+  "variantToSet": {
+    "message": "Einzustellender Hintergrund"
+  },
+  "wallpaper": {
+    "message": "Hintergrundbild"
+  },
+  "wallpaperSettings": {
+    "message": "Hintergrundeinstellungen"
+  },
+  "wallpaperToSet": {
+    "message": "Festzulegender Hintergrund"
+  },
+  "welcomeText": {
+    "message": "Wähle die Lesezeichenordner aus, die angezeigt werden sollen: Jeder Ordner wird zu einem Tab, mit seinen Websites als Symbole und einer Vorschau seiner Unterordner."
+  },
+  "welcomeTitle": {
+    "message": "Willkommen bei Cadran"
+  },
+  "yourName": {
+    "message": "Dein Vorname"
+  }
 }

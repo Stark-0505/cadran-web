@@ -1,992 +1,872 @@
 {
-   "actionFailed": {
-      "message": "Couldn’t complete the action"
-   },
-   "actionTitle": {
-      "message": "Open Cadran"
-   },
-   "add": {
-      "message": "Add"
-   },
-   "addFolders": {
-      "message": "Add folders…"
-   },
-   "addSiteMenu": {
-      "message": "Add a site…"
-   },
-   "addSiteOrFolder": {
-      "message": "Add a site or a folder"
-   },
-   "addSiteTitle": {
-      "message": "Add a site"
-   },
-   "addTileSetting": {
-      "message": "“Add” tile"
-   },
-   "addToFolder": {
-      "message": "Add to “$1”"
-   },
-   "addedToBookmarks": {
-      "message": "Added to bookmarks"
-   },
-   "address": {
-      "message": "Address"
-   },
-   "addressPlaceholder": {
-      "message": "example.com"
-   },
-   "allow": {
-      "message": "Allow"
-   },
-   "allowSiteAccess": {
-      "message": "Allow site access"
-   },
-   "allowSiteAccessFirst": {
-      "message": "Allow site access first (Settings › More › High-resolution icons)."
-   },
-   "alreadyShown": {
-      "message": "Already shown"
-   },
-   "alreadyShownAsTab": {
-      "message": "Already shown as a tab"
-   },
-   "auto": {
-      "message": "Auto"
-   },
-   "automatic": {
-      "message": "Automatic"
-   },
-   "back": {
-      "message": "Back"
-   },
-   "backup": {
-      "message": "Backup"
-   },
-   "backupImported": {
-      "message": "Backup imported"
-   },
-   "behavior": {
-      "message": "Behavior"
-   },
-   "blur": {
-      "message": "Blur"
-   },
-   "bookmarkletsBlocked": {
-      "message": "Bookmarklets can’t run from this page."
-   },
-   "bookmarks": {
-      "message": "Bookmarks"
-   },
-   "browseAllFolders": {
-      "message": "Browse all folders…"
-   },
-   "cancel": {
-      "message": "Cancel"
-   },
-   "cantMoveIntoItself": {
-      "message": "A folder can’t be moved into itself."
-   },
-   "cantOpenLink": {
-      "message": "This link couldn’t be opened."
-   },
-   "cantOpenPrivate": {
-      "message": "A private window couldn’t be opened."
-   },
-   "cantUndo": {
-      "message": "Couldn’t undo."
-   },
-   "changeIconMenu": {
-      "message": "Change icon…"
-   },
-   "changeWallpaperMenu": {
-      "message": "Change wallpaper…"
-   },
-   "choose": {
-      "message": "Choose"
-   },
-   "chooseAnotherFolder": {
-      "message": "Choose another folder"
-   },
-   "chooseAnotherFolderMenu": {
-      "message": "Choose another folder…"
-   },
-   "chooseEngine": {
-      "message": "Choose search engine"
-   },
-   "chooseFolderForTab": {
-      "message": "Choose this tab’s folder"
-   },
-   "chooseFolders": {
-      "message": "Choose folders"
-   },
-   "clock": {
-      "message": "Clock"
-   },
-   "clockAnalog": {
-      "message": "Analog"
-   },
-   "clockDigital": {
-      "message": "Digital"
-   },
-   "clockSeconds": {
-      "message": "Second hand"
-   },
-   "clockSecondsHint": {
-      "message": "It sweeps round in just under a minute, then pauses and sets off again on the minute."
-   },
-   "clockStyle": {
-      "message": "Style"
-   },
-   "close": {
-      "message": "Close"
-   },
-   "colorN": {
-      "message": "Color $1"
-   },
-   "colors": {
-      "message": "Colors"
-   },
-   "confirm": {
-      "message": "Confirm"
-   },
-   "copyFailed": {
-      "message": "Couldn’t copy"
-   },
-   "copyLink": {
-      "message": "Copy link"
-   },
-   "create": {
-      "message": "Create"
-   },
-   "customColor": {
-      "message": "Custom color"
-   },
-   "dark": {
-      "message": "Dark"
-   },
-   "darkWallpaper": {
-      "message": "Different wallpaper in dark mode"
-   },
-   "darkWallpaperHint": {
-      "message": "Switches automatically with your system’s light or dark theme"
-   },
-   "date": {
-      "message": "Date"
-   },
-   "defaultEngineShort": {
-      "message": "Default engine"
-   },
-   "defaultFolderName": {
-      "message": "Folder"
-   },
-   "defaultWallpaperAllTabs": {
-      "message": "Default wallpaper (all tabs)"
-   },
-   "delete": {
-      "message": "Delete"
-   },
-   "deleteConfirmTitle": {
-      "message": "Delete “$1”?"
-   },
-   "deleteFailed": {
-      "message": "Couldn’t delete: $1"
-   },
-   "deleteFolderMenu": {
-      "message": "Delete folder…"
-   },
-   "deleteFolderText_one": {
-      "message": "The folder and the link it contains will be removed from your bookmarks."
-   },
-   "deleteFolderText_other": {
-      "message": "The folder and the $1 links it contains will be removed from your bookmarks."
-   },
-   "deleteImage": {
-      "message": "Delete this image"
-   },
-   "deleteImageConfirm": {
-      "message": "Delete this image?"
-   },
-   "deletedToast": {
-      "message": "“$1” deleted"
-   },
-   "dim": {
-      "message": "Darken"
-   },
-   "displayedName": {
-      "message": "Display name"
-   },
-   "done": {
-      "message": "Done"
-   },
-   "dropImageHint": {
-      "message": "Drop an image (JPEG, PNG, WebP…) to use it as your wallpaper."
-   },
-   "dropImagesHint": {
-      "message": "Tip: drag one or more images straight onto the page."
-   },
-   "editBookmarkTitle": {
-      "message": "Edit bookmark"
-   },
-   "editMenu": {
-      "message": "Edit…"
-   },
-   "emptyFolderShort": {
-      "message": "empty"
-   },
-   "emptyFolderText": {
-      "message": "Add a site with the “+” tile, or drag a link here."
-   },
-   "emptyFolderTitle": {
-      "message": "This folder is empty"
-   },
-   "engineBrowserDefault": {
-      "message": "Browser’s default engine"
-   },
-   "errorTitle": {
-      "message": "Something went wrong"
-   },
-   "expand": {
-      "message": "Expand"
-   },
-   "export": {
-      "message": "Export"
-   },
-   "exportHint": {
-      "message": "Tabs, appearance, custom icons"
-   },
-   "exportSettings": {
-      "message": "Export settings"
-   },
-   "extDescription": {
-      "message": "A Safari / Vivaldi-style New Tab page: your bookmark folders as icon grids, with a customizable wallpaper."
-   },
-   "extName": {
-      "message": "Cadran — Speed Dial for your bookmarks"
-   },
-   "fetchSiteIconsHint": {
-      "message": "Fetch each site’s icon"
-   },
-   "fetchingIcons": {
-      "message": "Fetching icons…"
-   },
-   "fieldRequired": {
-      "message": "The “$1” field is required."
-   },
-   "filterFolders": {
-      "message": "Filter folders…"
-   },
-   "folderMissingText": {
-      "message": "The folder “$1” no longer exists in your bookmarks."
-   },
-   "folderName": {
-      "message": "Folder name"
-   },
-   "folderNotFound": {
-      "message": "Folder not found"
-   },
-   "folderPreview": {
-      "message": "Folder preview"
-   },
-   "foldersAsTabs": {
-      "message": "Folders shown as tabs"
-   },
-   "foldersHint": {
-      "message": "Each folder becomes a tab at the top of the page. Additions, deletions and drag-and-drop are saved straight to your browser’s bookmarks, so everything stays in sync."
-   },
-   "footer": {
-      "message": "Cadran $1 — your data stays in your browser."
-   },
-   "format12h": {
-      "message": "12-hour"
-   },
-   "format24h": {
-      "message": "24-hour"
-   },
-   "fromImageAddress": {
-      "message": "From an image address"
-   },
-   "goTo": {
-      "message": "Go to $1"
-   },
-   "grad_aurore": {
-      "message": "Aurora"
-   },
-   "grad_brume": {
-      "message": "Mist"
-   },
-   "grad_crepuscule": {
-      "message": "Dusk"
-   },
-   "grad_foret": {
-      "message": "Forest"
-   },
-   "grad_graphite": {
-      "message": "Graphite"
-   },
-   "grad_lagon": {
-      "message": "Lagoon"
-   },
-   "grad_lavande": {
-      "message": "Lavender"
-   },
-   "grad_menthe": {
-      "message": "Mint"
-   },
-   "grad_nuit": {
-      "message": "Night"
-   },
-   "grad_ocean": {
-      "message": "Ocean"
-   },
-   "grad_peche": {
-      "message": "Peach"
-   },
-   "grad_sierra": {
-      "message": "Sierra"
-   },
-   "gradients": {
-      "message": "Gradients"
-   },
-   "greeting": {
-      "message": "Greeting"
-   },
-   "greetingAfternoon": {
-      "message": "Good afternoon"
-   },
-   "greetingEvening": {
-      "message": "Good evening"
-   },
-   "greetingHint": {
-      "message": "Good morning, Good afternoon, Good evening…"
-   },
-   "greetingMorning": {
-      "message": "Good morning"
-   },
-   "greetingNight": {
-      "message": "Good night"
-   },
-   "greetingWithName": {
-      "message": "$1, $2"
-   },
-   "hdIcons": {
-      "message": "High-resolution icons"
-   },
-   "hdIconsHint": {
-      "message": "Cadran downloads each site’s official icon (the one Safari and the iPhone use) straight from the site, with no cookies and no third-party service. The permission is used for that alone. Otherwise, Cadran uses the favicons your browser already knows, or a letter."
-   },
-   "hoverFolderTabs": {
-      "message": "Folder tabs on hover"
-   },
-   "hoverFolderTabsHint": {
-      "message": "Tabs only appear when you point at them, or while dragging."
-   },
-   "iconOfTitle": {
-      "message": "Icon for “$1”"
-   },
-   "iconSize": {
-      "message": "Icon size"
-   },
-   "iconsCached_one": {
-      "message": "$1 icon cached"
-   },
-   "iconsCached_other": {
-      "message": "$1 icons cached"
-   },
-   "iconsNoticeText": {
-      "message": "Let Cadran fetch each site’s official icon. Access is used only to download these icons."
-   },
-   "iconsNoticeTitle": {
-      "message": "Sharp icons, just like Safari"
-   },
-   "iconsWillRedownload": {
-      "message": "Icons will be downloaded again."
-   },
-   "imageAddress": {
-      "message": "Image address"
-   },
-   "imageDownloadFailed": {
-      "message": "This image couldn’t be downloaded. Save it, then import it."
-   },
-   "imageUnreadable": {
-      "message": "This image couldn’t be read."
-   },
-   "images": {
-      "message": "Images"
-   },
-   "imagesAdded_one": {
-      "message": "Wallpaper updated"
-   },
-   "imagesAdded_other": {
-      "message": "$1 images added"
-   },
-   "imagesFailed_one": {
-      "message": "$1 image couldn’t be imported."
-   },
-   "imagesFailed_other": {
-      "message": "$1 images couldn’t be imported."
-   },
-   "importBackup": {
-      "message": "Import a backup"
-   },
-   "importEllipsis": {
-      "message": "Import…"
-   },
-   "importFailed": {
-      "message": "Import failed"
-   },
-   "importImageEllipsis": {
-      "message": "Import an image…"
-   },
-   "importImages": {
-      "message": "Import images"
-   },
-   "importedTag": {
-      "message": "imported"
-   },
-   "importingImages_one": {
-      "message": "Importing image…"
-   },
-   "importingImages_other": {
-      "message": "Importing $1 images…"
-   },
-   "includeWallpapers": {
-      "message": "Include wallpaper images"
-   },
-   "invalidAddress": {
-      "message": "Invalid address."
-   },
-   "kbActions": {
-      "message": "Actions (edit, icon, delete…)"
-   },
-   "kbCmdClick": {
-      "message": "⌘ / Ctrl + click"
-   },
-   "kbEscape": {
-      "message": "Esc"
-   },
-   "kbParentFolder": {
-      "message": "Go up to the parent folder"
-   },
-   "kbPrevNextTab": {
-      "message": "Previous / next tab"
-   },
-   "kbRightClick": {
-      "message": "Right-click"
-   },
-   "kbSearch": {
-      "message": "Search"
-   },
-   "kbSwipeTabs": {
-      "message": "Swipe between tabs (trackpad)"
-   },
-   "kbTwoFingers": {
-      "message": "Two fingers ↔"
-   },
-   "lang": {
-      "message": "en"
-   },
-   "later": {
-      "message": "Later"
-   },
-   "letterOrEmoji": {
-      "message": "Letter or emoji"
-   },
-   "light": {
-      "message": "Light"
-   },
-   "lightAndDark": {
-      "message": "Light and dark"
-   },
-   "linkAdded": {
-      "message": "“$1” added"
-   },
-   "linkCopied": {
-      "message": "Link copied"
-   },
-   "links_one": {
-      "message": "$1 link"
-   },
-   "links_other": {
-      "message": "$1 links"
-   },
-   "location": {
-      "message": "Location"
-   },
-   "maxColumns": {
-      "message": "Columns (max.)"
-   },
-   "menusAndPanels": {
-      "message": "Menus and panels"
-   },
-   "moveDown": {
-      "message": "Move down"
-   },
-   "moveLeft": {
-      "message": "Move left"
-   },
-   "moveRight": {
-      "message": "Move right"
-   },
-   "moveUp": {
-      "message": "Move up"
-   },
-   "movedInto": {
-      "message": "Moved to “$1”"
-   },
-   "name": {
-      "message": "Name"
-   },
-   "namePlaceholder": {
-      "message": "Optional — taken from the page"
-   },
-   "newFolderMenu": {
-      "message": "New folder…"
-   },
-   "newFolderTitle": {
-      "message": "New folder"
-   },
-   "newTabTitle": {
-      "message": "New Tab"
-   },
-   "noBookmarkFolders": {
-      "message": "No bookmark folders found. Import your bookmarks into your browser (Bookmarks menu › Import), then come back here."
-   },
-   "noDirectLinks": {
-      "message": "This folder has no direct links."
-   },
-   "noFoldersYet": {
-      "message": "No folders yet."
-   },
-   "noMatchingFolder": {
-      "message": "No matching folder."
-   },
-   "notABackup": {
-      "message": "This file isn’t a Cadran backup."
-   },
-   "open": {
-      "message": "Open"
-   },
-   "openAllInGroup": {
-      "message": "Open all in a tab group"
-   },
-   "openAllInTabs": {
-      "message": "Open all in tabs"
-   },
-   "openAllInWindow": {
-      "message": "Open all in a new window"
-   },
-   "openAllText": {
-      "message": "All the links in the folder “$1” will open."
-   },
-   "openInNewTab": {
-      "message": "Open in new tab"
-   },
-   "openInNewWindow": {
-      "message": "Open in new window"
-   },
-   "openInPrivateWindow": {
-      "message": "Open in private window"
-   },
-   "openLinks": {
-      "message": "Open links in"
-   },
-   "openLinksHint": {
-      "message": "⌘/Ctrl + click always opens a new tab"
-   },
-   "openNewTab": {
-      "message": "New tab"
-   },
-   "openSameTab": {
-      "message": "Same tab"
-   },
-   "openTabsConfirm_one": {
-      "message": "Open $1 tab?"
-   },
-   "openTabsConfirm_other": {
-      "message": "Open $1 tabs?"
-   },
-   "openThisAddress": {
-      "message": "Open this address"
-   },
-   "optional": {
-      "message": "Optional"
-   },
-   "ownHint": {
-      "message": "own"
-   },
-   "ownWallpaper": {
-      "message": "Own wallpaper for this tab"
-   },
-   "panelTitle": {
-      "message": "Settings"
-   },
-   "parentFolder": {
-      "message": "Parent folder"
-   },
-   "parentFolderHint": {
-      "message": "Parent folder (Esc)"
-   },
-   "plusActivate": {
-      "message": "Activate"
-   },
-   "plusActivated": {
-      "message": "Cadran+ is active. Thank you!"
-   },
-   "plusActiveTitle": {
-      "message": "Cadran+ is active"
-   },
-   "plusBuy": {
-      "message": "Buy Cadran+ · $1"
-   },
-   "plusChecking": {
-      "message": "Checking…"
-   },
-   "plusDiscover": {
-      "message": "Learn more"
-   },
-   "plusErrorInvalid": {
-      "message": "This key isn’t valid. Check that it’s complete."
-   },
-   "plusErrorLimit": {
-      "message": "This key is already active on the maximum number of devices. Remove it from another device, then try again."
-   },
-   "plusErrorNetwork": {
-      "message": "Couldn’t reach the verification service. Check your connection, then try again."
-   },
-   "plusFeatureAnalogClock": {
-      "message": "An analog clock whose second hand pauses at every minute"
-   },
-   "plusFeatureFuture": {
-      "message": "Future Cadran+ features, at no extra cost"
-   },
-   "plusFeatureRotation": {
-      "message": "Images that change on their own, with each new tab or every day"
-   },
-   "plusFeatureTabWallpapers": {
-      "message": "A different wallpaper for each tab, with a crossfade as you switch between them"
-   },
-   "plusFindKey": {
-      "message": "Find my key"
-   },
-   "plusFounderText": {
-      "message": "You adopted Cadran before sales opened, so Cadran+ is yours free, forever. Thank you!"
-   },
-   "plusFounderTitle": {
-      "message": "Free for life"
-   },
-   "plusHaveKey": {
-      "message": "Have a key?"
-   },
-   "plusInactive": {
-      "message": "Saved, shows with Cadran+"
-   },
-   "plusIntro": {
-      "message": "Cadran stays completely free. Cadran+ adds a few refinements, for a single payment."
-   },
-   "plusKeyHint": {
-      "message": "After payment, your key is waiting in your Polar customer portal."
-   },
-   "plusKeyLabel": {
-      "message": "License key"
-   },
-   "plusKeyPlaceholder": {
-      "message": "Paste your key here"
-   },
-   "plusKeyShown": {
-      "message": "Key $1"
-   },
-   "plusManage": {
-      "message": "Manage"
-   },
-   "plusOneTime": {
-      "message": "One-time payment, no subscription, in a new tab."
-   },
-   "plusPreviewNote": {
-      "message": "Cadran+ trial: your settings are saved, but only show on this page."
-   },
-   "plusPreviewStarted": {
-      "message": "Cadran+ is active on this page until you close it"
-   },
-   "plusPrivacy": {
-      "message": "Your key is checked once, on activation, with Polar, which handles payments. Nothing else leaves your browser."
-   },
-   "plusReasonAnalogClock": {
-      "message": "The analog clock is part of Cadran+."
-   },
-   "plusReasonRotation": {
-      "message": "Automatic image changes are part of Cadran+."
-   },
-   "plusReasonTabWallpaper": {
-      "message": "A wallpaper of its own for each tab is part of Cadran+."
-   },
-   "plusRemove": {
-      "message": "Remove from this device"
-   },
-   "plusRemoveConfirm": {
-      "message": "Remove Cadran+ from this device?"
-   },
-   "plusRemoveText": {
-      "message": "The key becomes available for another device. Your settings are kept."
-   },
-   "plusRemoved": {
-      "message": "Cadran+ removed from this device"
-   },
-   "plusStatusActive": {
-      "message": "Active on this device"
-   },
-   "plusStatusFree": {
-      "message": "A wallpaper per tab, an analog clock…"
-   },
-   "plusStatusPreview": {
-      "message": "Trial on this page"
-   },
-   "plusSupport": {
-      "message": "By buying Cadran+, you support independent development."
-   },
-   "plusTry": {
-      "message": "Try it on this page"
-   },
-   "recentlyClosed": {
-      "message": "Recently closed"
-   },
-   "recentlyClosedHint": {
-      "message": "Tabs and windows to reopen"
-   },
-   "redownload": {
-      "message": "Download again"
-   },
-   "redownloadAll": {
-      "message": "Download all again"
-   },
-   "removeTab": {
-      "message": "Remove tab"
-   },
-   "removeTabHint": {
-      "message": "Remove tab (the folder isn’t deleted)"
-   },
-   "renameFolderTitle": {
-      "message": "Rename folder"
-   },
-   "renameMenu": {
-      "message": "Rename…"
-   },
-   "renameTabHelp": {
-      "message": "The bookmark folder isn’t renamed. Leave empty to use its name."
-   },
-   "renameTabMenu": {
-      "message": "Rename tab…"
-   },
-   "renameTabTitle": {
-      "message": "Rename tab"
-   },
-   "reopenWindow": {
-      "message": "Reopen window ($1)"
-   },
-   "reset": {
-      "message": "Reset"
-   },
-   "resetConfirmText": {
-      "message": "Your bookmarks aren’t affected; only Cadran’s settings go back to their defaults."
-   },
-   "resetConfirmTitle": {
-      "message": "Reset settings?"
-   },
-   "revokeSiteAccess": {
-      "message": "Revoke access"
-   },
-   "rotateDaily": {
-      "message": "Every day"
-   },
-   "rotateEachOpening": {
-      "message": "Each new tab"
-   },
-   "rotateImages": {
-      "message": "Change image automatically"
-   },
-   "rotateNever": {
-      "message": "Never"
-   },
-   "save": {
-      "message": "Save"
-   },
-   "search": {
-      "message": "Search"
-   },
-   "searchBar": {
-      "message": "Search bar"
-   },
-   "searchBarHint": {
-      "message": "Also filters all your bookmarks"
-   },
-   "searchEngine": {
-      "message": "Engine"
-   },
-   "searchEngineHeader": {
-      "message": "Search engine"
-   },
-   "searchFor": {
-      "message": "Search for “$1”"
-   },
-   "searchPlaceholder": {
-      "message": "Search the web or your bookmarks"
-   },
-   "searchPlaceholderWith": {
-      "message": "Search with $1 or your bookmarks"
-   },
-   "sections": {
-      "message": "Sections"
-   },
-   "sectionsPermissionHint": {
-      "message": "These two sections need an extra permission, requested only when you turn them on."
-   },
-   "selectAFolder": {
-      "message": "Select a folder."
-   },
-   "selectAtLeastOneFolder": {
-      "message": "Select at least one folder."
-   },
-   "setWallpaperOf": {
-      "message": "Set the wallpaper of"
-   },
-   "setWallpaperOfHint": {
-      "message": "Each tab can keep the default wallpaper or have its own"
-   },
-   "shortcut": {
-      "message": "Shortcut"
-   },
-   "shortcuts": {
-      "message": "Shortcuts"
-   },
-   "show": {
-      "message": "Show"
-   },
-   "showAnotherFolder": {
-      "message": "Show another folder"
-   },
-   "showAsTab": {
-      "message": "Show as a tab"
-   },
-   "showFoldersTitle": {
-      "message": "Show folders"
-   },
-   "showFolders_one": {
-      "message": "Show this folder"
-   },
-   "showFolders_other": {
-      "message": "Show these $1 folders"
-   },
-   "showNames": {
-      "message": "Show site / folder names"
-   },
-   "showTime": {
-      "message": "Show the time"
-   },
-   "siteAccessGranted": {
-      "message": "Site access allowed"
-   },
-   "siteAccessNotGranted": {
-      "message": "Site access not allowed"
-   },
-   "styleCards": {
-      "message": "Cards"
-   },
-   "styleIcons": {
-      "message": "Icons"
-   },
-   "tabAppearance": {
-      "message": "Appearance"
-   },
-   "tabFolders": {
-      "message": "Folders"
-   },
-   "tabHome": {
-      "message": "Home"
-   },
-   "tabMore": {
-      "message": "More"
-   },
-   "tabName": {
-      "message": "Tab name"
-   },
-   "tabNameHint": {
-      "message": "Name shown on the tab (the folder isn’t renamed)"
-   },
-   "tabRemoved": {
-      "message": "Tab “$1” removed"
-   },
-   "tabSection": {
-      "message": "Tab"
-   },
-   "tabWallpaper": {
-      "message": "Wallpaper"
-   },
-   "tabWallpaperMenu": {
-      "message": "Wallpaper for this tab…"
-   },
-   "tabWallpaperStillDefault": {
-      "message": "Wallpaper for this tab (default for now)"
-   },
-   "tabWithOwnWallpaper": {
-      "message": "$1 — own wallpaper"
-   },
-   "tabsCount_one": {
-      "message": "$1 tab"
-   },
-   "tabsCount_other": {
-      "message": "$1 tabs"
-   },
-   "textOnWallpaper": {
-      "message": "Text on wallpaper"
-   },
-   "tileStyle": {
-      "message": "Style"
-   },
-   "tiles": {
-      "message": "Tiles"
-   },
-   "timeFormat": {
-      "message": "Time format"
-   },
-   "topSites": {
-      "message": "Frequently visited"
-   },
-   "topSitesHint": {
-      "message": "Based on your browsing history"
-   },
-   "undo": {
-      "message": "Undo"
-   },
-   "unsupportedFormat": {
-      "message": "Unsupported format: $1"
-   },
-   "untitled": {
-      "message": "Untitled"
-   },
-   "use": {
-      "message": "Use"
-   },
-   "usesDefaultForNow": {
-      "message": "For now, it uses the default wallpaper"
-   },
-   "variantToSet": {
-      "message": "Wallpaper to set"
-   },
-   "wallpaper": {
-      "message": "Wallpaper"
-   },
-   "wallpaperSettings": {
-      "message": "Wallpaper settings"
-   },
-   "wallpaperToSet": {
-      "message": "Wallpaper to set"
-   },
-   "welcomeText": {
-      "message": "Choose the bookmark folders to show: each folder becomes a tab, with its sites as icons and its subfolders previewed."
-   },
-   "welcomeTitle": {
-      "message": "Welcome to Cadran"
-   },
-   "yourName": {
-      "message": "Your first name"
-   }
+  "actionFailed": {
+    "message": "Couldn’t complete the action"
+  },
+  "actionTitle": {
+    "message": "Open Cadran"
+  },
+  "add": {
+    "message": "Add"
+  },
+  "addFolders": {
+    "message": "Add folders…"
+  },
+  "addSiteMenu": {
+    "message": "Add a site…"
+  },
+  "addSiteOrFolder": {
+    "message": "Add a site or a folder"
+  },
+  "addSiteTitle": {
+    "message": "Add a site"
+  },
+  "addTileSetting": {
+    "message": "“Add” tile"
+  },
+  "addToFolder": {
+    "message": "Add to “$1”"
+  },
+  "addedToBookmarks": {
+    "message": "Added to bookmarks"
+  },
+  "address": {
+    "message": "Address"
+  },
+  "addressPlaceholder": {
+    "message": "example.com"
+  },
+  "allow": {
+    "message": "Allow"
+  },
+  "allowSiteAccess": {
+    "message": "Allow site access"
+  },
+  "allowSiteAccessFirst": {
+    "message": "Allow site access first (Settings › More › High-resolution icons)."
+  },
+  "alreadyShown": {
+    "message": "Already shown"
+  },
+  "alreadyShownAsTab": {
+    "message": "Already shown as a tab"
+  },
+  "auto": {
+    "message": "Auto"
+  },
+  "automatic": {
+    "message": "Automatic"
+  },
+  "back": {
+    "message": "Back"
+  },
+  "backup": {
+    "message": "Backup"
+  },
+  "backupImported": {
+    "message": "Backup imported"
+  },
+  "behavior": {
+    "message": "Behavior"
+  },
+  "blur": {
+    "message": "Blur"
+  },
+  "bookmarkletsBlocked": {
+    "message": "Bookmarklets can’t run from this page."
+  },
+  "bookmarks": {
+    "message": "Bookmarks"
+  },
+  "browseAllFolders": {
+    "message": "Browse all folders…"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "cantMoveIntoItself": {
+    "message": "A folder can’t be moved into itself."
+  },
+  "cantOpenLink": {
+    "message": "This link couldn’t be opened."
+  },
+  "cantOpenPrivate": {
+    "message": "A private window couldn’t be opened."
+  },
+  "cantUndo": {
+    "message": "Couldn’t undo."
+  },
+  "changeIconMenu": {
+    "message": "Change icon…"
+  },
+  "changeWallpaperMenu": {
+    "message": "Change wallpaper…"
+  },
+  "choose": {
+    "message": "Choose"
+  },
+  "chooseAnotherFolder": {
+    "message": "Choose another folder"
+  },
+  "chooseAnotherFolderMenu": {
+    "message": "Choose another folder…"
+  },
+  "chooseEngine": {
+    "message": "Choose search engine"
+  },
+  "chooseFolderForTab": {
+    "message": "Choose this tab’s folder"
+  },
+  "chooseFolders": {
+    "message": "Choose folders"
+  },
+  "clock": {
+    "message": "Clock"
+  },
+  "clockAnalog": {
+    "message": "Analog"
+  },
+  "clockDigital": {
+    "message": "Digital"
+  },
+  "clockSeconds": {
+    "message": "Second hand"
+  },
+  "clockSecondsHint": {
+    "message": "It sweeps round in just under a minute, then pauses and sets off again on the minute."
+  },
+  "clockStyle": {
+    "message": "Style"
+  },
+  "close": {
+    "message": "Close"
+  },
+  "colorN": {
+    "message": "Color $1"
+  },
+  "colors": {
+    "message": "Colors"
+  },
+  "confirm": {
+    "message": "Confirm"
+  },
+  "copyFailed": {
+    "message": "Couldn’t copy"
+  },
+  "copyLink": {
+    "message": "Copy link"
+  },
+  "create": {
+    "message": "Create"
+  },
+  "customColor": {
+    "message": "Custom color"
+  },
+  "dark": {
+    "message": "Dark"
+  },
+  "darkWallpaper": {
+    "message": "Different wallpaper in dark mode"
+  },
+  "darkWallpaperHint": {
+    "message": "Switches automatically with your system’s light or dark theme"
+  },
+  "date": {
+    "message": "Date"
+  },
+  "defaultEngineShort": {
+    "message": "Default engine"
+  },
+  "defaultFolderName": {
+    "message": "Folder"
+  },
+  "defaultWallpaperAllTabs": {
+    "message": "Default wallpaper (all tabs)"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "deleteConfirmTitle": {
+    "message": "Delete “$1”?"
+  },
+  "deleteFailed": {
+    "message": "Couldn’t delete: $1"
+  },
+  "deleteFolderMenu": {
+    "message": "Delete folder…"
+  },
+  "deleteFolderText_one": {
+    "message": "The folder and the link it contains will be removed from your bookmarks."
+  },
+  "deleteFolderText_other": {
+    "message": "The folder and the $1 links it contains will be removed from your bookmarks."
+  },
+  "deleteImage": {
+    "message": "Delete this image"
+  },
+  "deleteImageConfirm": {
+    "message": "Delete this image?"
+  },
+  "deletedToast": {
+    "message": "“$1” deleted"
+  },
+  "dim": {
+    "message": "Darken"
+  },
+  "displayedName": {
+    "message": "Display name"
+  },
+  "done": {
+    "message": "Done"
+  },
+  "dropImageHint": {
+    "message": "Drop an image (JPEG, PNG, WebP…) to use it as your wallpaper."
+  },
+  "dropImagesHint": {
+    "message": "Tip: drag one or more images straight onto the page."
+  },
+  "editBookmarkTitle": {
+    "message": "Edit bookmark"
+  },
+  "editMenu": {
+    "message": "Edit…"
+  },
+  "emptyFolderShort": {
+    "message": "empty"
+  },
+  "emptyFolderText": {
+    "message": "Add a site with the “+” tile, or drag a link here."
+  },
+  "emptyFolderTitle": {
+    "message": "This folder is empty"
+  },
+  "engineBrowserDefault": {
+    "message": "Browser’s default engine"
+  },
+  "errorTitle": {
+    "message": "Something went wrong"
+  },
+  "expand": {
+    "message": "Expand"
+  },
+  "export": {
+    "message": "Export"
+  },
+  "exportHint": {
+    "message": "Tabs, appearance, custom icons"
+  },
+  "exportSettings": {
+    "message": "Export settings"
+  },
+  "extDescription": {
+    "message": "A Safari / Vivaldi-style New Tab page: your bookmark folders as icon grids, with a customizable wallpaper."
+  },
+  "extName": {
+    "message": "Cadran — Speed Dial for your bookmarks"
+  },
+  "fetchSiteIconsHint": {
+    "message": "Fetch each site’s icon"
+  },
+  "fetchingIcons": {
+    "message": "Fetching icons…"
+  },
+  "fieldRequired": {
+    "message": "The “$1” field is required."
+  },
+  "filterFolders": {
+    "message": "Filter folders…"
+  },
+  "folderMissingText": {
+    "message": "The folder “$1” no longer exists in your bookmarks."
+  },
+  "folderName": {
+    "message": "Folder name"
+  },
+  "folderNotFound": {
+    "message": "Folder not found"
+  },
+  "folderPreview": {
+    "message": "Folder preview"
+  },
+  "foldersAsTabs": {
+    "message": "Folders shown as tabs"
+  },
+  "foldersHint": {
+    "message": "Each folder becomes a tab at the top of the page. Additions, deletions and drag-and-drop are saved straight to your browser’s bookmarks, so everything stays in sync."
+  },
+  "footer": {
+    "message": "Cadran $1 — your data stays in your browser."
+  },
+  "format12h": {
+    "message": "12-hour"
+  },
+  "format24h": {
+    "message": "24-hour"
+  },
+  "fromImageAddress": {
+    "message": "From an image address"
+  },
+  "goTo": {
+    "message": "Go to $1"
+  },
+  "grad_aurore": {
+    "message": "Aurora"
+  },
+  "grad_brume": {
+    "message": "Mist"
+  },
+  "grad_crepuscule": {
+    "message": "Dusk"
+  },
+  "grad_foret": {
+    "message": "Forest"
+  },
+  "grad_graphite": {
+    "message": "Graphite"
+  },
+  "grad_lagon": {
+    "message": "Lagoon"
+  },
+  "grad_lavande": {
+    "message": "Lavender"
+  },
+  "grad_menthe": {
+    "message": "Mint"
+  },
+  "grad_nuit": {
+    "message": "Night"
+  },
+  "grad_ocean": {
+    "message": "Ocean"
+  },
+  "grad_peche": {
+    "message": "Peach"
+  },
+  "grad_sierra": {
+    "message": "Sierra"
+  },
+  "gradients": {
+    "message": "Gradients"
+  },
+  "greeting": {
+    "message": "Greeting"
+  },
+  "greetingAfternoon": {
+    "message": "Good afternoon"
+  },
+  "greetingEvening": {
+    "message": "Good evening"
+  },
+  "greetingHint": {
+    "message": "Good morning, Good afternoon, Good evening…"
+  },
+  "greetingMorning": {
+    "message": "Good morning"
+  },
+  "greetingNight": {
+    "message": "Good night"
+  },
+  "greetingWithName": {
+    "message": "$1, $2"
+  },
+  "hdIcons": {
+    "message": "High-resolution icons"
+  },
+  "hdIconsHint": {
+    "message": "Cadran downloads each site’s official icon (the one Safari and the iPhone use) straight from the site, with no cookies and no third-party service. The permission is used for that alone. Otherwise, Cadran uses the favicons your browser already knows, or a letter."
+  },
+  "hoverFolderTabs": {
+    "message": "Folder tabs on hover"
+  },
+  "hoverFolderTabsHint": {
+    "message": "Tabs only appear when you point at them, or while dragging."
+  },
+  "iconOfTitle": {
+    "message": "Icon for “$1”"
+  },
+  "iconSize": {
+    "message": "Icon size"
+  },
+  "iconsCached_one": {
+    "message": "$1 icon cached"
+  },
+  "iconsCached_other": {
+    "message": "$1 icons cached"
+  },
+  "iconsNoticeText": {
+    "message": "Let Cadran fetch each site’s official icon. Access is used only to download these icons."
+  },
+  "iconsNoticeTitle": {
+    "message": "Sharp icons, just like Safari"
+  },
+  "iconsWillRedownload": {
+    "message": "Icons will be downloaded again."
+  },
+  "imageAddress": {
+    "message": "Image address"
+  },
+  "imageDownloadFailed": {
+    "message": "This image couldn’t be downloaded. Save it, then import it."
+  },
+  "imageUnreadable": {
+    "message": "This image couldn’t be read."
+  },
+  "images": {
+    "message": "Images"
+  },
+  "imagesAdded_one": {
+    "message": "Wallpaper updated"
+  },
+  "imagesAdded_other": {
+    "message": "$1 images added"
+  },
+  "imagesFailed_one": {
+    "message": "$1 image couldn’t be imported."
+  },
+  "imagesFailed_other": {
+    "message": "$1 images couldn’t be imported."
+  },
+  "importBackup": {
+    "message": "Import a backup"
+  },
+  "importEllipsis": {
+    "message": "Import…"
+  },
+  "importFailed": {
+    "message": "Import failed"
+  },
+  "importImageEllipsis": {
+    "message": "Import an image…"
+  },
+  "importImages": {
+    "message": "Import images"
+  },
+  "importedTag": {
+    "message": "imported"
+  },
+  "importingImages_one": {
+    "message": "Importing image…"
+  },
+  "importingImages_other": {
+    "message": "Importing $1 images…"
+  },
+  "includeWallpapers": {
+    "message": "Include wallpaper images"
+  },
+  "invalidAddress": {
+    "message": "Invalid address."
+  },
+  "kbActions": {
+    "message": "Actions (edit, icon, delete…)"
+  },
+  "kbCmdClick": {
+    "message": "⌘ / Ctrl + click"
+  },
+  "kbEscape": {
+    "message": "Esc"
+  },
+  "kbParentFolder": {
+    "message": "Go up to the parent folder"
+  },
+  "kbPrevNextTab": {
+    "message": "Previous / next tab"
+  },
+  "kbRightClick": {
+    "message": "Right-click"
+  },
+  "kbSearch": {
+    "message": "Search"
+  },
+  "kbSwipeTabs": {
+    "message": "Swipe between tabs (trackpad)"
+  },
+  "kbTwoFingers": {
+    "message": "Two fingers ↔"
+  },
+  "lang": {
+    "message": "en"
+  },
+  "later": {
+    "message": "Later"
+  },
+  "letterOrEmoji": {
+    "message": "Letter or emoji"
+  },
+  "light": {
+    "message": "Light"
+  },
+  "lightAndDark": {
+    "message": "Light and dark"
+  },
+  "linkAdded": {
+    "message": "“$1” added"
+  },
+  "linkCopied": {
+    "message": "Link copied"
+  },
+  "links_one": {
+    "message": "$1 link"
+  },
+  "links_other": {
+    "message": "$1 links"
+  },
+  "location": {
+    "message": "Location"
+  },
+  "maxColumns": {
+    "message": "Columns (max.)"
+  },
+  "menusAndPanels": {
+    "message": "Menus and panels"
+  },
+  "moveDown": {
+    "message": "Move down"
+  },
+  "moveLeft": {
+    "message": "Move left"
+  },
+  "moveRight": {
+    "message": "Move right"
+  },
+  "moveUp": {
+    "message": "Move up"
+  },
+  "movedInto": {
+    "message": "Moved to “$1”"
+  },
+  "name": {
+    "message": "Name"
+  },
+  "namePlaceholder": {
+    "message": "Optional — taken from the page"
+  },
+  "newFolderMenu": {
+    "message": "New folder…"
+  },
+  "newFolderTitle": {
+    "message": "New folder"
+  },
+  "newTabTitle": {
+    "message": "New Tab"
+  },
+  "noBookmarkFolders": {
+    "message": "No bookmark folders found. Import your bookmarks into your browser (Bookmarks menu › Import), then come back here."
+  },
+  "noDirectLinks": {
+    "message": "This folder has no direct links."
+  },
+  "noFoldersYet": {
+    "message": "No folders yet."
+  },
+  "noMatchingFolder": {
+    "message": "No matching folder."
+  },
+  "notABackup": {
+    "message": "This file isn’t a Cadran backup."
+  },
+  "open": {
+    "message": "Open"
+  },
+  "openAllInGroup": {
+    "message": "Open all in a tab group"
+  },
+  "openAllInTabs": {
+    "message": "Open all in tabs"
+  },
+  "openAllInWindow": {
+    "message": "Open all in a new window"
+  },
+  "openAllText": {
+    "message": "All the links in the folder “$1” will open."
+  },
+  "openInNewTab": {
+    "message": "Open in new tab"
+  },
+  "openInNewWindow": {
+    "message": "Open in new window"
+  },
+  "openInPrivateWindow": {
+    "message": "Open in private window"
+  },
+  "openLinks": {
+    "message": "Open links in"
+  },
+  "openLinksHint": {
+    "message": "⌘/Ctrl + click always opens a new tab"
+  },
+  "openNewTab": {
+    "message": "New tab"
+  },
+  "openSameTab": {
+    "message": "Same tab"
+  },
+  "openTabsConfirm_one": {
+    "message": "Open $1 tab?"
+  },
+  "openTabsConfirm_other": {
+    "message": "Open $1 tabs?"
+  },
+  "openThisAddress": {
+    "message": "Open this address"
+  },
+  "optional": {
+    "message": "Optional"
+  },
+  "ownHint": {
+    "message": "own"
+  },
+  "ownWallpaper": {
+    "message": "Own wallpaper for this tab"
+  },
+  "panelTitle": {
+    "message": "Settings"
+  },
+  "parentFolder": {
+    "message": "Parent folder"
+  },
+  "parentFolderHint": {
+    "message": "Parent folder (Esc)"
+  },
+  "recentlyClosed": {
+    "message": "Recently closed"
+  },
+  "recentlyClosedHint": {
+    "message": "Tabs and windows to reopen"
+  },
+  "redownload": {
+    "message": "Download again"
+  },
+  "redownloadAll": {
+    "message": "Download all again"
+  },
+  "removeTab": {
+    "message": "Remove tab"
+  },
+  "removeTabHint": {
+    "message": "Remove tab (the folder isn’t deleted)"
+  },
+  "renameFolderTitle": {
+    "message": "Rename folder"
+  },
+  "renameMenu": {
+    "message": "Rename…"
+  },
+  "renameTabHelp": {
+    "message": "The bookmark folder isn’t renamed. Leave empty to use its name."
+  },
+  "renameTabMenu": {
+    "message": "Rename tab…"
+  },
+  "renameTabTitle": {
+    "message": "Rename tab"
+  },
+  "reopenWindow": {
+    "message": "Reopen window ($1)"
+  },
+  "reset": {
+    "message": "Reset"
+  },
+  "resetConfirmText": {
+    "message": "Your bookmarks aren’t affected; only Cadran’s settings go back to their defaults."
+  },
+  "resetConfirmTitle": {
+    "message": "Reset settings?"
+  },
+  "revokeSiteAccess": {
+    "message": "Revoke access"
+  },
+  "rotateDaily": {
+    "message": "Every day"
+  },
+  "rotateEachOpening": {
+    "message": "Each new tab"
+  },
+  "rotateImages": {
+    "message": "Change image automatically"
+  },
+  "rotateNever": {
+    "message": "Never"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "search": {
+    "message": "Search"
+  },
+  "searchBar": {
+    "message": "Search bar"
+  },
+  "searchBarHint": {
+    "message": "Also filters all your bookmarks"
+  },
+  "searchEngine": {
+    "message": "Engine"
+  },
+  "searchEngineHeader": {
+    "message": "Search engine"
+  },
+  "searchFor": {
+    "message": "Search for “$1”"
+  },
+  "searchPlaceholder": {
+    "message": "Search the web or your bookmarks"
+  },
+  "searchPlaceholderWith": {
+    "message": "Search with $1 or your bookmarks"
+  },
+  "sections": {
+    "message": "Sections"
+  },
+  "sectionsPermissionHint": {
+    "message": "These two sections need an extra permission, requested only when you turn them on."
+  },
+  "selectAFolder": {
+    "message": "Select a folder."
+  },
+  "selectAtLeastOneFolder": {
+    "message": "Select at least one folder."
+  },
+  "setWallpaperOf": {
+    "message": "Set the wallpaper of"
+  },
+  "setWallpaperOfHint": {
+    "message": "Each tab can keep the default wallpaper or have its own"
+  },
+  "shortcut": {
+    "message": "Shortcut"
+  },
+  "shortcuts": {
+    "message": "Shortcuts"
+  },
+  "show": {
+    "message": "Show"
+  },
+  "showAnotherFolder": {
+    "message": "Show another folder"
+  },
+  "showAsTab": {
+    "message": "Show as a tab"
+  },
+  "showFoldersTitle": {
+    "message": "Show folders"
+  },
+  "showFolders_one": {
+    "message": "Show this folder"
+  },
+  "showFolders_other": {
+    "message": "Show these $1 folders"
+  },
+  "showNames": {
+    "message": "Show site / folder names"
+  },
+  "showTime": {
+    "message": "Show the time"
+  },
+  "siteAccessGranted": {
+    "message": "Site access allowed"
+  },
+  "siteAccessNotGranted": {
+    "message": "Site access not allowed"
+  },
+  "styleCards": {
+    "message": "Cards"
+  },
+  "styleIcons": {
+    "message": "Icons"
+  },
+  "tabAppearance": {
+    "message": "Appearance"
+  },
+  "tabFolders": {
+    "message": "Folders"
+  },
+  "tabHome": {
+    "message": "Home"
+  },
+  "tabMore": {
+    "message": "More"
+  },
+  "tabName": {
+    "message": "Tab name"
+  },
+  "tabNameHint": {
+    "message": "Name shown on the tab (the folder isn’t renamed)"
+  },
+  "tabRemoved": {
+    "message": "Tab “$1” removed"
+  },
+  "tabSection": {
+    "message": "Tab"
+  },
+  "tabWallpaper": {
+    "message": "Wallpaper"
+  },
+  "tabWallpaperMenu": {
+    "message": "Wallpaper for this tab…"
+  },
+  "tabWallpaperStillDefault": {
+    "message": "Wallpaper for this tab (default for now)"
+  },
+  "tabWithOwnWallpaper": {
+    "message": "$1 — own wallpaper"
+  },
+  "tabsCount_one": {
+    "message": "$1 tab"
+  },
+  "tabsCount_other": {
+    "message": "$1 tabs"
+  },
+  "textOnWallpaper": {
+    "message": "Text on wallpaper"
+  },
+  "tileStyle": {
+    "message": "Style"
+  },
+  "tiles": {
+    "message": "Tiles"
+  },
+  "timeFormat": {
+    "message": "Time format"
+  },
+  "topSites": {
+    "message": "Frequently visited"
+  },
+  "topSitesHint": {
+    "message": "Based on your browsing history"
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "unsupportedFormat": {
+    "message": "Unsupported format: $1"
+  },
+  "untitled": {
+    "message": "Untitled"
+  },
+  "use": {
+    "message": "Use"
+  },
+  "usesDefaultForNow": {
+    "message": "For now, it uses the default wallpaper"
+  },
+  "variantToSet": {
+    "message": "Wallpaper to set"
+  },
+  "wallpaper": {
+    "message": "Wallpaper"
+  },
+  "wallpaperSettings": {
+    "message": "Wallpaper settings"
+  },
+  "wallpaperToSet": {
+    "message": "Wallpaper to set"
+  },
+  "welcomeText": {
+    "message": "Choose the bookmark folders to show: each folder becomes a tab, with its sites as icons and its subfolders previewed."
+  },
+  "welcomeTitle": {
+    "message": "Welcome to Cadran"
+  },
+  "yourName": {
+    "message": "Your first name"
+  }
 }

@@ -5,7 +5,7 @@ import { getNode, createBookmark, updateBookmark, removeNode, isLocked, countLin
 import { openDialog, confirmDialog, toast } from './ui.js';
 import {
   paintPlate, getCustom, setCustomImage, setCustomImageFromUrl, setCustomMono, clearCustom,
-  refetchSite, isPermitted, PALETTE, gradientFor, monogram,
+  refetchSite, isPermitted, PALETTE, gradientFor, monogram, repaintAll,
 } from './icons.js';
 
 /** where : 'current' | 'tab' | 'background' | 'window' | 'private' */
@@ -213,6 +213,11 @@ export async function iconDialog(node) {
 
   const urlInput = h('input', { class: 'input', type: 'url', placeholder: 'https://…/logo.png', style: 'flex:1', 'aria-label': t('imageAddress') });
   const refetch = () => run(async () => {
+    if (window.CADRAN_WEB_MODE) {
+      await clearCustom(url);
+      repaintAll();
+      return;
+    }
     if (!isPermitted()) throw new Error(t('allowSiteAccessFirst'));
     await clearCustom(url);
     await refetchSite(url);
