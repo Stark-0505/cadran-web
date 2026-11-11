@@ -26,6 +26,60 @@
   function nextId() { const s=parseStore(); s.nextBookmarkId=(s.nextBookmarkId||10)+1; writeStore(s); return String(s.nextBookmarkId); }
   function notifyTree() { for(const k of Object.keys(bookmarkEvents)) if(k.startsWith('on')) { /* individual events are emitted by operations */ } }
   function deepClone(v) { return JSON.parse(JSON.stringify(v)); }
+
+  // Import a standard Netscape-format bookmarks HTML export. Websites cannot
+  // read Chrome Android's private bookmark database, so users select an export file.
+  window.CadranImportBookmarks = function importBookmarksHTML(html) {
+    const doc = new DOMParser().parseFromString(String(html || ''), 'text/html');
+    const rootDL = doc.querySelector('dl');
+    if (!rootDL) return 0;
+    let next = 100;
+    let imported = 0;
+    const makeId = () => String(++next);
+    const normalize = (s) => String(s || '').trim().toLowerCase().replace(/[^a-z]/g, '');
+    const roots = defaultTree();
+    const rootByName = new Map([
+      ['bookmarkbar', roots.children[0]], ['bookmarksbar', roots.children[0]],
+      ['otherbookmarks', roots.children[1]], ['mobilebookmarks', roots.children[2]],
+    ]);
+    function readDL(dl, parent) {
+      for (const dt of Array.from(dl.children).filter(el => el.tagName === 'DT')) {
+        const heading = Array.from(dt.children).find(el => el.tagName === 'H3');
+        const anchor = Array.from(dt.children).find(el => el.tagName === 'A');
+        const nested = Array.from(dt.children).find(el => el.tagName === 'DL');
+        if (heading) {
+          const title = heading.textContent.trim() || 'Folder';
+          const node = { id: makeId(), parentId: parent.id, title, children: [], index: parent.children.length };
+          parent.children.push(node);
+          if (nested) readDL(nested, node);
+        } else if (anchor) {
+          const url = anchor.getAttribute('href') || '';
+          if (!/^https?:|^ftp:|^mailto:/i.test(url)) continue;
+          parent.children.push({ id: makeId(), parentId: parent.id, title: anchor.textContent.trim() || url, url, index: parent.children.length });
+          imported++;
+        } else if (nested) readDL(nested, parent);
+      }
+    }
+    for (const dt of Array.from(rootDL.children).filter(el => el.tagName === 'DT')) {
+      const heading = Array.from(dt.children).find(el => el.tagName === 'H3');
+      const nested = Array.from(dt.children).find(el => el.tagName === 'DL');
+      if (heading && nested) {
+        const target = rootByName.get(normalize(heading.textContent));
+        readDL(nested, target || roots.children[1]);
+      } else if (nested) readDL(nested, roots.children[1]);
+      else if (Array.from(dt.children).some(el => el.tagName === 'A')) readDL({ children: [dt] }, roots.children[1]);
+    }
+    if (!imported) return 0;
+    roots.children.forEach((folder, i) => { folder.index = i; folder.parentId = '0'; });
+    const data = parseStore();
+    data.bookmarkTree = roots;
+    data.nextBookmarkId = next;
+    data.appStorage = data.appStorage || {};
+    if (data.appStorage.settings) data.appStorage.settings.groups = [];
+    writeStore(data);
+    return imported;
+  };
+
   const bookmarks = {
     ...bookmarkEvents,
     async getTree(){ return [deepClone(getTree())]; },

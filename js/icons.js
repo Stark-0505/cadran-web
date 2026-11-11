@@ -82,6 +82,10 @@ export function paintPlate(plate, item) {
   const c = custom.get(url);
   if (c) return c.type === 'mono' ? paintMono(plate, c.text, c.color) : paintImage(plate, c, item);
 
+  // A hosted web app cannot request Chrome extension host permissions. Use a
+  // high-resolution favicon endpoint by default instead of showing a dead permission prompt.
+  if (window.CADRAN_WEB_MODE && isWebUrl(url)) return paintWebFavicon(plate, item);
+
   const origin = originOf(url);
   const s = origin ? site.get(origin) : null;
   if (s?.ok) return paintImage(plate, s, item);
@@ -124,6 +128,22 @@ function paintImage(plate, rec, item) {
   img.decoding = 'async';
   img.onerror = () => fallbackToMono(plate, item);
   img.src = rec.src;
+  plate.append(img);
+}
+
+
+function paintWebFavicon(plate, item) {
+  plate.classList.add('web-favicon');
+  plate.style.background = '#fff';
+  const img = new Image();
+  img.alt = '';
+  img.draggable = false;
+  img.decoding = 'async';
+  img.loading = 'lazy';
+  img.referrerPolicy = 'no-referrer';
+  img.onerror = () => fallbackToMono(plate, item);
+  // Google S2 supports larger requested sizes where the origin has them.
+  img.src = faviconUrl(item.url, 256);
   plate.append(img);
 }
 
@@ -203,10 +223,12 @@ async function verifyFavicon(url) {
 
 // ---------- Icônes haute définition récupérées sur les sites ----------
 export async function hasSitePermission() {
+  if (window.CADRAN_WEB_MODE) return true;
   try { return await chrome.permissions.contains(SITE_PERMS); } catch { return false; }
 }
 /** À appeler directement dans un gestionnaire de clic (geste utilisateur requis). */
 export async function requestSitePermission() {
+  if (window.CADRAN_WEB_MODE) { permitted = true; repaint(() => true); return true; }
   const ok = await chrome.permissions.request(SITE_PERMS);
   if (ok) {
     permitted = true;
@@ -229,7 +251,7 @@ const queued = new Set();
 let active = 0;
 
 function wantsFetch(origin) {
-  if (!fetchEnabled || !permitted || queued.has(origin)) return false;
+  if (window.CADRAN_WEB_MODE || !fetchEnabled || !permitted || queued.has(origin)) return false;
   const s = site.get(origin);
   return !s || (!s.ok && Date.now() - s.at > RETRY_MS);
 }

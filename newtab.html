@@ -44,8 +44,28 @@
   </main>
 
   <div id="corner">
+    <button id="btn-import-bookmarks" class="round-btn import-bookmarks-btn" type="button" aria-label="Import bookmarks HTML" title="Import bookmarks HTML">⇧</button>
     <button id="btn-settings" class="round-btn" type="button" data-i18n-title="panelTitle" data-i18n-aria-label="panelTitle"></button>
+    <input id="bookmarks-html-input" type="file" accept=".html,.htm,text/html" hidden>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const button = document.getElementById('btn-import-bookmarks');
+      const input = document.getElementById('bookmarks-html-input');
+      button?.addEventListener('click', () => input?.click());
+      input?.addEventListener('change', async () => {
+        const file = input.files?.[0]; input.value = '';
+        if (!file) return;
+        try {
+          const html = await file.text();
+          const count = window.CadranImportBookmarks?.(html);
+          if (!count) { alert('No bookmarks were found. Choose a bookmarks HTML export.'); return; }
+          alert(`Imported ${count} bookmarks. Cadran will reload now.`);
+          location.reload();
+        } catch (error) { console.error(error); alert('Could not import this bookmarks file.'); }
+      });
+    });
+  </script>
   <aside id="panel" class="glass-panel" data-i18n-aria-label="panelTitle"></aside>
   <div id="layer"></div>
 </body>

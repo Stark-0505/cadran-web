@@ -1,4 +1,4 @@
-const CACHE = 'cadran-web-v1';
+const CACHE = 'cadran-web-v2';
 const SHELL = ['./', './index.html', './newtab.html', './manifest.webmanifest', './css/base.css', './css/tiles.css', './css/ui.css', './js/web-compat.js', './js/app.js', './js/pager.js', './js/i18n.js', './js/search.js', './js/widgets.js', './js/plus-config.js', './js/bookmarks.js', './js/panel.js', './js/plus.js', './js/store.js', './js/grid.js', './js/picker.js', './js/db.js', './js/wallpaper.js', './js/actions.js', './js/ui.js', './js/util.js', './js/boot.js', './js/icons.js', './js/analog-clock.js', './icons/icon-128.png', './icons/icon-32.png'];
 self.addEventListener('install', event => { event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim())); });

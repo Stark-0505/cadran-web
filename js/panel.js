@@ -466,8 +466,9 @@ function moreTab() {
   const status = h('span', null, '…');
   const permBox = h('div', { class: 'button-row' });
   const count = h('small', null, tp('iconsCached', siteIconCount()));
+  const webMode = !!window.CADRAN_WEB_MODE;
 
-  hasSitePermission().then((ok) => {
+  if (!webMode) hasSitePermission().then((ok) => {
     status.replaceChildren(h('i', { class: 'status-dot' + (ok ? ' on' : '') }), ok ? t('siteAccessGranted') : t('siteAccessNotGranted'));
     permBox.replaceChildren(ok
       ? h('button', {
@@ -489,14 +490,20 @@ function moreTab() {
   const withImages = h('input', { type: 'checkbox', checked: true });
 
   return [
-    h('h3', null, t('hdIcons')),
-    h('div', { class: 'card' },
-      row(status, toggle(s.icons.fetchSites, (v) => set((st) => { st.icons.fetchSites = v; })), t('fetchSiteIconsHint')),
-      h('div', { class: 'row stack' }, permBox,
-        h('div', { class: 'button-row' },
-          count,
-          h('button', { class: 'btn small', type: 'button', onclick: async () => { await clearSiteIcons(); toast(t('iconsWillRedownload')); render(); } }, icon('refresh', 14), t('redownloadAll'))))),
-    h('p', { class: 'hint' }, t('hdIconsHint')),
+    ...(webMode ? [
+      h('h3', null, t('hdIcons')),
+      h('div', { class: 'card' }, h('p', null, 'High-resolution speed-dial icons are enabled automatically. Cadran uses a public favicon service where available. No site-access permission or toggle is needed.')),
+      h('p', { class: 'hint' }, 'Some sites only publish small favicons, so a high-resolution version may not exist.'),
+    ] : [
+      h('h3', null, t('hdIcons')),
+      h('div', { class: 'card' },
+        row(status, toggle(s.icons.fetchSites, (v) => set((st) => { st.icons.fetchSites = v; })), t('fetchSiteIconsHint')),
+        h('div', { class: 'row stack' }, permBox,
+          h('div', { class: 'button-row' },
+            count,
+            h('button', { class: 'btn small', type: 'button', onclick: async () => { await clearSiteIcons(); toast(t('iconsWillRedownload')); render(); } }, icon('refresh', 14), t('redownloadAll'))))),
+      h('p', { class: 'hint' }, t('hdIconsHint')),
+    ]),
 
     h('h3', null, t('backup')),
     h('div', { class: 'card' },
