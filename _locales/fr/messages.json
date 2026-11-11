@@ -1,0 +1,992 @@
+{
+   "actionFailed": {
+      "message": "Action impossible"
+   },
+   "actionTitle": {
+      "message": "Ouvrir Cadran"
+   },
+   "add": {
+      "message": "Ajouter"
+   },
+   "addFolders": {
+      "message": "Ajouter des dossiers…"
+   },
+   "addSiteMenu": {
+      "message": "Ajouter un site…"
+   },
+   "addSiteOrFolder": {
+      "message": "Ajouter un site ou un dossier"
+   },
+   "addSiteTitle": {
+      "message": "Ajouter un site"
+   },
+   "addTileSetting": {
+      "message": "Tuile « Ajouter »"
+   },
+   "addToFolder": {
+      "message": "Ajouter à « $1 »"
+   },
+   "addedToBookmarks": {
+      "message": "Ajouté aux favoris"
+   },
+   "address": {
+      "message": "Adresse"
+   },
+   "addressPlaceholder": {
+      "message": "exemple.fr"
+   },
+   "allow": {
+      "message": "Autoriser"
+   },
+   "allowSiteAccess": {
+      "message": "Autoriser l’accès aux sites"
+   },
+   "allowSiteAccessFirst": {
+      "message": "Autorisez d’abord l’accès aux sites (Réglages › Plus › Icônes haute définition)."
+   },
+   "alreadyShown": {
+      "message": "Déjà affiché"
+   },
+   "alreadyShownAsTab": {
+      "message": "Déjà affiché en onglet"
+   },
+   "auto": {
+      "message": "Auto"
+   },
+   "automatic": {
+      "message": "Automatique"
+   },
+   "back": {
+      "message": "Retour"
+   },
+   "backup": {
+      "message": "Sauvegarde"
+   },
+   "backupImported": {
+      "message": "Sauvegarde importée"
+   },
+   "behavior": {
+      "message": "Comportement"
+   },
+   "blur": {
+      "message": "Flou"
+   },
+   "bookmarkletsBlocked": {
+      "message": "Les bookmarklets ne peuvent pas être lancés depuis cette page."
+   },
+   "bookmarks": {
+      "message": "Favoris"
+   },
+   "browseAllFolders": {
+      "message": "Parcourir tous les dossiers…"
+   },
+   "cancel": {
+      "message": "Annuler"
+   },
+   "cantMoveIntoItself": {
+      "message": "Impossible de déplacer un dossier dans lui-même."
+   },
+   "cantOpenLink": {
+      "message": "Impossible d’ouvrir ce lien."
+   },
+   "cantOpenPrivate": {
+      "message": "Impossible d’ouvrir une fenêtre privée."
+   },
+   "cantUndo": {
+      "message": "Impossible d’annuler."
+   },
+   "changeIconMenu": {
+      "message": "Changer l’icône…"
+   },
+   "changeWallpaperMenu": {
+      "message": "Changer le fond d’écran…"
+   },
+   "choose": {
+      "message": "Choisir"
+   },
+   "chooseAnotherFolder": {
+      "message": "Choisir un autre dossier"
+   },
+   "chooseAnotherFolderMenu": {
+      "message": "Choisir un autre dossier…"
+   },
+   "chooseEngine": {
+      "message": "Choisir le moteur de recherche"
+   },
+   "chooseFolderForTab": {
+      "message": "Choisir le dossier de cet onglet"
+   },
+   "chooseFolders": {
+      "message": "Choisir des dossiers"
+   },
+   "clock": {
+      "message": "Horloge"
+   },
+   "clockAnalog": {
+      "message": "Analogique"
+   },
+   "clockDigital": {
+      "message": "Numérique"
+   },
+   "clockSeconds": {
+      "message": "Trotteuse"
+   },
+   "clockSecondsHint": {
+      "message": "Elle fait le tour en un peu moins d’une minute, puis marque une pause avant de repartir à la minute pile."
+   },
+   "clockStyle": {
+      "message": "Style"
+   },
+   "close": {
+      "message": "Fermer"
+   },
+   "colorN": {
+      "message": "Couleur $1"
+   },
+   "colors": {
+      "message": "Couleurs"
+   },
+   "confirm": {
+      "message": "Confirmer"
+   },
+   "copyFailed": {
+      "message": "Copie impossible"
+   },
+   "copyLink": {
+      "message": "Copier le lien"
+   },
+   "create": {
+      "message": "Créer"
+   },
+   "customColor": {
+      "message": "Couleur personnalisée"
+   },
+   "dark": {
+      "message": "Sombre"
+   },
+   "darkWallpaper": {
+      "message": "Fond différent en mode sombre"
+   },
+   "darkWallpaperHint": {
+      "message": "Change tout seul selon le thème clair ou sombre du système"
+   },
+   "date": {
+      "message": "Date"
+   },
+   "defaultEngineShort": {
+      "message": "Moteur par défaut"
+   },
+   "defaultFolderName": {
+      "message": "Dossier"
+   },
+   "defaultWallpaperAllTabs": {
+      "message": "Fond par défaut (tous les onglets)"
+   },
+   "delete": {
+      "message": "Supprimer"
+   },
+   "deleteConfirmTitle": {
+      "message": "Supprimer « $1 » ?"
+   },
+   "deleteFailed": {
+      "message": "Suppression impossible : $1"
+   },
+   "deleteFolderMenu": {
+      "message": "Supprimer le dossier…"
+   },
+   "deleteFolderText_one": {
+      "message": "Le dossier et le lien qu’il contient seront supprimés de vos favoris."
+   },
+   "deleteFolderText_other": {
+      "message": "Le dossier et les $1 liens qu’il contient seront supprimés de vos favoris."
+   },
+   "deleteImage": {
+      "message": "Supprimer cette image"
+   },
+   "deleteImageConfirm": {
+      "message": "Supprimer cette image ?"
+   },
+   "deletedToast": {
+      "message": "« $1 » supprimé"
+   },
+   "dim": {
+      "message": "Assombrir"
+   },
+   "displayedName": {
+      "message": "Nom affiché"
+   },
+   "done": {
+      "message": "Terminé"
+   },
+   "dropImageHint": {
+      "message": "Déposez une image (JPEG, PNG, WebP…) pour en faire votre fond d’écran."
+   },
+   "dropImagesHint": {
+      "message": "Astuce : glissez une ou plusieurs images directement sur la page."
+   },
+   "editBookmarkTitle": {
+      "message": "Modifier le favori"
+   },
+   "editMenu": {
+      "message": "Modifier…"
+   },
+   "emptyFolderShort": {
+      "message": "vide"
+   },
+   "emptyFolderText": {
+      "message": "Ajoutez un site avec la tuile « + », ou glissez un lien ici."
+   },
+   "emptyFolderTitle": {
+      "message": "Ce dossier est vide"
+   },
+   "engineBrowserDefault": {
+      "message": "Moteur par défaut du navigateur"
+   },
+   "errorTitle": {
+      "message": "Un problème est survenu"
+   },
+   "expand": {
+      "message": "Déplier"
+   },
+   "export": {
+      "message": "Exporter"
+   },
+   "exportHint": {
+      "message": "Onglets, apparence, icônes personnalisées"
+   },
+   "exportSettings": {
+      "message": "Exporter les réglages"
+   },
+   "extDescription": {
+      "message": "Page Nouvel onglet façon Safari / Vivaldi : vos dossiers de favoris en grilles d’icônes, avec fond d’écran personnalisable."
+   },
+   "extName": {
+      "message": "Cadran — Speed Dial pour vos favoris"
+   },
+   "fetchSiteIconsHint": {
+      "message": "Récupérer l’icône de chaque site"
+   },
+   "fetchingIcons": {
+      "message": "Récupération des icônes en cours…"
+   },
+   "fieldRequired": {
+      "message": "Le champ « $1 » est requis."
+   },
+   "filterFolders": {
+      "message": "Filtrer les dossiers…"
+   },
+   "folderMissingText": {
+      "message": "Le dossier « $1 » n’existe plus dans vos favoris."
+   },
+   "folderName": {
+      "message": "Nom du dossier"
+   },
+   "folderNotFound": {
+      "message": "Dossier introuvable"
+   },
+   "folderPreview": {
+      "message": "Aperçu des dossiers"
+   },
+   "foldersAsTabs": {
+      "message": "Dossiers affichés en onglets"
+   },
+   "foldersHint": {
+      "message": "Chaque dossier devient un onglet en haut de la page. Ajouts, suppressions et glisser-déposer sont enregistrés directement dans les favoris du navigateur : tout reste synchronisé."
+   },
+   "footer": {
+      "message": "Cadran $1 — vos données restent dans votre navigateur."
+   },
+   "format12h": {
+      "message": "12 h"
+   },
+   "format24h": {
+      "message": "24 h"
+   },
+   "fromImageAddress": {
+      "message": "Depuis l’adresse d’une image"
+   },
+   "goTo": {
+      "message": "Aller à $1"
+   },
+   "grad_aurore": {
+      "message": "Aurore"
+   },
+   "grad_brume": {
+      "message": "Brume"
+   },
+   "grad_crepuscule": {
+      "message": "Crépuscule"
+   },
+   "grad_foret": {
+      "message": "Forêt"
+   },
+   "grad_graphite": {
+      "message": "Graphite"
+   },
+   "grad_lagon": {
+      "message": "Lagon"
+   },
+   "grad_lavande": {
+      "message": "Lavande"
+   },
+   "grad_menthe": {
+      "message": "Menthe"
+   },
+   "grad_nuit": {
+      "message": "Nuit"
+   },
+   "grad_ocean": {
+      "message": "Océan"
+   },
+   "grad_peche": {
+      "message": "Pêche"
+   },
+   "grad_sierra": {
+      "message": "Sierra"
+   },
+   "gradients": {
+      "message": "Dégradés"
+   },
+   "greeting": {
+      "message": "Salutation"
+   },
+   "greetingAfternoon": {
+      "message": "Bon après-midi"
+   },
+   "greetingEvening": {
+      "message": "Bonsoir"
+   },
+   "greetingHint": {
+      "message": "Bonjour, Bon après-midi, Bonsoir…"
+   },
+   "greetingMorning": {
+      "message": "Bonjour"
+   },
+   "greetingNight": {
+      "message": "Bonne nuit"
+   },
+   "greetingWithName": {
+      "message": "$1, $2"
+   },
+   "hdIcons": {
+      "message": "Icônes haute définition"
+   },
+   "hdIconsHint": {
+      "message": "Cadran télécharge l’icône officielle de chaque site (celle utilisée par Safari et l’iPhone) directement sur le site, sans cookies ni service tiers. L’autorisation ne sert qu’à cela. Sinon, Cadran utilise les favicons connus du navigateur, ou une lettre."
+   },
+   "hoverFolderTabs": {
+      "message": "Onglets de dossiers au survol"
+   },
+   "hoverFolderTabsHint": {
+      "message": "Les onglets n’apparaissent que lorsque la souris passe dessus, ou pendant un glisser-déposer."
+   },
+   "iconOfTitle": {
+      "message": "Icône de « $1 »"
+   },
+   "iconSize": {
+      "message": "Taille des icônes"
+   },
+   "iconsCached_one": {
+      "message": "$1 icône en cache"
+   },
+   "iconsCached_other": {
+      "message": "$1 icônes en cache"
+   },
+   "iconsNoticeText": {
+      "message": "Autorisez Cadran à récupérer l’icône officielle de chaque site. L’accès sert uniquement à télécharger ces icônes."
+   },
+   "iconsNoticeTitle": {
+      "message": "Des icônes nettes, comme sur Safari"
+   },
+   "iconsWillRedownload": {
+      "message": "Les icônes vont être retéléchargées."
+   },
+   "imageAddress": {
+      "message": "Adresse d’une image"
+   },
+   "imageDownloadFailed": {
+      "message": "Impossible de télécharger cette image. Enregistrez-la puis importez-la."
+   },
+   "imageUnreadable": {
+      "message": "Cette image n’a pas pu être lue."
+   },
+   "images": {
+      "message": "Images"
+   },
+   "imagesAdded_one": {
+      "message": "Fond d’écran mis à jour"
+   },
+   "imagesAdded_other": {
+      "message": "$1 images ajoutées"
+   },
+   "imagesFailed_one": {
+      "message": "$1 image n’a pas pu être importée."
+   },
+   "imagesFailed_other": {
+      "message": "$1 images n’ont pas pu être importées."
+   },
+   "importBackup": {
+      "message": "Importer une sauvegarde"
+   },
+   "importEllipsis": {
+      "message": "Importer…"
+   },
+   "importFailed": {
+      "message": "Import impossible"
+   },
+   "importImageEllipsis": {
+      "message": "Importer une image…"
+   },
+   "importImages": {
+      "message": "Importer des images"
+   },
+   "importedTag": {
+      "message": "importé"
+   },
+   "importingImages_one": {
+      "message": "Import de l’image…"
+   },
+   "importingImages_other": {
+      "message": "Import de $1 images…"
+   },
+   "includeWallpapers": {
+      "message": "Inclure les images de fond"
+   },
+   "invalidAddress": {
+      "message": "Adresse invalide."
+   },
+   "kbActions": {
+      "message": "Actions (modifier, icône, supprimer…)"
+   },
+   "kbCmdClick": {
+      "message": "⌘ / Ctrl + clic"
+   },
+   "kbEscape": {
+      "message": "Échap"
+   },
+   "kbParentFolder": {
+      "message": "Remonter au dossier parent"
+   },
+   "kbPrevNextTab": {
+      "message": "Onglet précédent / suivant"
+   },
+   "kbRightClick": {
+      "message": "Clic droit"
+   },
+   "kbSearch": {
+      "message": "Rechercher"
+   },
+   "kbSwipeTabs": {
+      "message": "Glisser d’un onglet à l’autre (trackpad)"
+   },
+   "kbTwoFingers": {
+      "message": "Deux doigts ↔"
+   },
+   "lang": {
+      "message": "fr"
+   },
+   "later": {
+      "message": "Plus tard"
+   },
+   "letterOrEmoji": {
+      "message": "Lettre ou emoji"
+   },
+   "light": {
+      "message": "Clair"
+   },
+   "lightAndDark": {
+      "message": "Clair et sombre"
+   },
+   "linkAdded": {
+      "message": "« $1 » ajouté"
+   },
+   "linkCopied": {
+      "message": "Lien copié"
+   },
+   "links_one": {
+      "message": "$1 lien"
+   },
+   "links_other": {
+      "message": "$1 liens"
+   },
+   "location": {
+      "message": "Emplacement"
+   },
+   "maxColumns": {
+      "message": "Colonnes (max.)"
+   },
+   "menusAndPanels": {
+      "message": "Menus et panneaux"
+   },
+   "moveDown": {
+      "message": "Descendre"
+   },
+   "moveLeft": {
+      "message": "Déplacer à gauche"
+   },
+   "moveRight": {
+      "message": "Déplacer à droite"
+   },
+   "moveUp": {
+      "message": "Monter"
+   },
+   "movedInto": {
+      "message": "Déplacé dans « $1 »"
+   },
+   "name": {
+      "message": "Nom"
+   },
+   "namePlaceholder": {
+      "message": "Facultatif — déduit de la page"
+   },
+   "newFolderMenu": {
+      "message": "Nouveau dossier…"
+   },
+   "newFolderTitle": {
+      "message": "Nouveau dossier"
+   },
+   "newTabTitle": {
+      "message": "Nouvel onglet"
+   },
+   "noBookmarkFolders": {
+      "message": "Aucun dossier de favoris trouvé. Importez vos favoris dans votre navigateur (menu Favoris › Importer), puis revenez ici."
+   },
+   "noDirectLinks": {
+      "message": "Ce dossier ne contient aucun lien direct."
+   },
+   "noFoldersYet": {
+      "message": "Aucun dossier pour le moment."
+   },
+   "noMatchingFolder": {
+      "message": "Aucun dossier ne correspond."
+   },
+   "notABackup": {
+      "message": "Ce fichier n’est pas une sauvegarde Cadran."
+   },
+   "open": {
+      "message": "Ouvrir"
+   },
+   "openAllInGroup": {
+      "message": "Tout ouvrir dans un groupe d’onglets"
+   },
+   "openAllInTabs": {
+      "message": "Tout ouvrir dans des onglets"
+   },
+   "openAllInWindow": {
+      "message": "Tout ouvrir dans une nouvelle fenêtre"
+   },
+   "openAllText": {
+      "message": "Tous les liens du dossier « $1 » vont s’ouvrir."
+   },
+   "openInNewTab": {
+      "message": "Ouvrir dans un nouvel onglet"
+   },
+   "openInNewWindow": {
+      "message": "Ouvrir dans une nouvelle fenêtre"
+   },
+   "openInPrivateWindow": {
+      "message": "Ouvrir dans une fenêtre privée"
+   },
+   "openLinks": {
+      "message": "Ouvrir les liens"
+   },
+   "openLinksHint": {
+      "message": "⌘/Ctrl + clic ouvre toujours un nouvel onglet"
+   },
+   "openNewTab": {
+      "message": "Nouvel onglet"
+   },
+   "openSameTab": {
+      "message": "Même onglet"
+   },
+   "openTabsConfirm_one": {
+      "message": "Ouvrir $1 onglet ?"
+   },
+   "openTabsConfirm_other": {
+      "message": "Ouvrir $1 onglets ?"
+   },
+   "openThisAddress": {
+      "message": "Ouvrir cette adresse"
+   },
+   "optional": {
+      "message": "Facultatif"
+   },
+   "ownHint": {
+      "message": "propre"
+   },
+   "ownWallpaper": {
+      "message": "Fond propre à cet onglet"
+   },
+   "panelTitle": {
+      "message": "Réglages"
+   },
+   "parentFolder": {
+      "message": "Dossier parent"
+   },
+   "parentFolderHint": {
+      "message": "Dossier parent (Échap)"
+   },
+   "plusActivate": {
+      "message": "Activer"
+   },
+   "plusActivated": {
+      "message": "Cadran+ est activé. Merci !"
+   },
+   "plusActiveTitle": {
+      "message": "Cadran+ est activé"
+   },
+   "plusBuy": {
+      "message": "Acheter Cadran+ · $1"
+   },
+   "plusChecking": {
+      "message": "Vérification…"
+   },
+   "plusDiscover": {
+      "message": "Découvrir"
+   },
+   "plusErrorInvalid": {
+      "message": "Cette clé n’est pas valable. Vérifiez qu’elle est complète."
+   },
+   "plusErrorLimit": {
+      "message": "Cette clé est déjà activée sur le nombre maximal d’appareils. Retirez-la d’un autre appareil, puis réessayez."
+   },
+   "plusErrorNetwork": {
+      "message": "Impossible de joindre le service de vérification. Vérifiez votre connexion, puis réessayez."
+   },
+   "plusFeatureAnalogClock": {
+      "message": "Une horloge analogique, dont la trotteuse marque une pause à chaque minute"
+   },
+   "plusFeatureFuture": {
+      "message": "Les prochaines fonctions de Cadran+, sans supplément"
+   },
+   "plusFeatureRotation": {
+      "message": "Des images qui changent toutes seules, à chaque nouvel onglet ou chaque jour"
+   },
+   "plusFeatureTabWallpapers": {
+      "message": "Un fond différent pour chaque onglet, avec un fondu enchaîné quand vous passez de l’un à l’autre"
+   },
+   "plusFindKey": {
+      "message": "Retrouver ma clé"
+   },
+   "plusFounderText": {
+      "message": "Vous avez adopté Cadran avant l’ouverture des ventes : Cadran+ vous est offert, pour toujours. Merci !"
+   },
+   "plusFounderTitle": {
+      "message": "Offert à vie"
+   },
+   "plusHaveKey": {
+      "message": "Vous avez une clé ?"
+   },
+   "plusInactive": {
+      "message": "Enregistré, visible avec Cadran+"
+   },
+   "plusIntro": {
+      "message": "Cadran reste entièrement gratuit. Cadran+ y ajoute quelques raffinements, pour un seul paiement."
+   },
+   "plusKeyHint": {
+      "message": "Après le paiement, votre clé vous attend dans votre espace client Polar."
+   },
+   "plusKeyLabel": {
+      "message": "Clé de licence"
+   },
+   "plusKeyPlaceholder": {
+      "message": "Collez votre clé ici"
+   },
+   "plusKeyShown": {
+      "message": "Clé $1"
+   },
+   "plusManage": {
+      "message": "Gérer"
+   },
+   "plusOneTime": {
+      "message": "Paiement unique, sans abonnement, dans un nouvel onglet."
+   },
+   "plusPreviewNote": {
+      "message": "Essai de Cadran+ : vos réglages sont enregistrés, mais ne s’affichent que sur cette page."
+   },
+   "plusPreviewStarted": {
+      "message": "Cadran+ est actif sur cette page, jusqu’à sa fermeture"
+   },
+   "plusPrivacy": {
+      "message": "La clé est vérifiée une seule fois, à l’activation, auprès de Polar, qui gère les paiements. Rien d’autre ne quitte votre navigateur."
+   },
+   "plusReasonAnalogClock": {
+      "message": "L’horloge analogique fait partie de Cadran+."
+   },
+   "plusReasonRotation": {
+      "message": "Le changement d’image automatique fait partie de Cadran+."
+   },
+   "plusReasonTabWallpaper": {
+      "message": "Un fond propre à chaque onglet fait partie de Cadran+."
+   },
+   "plusRemove": {
+      "message": "Retirer de cet appareil"
+   },
+   "plusRemoveConfirm": {
+      "message": "Retirer Cadran+ de cet appareil ?"
+   },
+   "plusRemoveText": {
+      "message": "La clé redevient disponible pour un autre appareil. Vos réglages sont conservés."
+   },
+   "plusRemoved": {
+      "message": "Cadran+ a été retiré de cet appareil"
+   },
+   "plusStatusActive": {
+      "message": "Activé sur cet appareil"
+   },
+   "plusStatusFree": {
+      "message": "Un fond par onglet, une horloge analogique…"
+   },
+   "plusStatusPreview": {
+      "message": "Essai sur cette page"
+   },
+   "plusSupport": {
+      "message": "En achetant Cadran+, vous soutenez un développement indépendant."
+   },
+   "plusTry": {
+      "message": "Essayer sur cette page"
+   },
+   "recentlyClosed": {
+      "message": "Récemment fermés"
+   },
+   "recentlyClosedHint": {
+      "message": "Onglets et fenêtres à rouvrir"
+   },
+   "redownload": {
+      "message": "Retélécharger"
+   },
+   "redownloadAll": {
+      "message": "Tout retélécharger"
+   },
+   "removeTab": {
+      "message": "Retirer l’onglet"
+   },
+   "removeTabHint": {
+      "message": "Retirer l’onglet (le dossier n’est pas supprimé)"
+   },
+   "renameFolderTitle": {
+      "message": "Renommer le dossier"
+   },
+   "renameMenu": {
+      "message": "Renommer…"
+   },
+   "renameTabHelp": {
+      "message": "Le dossier de favoris n’est pas renommé. Laissez vide pour utiliser son nom."
+   },
+   "renameTabMenu": {
+      "message": "Renommer l’onglet…"
+   },
+   "renameTabTitle": {
+      "message": "Renommer l’onglet"
+   },
+   "reopenWindow": {
+      "message": "Rouvrir la fenêtre ($1)"
+   },
+   "reset": {
+      "message": "Réinitialiser"
+   },
+   "resetConfirmText": {
+      "message": "Vos favoris ne sont pas touchés, seuls les réglages de Cadran reviennent à zéro."
+   },
+   "resetConfirmTitle": {
+      "message": "Réinitialiser les réglages ?"
+   },
+   "revokeSiteAccess": {
+      "message": "Retirer l’autorisation"
+   },
+   "rotateDaily": {
+      "message": "Chaque jour"
+   },
+   "rotateEachOpening": {
+      "message": "À chaque ouverture"
+   },
+   "rotateImages": {
+      "message": "Changer d’image automatiquement"
+   },
+   "rotateNever": {
+      "message": "Jamais"
+   },
+   "save": {
+      "message": "Enregistrer"
+   },
+   "search": {
+      "message": "Recherche"
+   },
+   "searchBar": {
+      "message": "Barre de recherche"
+   },
+   "searchBarHint": {
+      "message": "Filtre aussi tous vos favoris"
+   },
+   "searchEngine": {
+      "message": "Moteur"
+   },
+   "searchEngineHeader": {
+      "message": "Moteur de recherche"
+   },
+   "searchFor": {
+      "message": "Rechercher « $1 »"
+   },
+   "searchPlaceholder": {
+      "message": "Rechercher sur le Web ou dans vos favoris"
+   },
+   "searchPlaceholderWith": {
+      "message": "Rechercher avec $1 ou dans vos favoris"
+   },
+   "sections": {
+      "message": "Sections"
+   },
+   "sectionsPermissionHint": {
+      "message": "Ces deux sections demandent une autorisation supplémentaire, uniquement au moment où vous les activez."
+   },
+   "selectAFolder": {
+      "message": "Sélectionnez un dossier."
+   },
+   "selectAtLeastOneFolder": {
+      "message": "Sélectionnez au moins un dossier."
+   },
+   "setWallpaperOf": {
+      "message": "Régler le fond de"
+   },
+   "setWallpaperOfHint": {
+      "message": "Chaque onglet peut garder le fond par défaut ou avoir le sien"
+   },
+   "shortcut": {
+      "message": "Raccourci"
+   },
+   "shortcuts": {
+      "message": "Raccourcis"
+   },
+   "show": {
+      "message": "Afficher"
+   },
+   "showAnotherFolder": {
+      "message": "Afficher un autre dossier"
+   },
+   "showAsTab": {
+      "message": "Afficher en onglet"
+   },
+   "showFoldersTitle": {
+      "message": "Afficher des dossiers"
+   },
+   "showFolders_one": {
+      "message": "Afficher ce dossier"
+   },
+   "showFolders_other": {
+      "message": "Afficher ces $1 dossiers"
+   },
+   "showNames": {
+      "message": "Afficher nom de sites / dossiers"
+   },
+   "showTime": {
+      "message": "Afficher l’heure"
+   },
+   "siteAccessGranted": {
+      "message": "Accès aux sites autorisé"
+   },
+   "siteAccessNotGranted": {
+      "message": "Accès aux sites non autorisé"
+   },
+   "styleCards": {
+      "message": "Cartes"
+   },
+   "styleIcons": {
+      "message": "Icônes"
+   },
+   "tabAppearance": {
+      "message": "Apparence"
+   },
+   "tabFolders": {
+      "message": "Dossiers"
+   },
+   "tabHome": {
+      "message": "Accueil"
+   },
+   "tabMore": {
+      "message": "Plus"
+   },
+   "tabName": {
+      "message": "Nom de l’onglet"
+   },
+   "tabNameHint": {
+      "message": "Nom affiché sur l’onglet (le dossier n’est pas renommé)"
+   },
+   "tabRemoved": {
+      "message": "Onglet « $1 » retiré"
+   },
+   "tabSection": {
+      "message": "Onglet"
+   },
+   "tabWallpaper": {
+      "message": "Fond"
+   },
+   "tabWallpaperMenu": {
+      "message": "Fond de cet onglet…"
+   },
+   "tabWallpaperStillDefault": {
+      "message": "Fond de cet onglet (par défaut pour l’instant)"
+   },
+   "tabWithOwnWallpaper": {
+      "message": "$1 — fond propre"
+   },
+   "tabsCount_one": {
+      "message": "$1 onglet"
+   },
+   "tabsCount_other": {
+      "message": "$1 onglets"
+   },
+   "textOnWallpaper": {
+      "message": "Texte sur le fond"
+   },
+   "tileStyle": {
+      "message": "Style"
+   },
+   "tiles": {
+      "message": "Tuiles"
+   },
+   "timeFormat": {
+      "message": "Format de l’heure"
+   },
+   "topSites": {
+      "message": "Sites fréquents"
+   },
+   "topSitesHint": {
+      "message": "D’après votre historique de navigation"
+   },
+   "undo": {
+      "message": "Annuler"
+   },
+   "unsupportedFormat": {
+      "message": "Format non pris en charge : $1"
+   },
+   "untitled": {
+      "message": "Sans titre"
+   },
+   "use": {
+      "message": "Utiliser"
+   },
+   "usesDefaultForNow": {
+      "message": "Pour l’instant, il utilise le fond par défaut"
+   },
+   "variantToSet": {
+      "message": "Fond à régler"
+   },
+   "wallpaper": {
+      "message": "Fond d’écran"
+   },
+   "wallpaperSettings": {
+      "message": "Réglages du fond"
+   },
+   "wallpaperToSet": {
+      "message": "Fond à régler"
+   },
+   "welcomeText": {
+      "message": "Choisissez les dossiers de favoris à afficher : chaque dossier devient un onglet, avec ses sites en icônes et ses sous-dossiers en aperçu."
+   },
+   "welcomeTitle": {
+      "message": "Bienvenue dans Cadran"
+   },
+   "yourName": {
+      "message": "Votre prénom"
+   }
+}

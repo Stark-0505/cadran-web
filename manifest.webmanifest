@@ -1,0 +1,17 @@
+{
+  "name": "Cadran Start Page",
+  "short_name": "Cadran",
+  "description": "A customizable browser start page",
+  "start_url": "./newtab.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#17171b",
+  "theme_color": "#17171b",
+  "icons": [
+    {
+      "src": "icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ]
+}

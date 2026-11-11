@@ -1,0 +1,249 @@
+/* ---------- Pages : un onglet par page, défilement horizontal aimanté ---------- */
+.pager {
+  display: flex;
+  align-items: flex-start;
+  /* Pleine largeur de la fenêtre, pour que les pages glissent d'un bord à l'autre */
+  width: calc(100% + 2 * var(--gutter));
+  margin-inline: calc(-1 * var(--gutter));
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain; /* pas de « page précédente » en glissant au bord */
+  scrollbar-width: none;
+}
+.pager::-webkit-scrollbar { display: none; }
+.pager.resizing { transition: height .42s cubic-bezier(.22, .8, .2, 1); }
+/* Changement d'onglet animé (js/pager.js) : l'aimantation reprend une fois la page en place */
+.pager.animating { scroll-snap-type: none; }
+.page {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 0;
+  overflow: clip;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+/* La marge haute laisse de la place à l'effet de survol des icônes */
+.page-inner { padding: 12px var(--gutter) 16px; }
+.page-inner.leaving { position: absolute; top: 0; left: 0; right: 0; pointer-events: none; }
+
+/* ---------- Grille ---------- */
+.grid {
+  --tile-w: max(calc(var(--icon) + 30px), 70px); /* plancher : les noms restent lisibles avec de petites icônes */
+  --gap-x: calc(var(--icon) * .26 + 4px);
+  --gap-y: calc(var(--icon) * .26 + 4px);
+  --label-size: clamp(11px, calc(var(--icon) * .165), 13.5px);
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, var(--tile-w));
+  justify-content: center;
+  column-gap: var(--gap-x);
+  row-gap: var(--gap-y);
+  width: 100%;
+  max-width: calc(var(--cols) * var(--tile-w) + (var(--cols) - 1) * var(--gap-x));
+  margin: 0 auto;
+}
+.grid.compact { --icon: min(var(--icon-base), max(40px, calc(var(--icon-base) * .66))); }
+.grid.drop-external { outline: 2px dashed rgba(255, 255, 255, .6); outline-offset: 12px; border-radius: 18px; }
+
+/* ---------- Tuile ---------- */
+.tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 4px 0;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  color: var(--ink);
+  text-decoration: none;
+  /* Appui long au doigt : ni sélection de texte ni aperçu du lien (iOS) */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.tile .label {
+  max-width: 100%;
+  padding: 0 2px;
+  font-size: var(--label-size);
+  font-weight: 500;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: var(--ink-shadow);
+}
+/* Réglage global : grille des dossiers comme sections « Sites fréquents » et « Récemment fermés » */
+:root[data-titles="off"] .tile .label { display: none; }
+
+/* ---------- Plaque (l'icône) ---------- */
+.plate {
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: var(--icon);
+  height: var(--icon);
+  border-radius: 23%;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .16), 0 6px 18px rgba(0, 0, 0, .16);
+  transition: transform .2s cubic-bezier(.2, .8, .2, 1), box-shadow .2s;
+  user-select: none;
+}
+.tile:hover .plate { transform: translateY(-3px) scale(1.045); box-shadow: 0 2px 4px rgba(0, 0, 0, .16), 0 12px 28px rgba(0, 0, 0, .24); }
+.tile:active .plate { transform: scale(.96); transition-duration: .08s; }
+.tile:focus-visible .plate { box-shadow: 0 0 0 3px var(--accent), 0 8px 24px rgba(0, 0, 0, .25); }
+.tile.selected .plate { box-shadow: 0 0 0 3px var(--accent), 0 8px 24px rgba(0, 0, 0, .25); }
+
+.plate img { display: block; pointer-events: none; }
+.plate.full img { width: 100%; height: 100%; object-fit: cover; }
+.plate.pad img { width: 62%; height: 62%; object-fit: contain; }
+.plate.fav img { width: min(32px, 46%); height: min(32px, 46%); object-fit: contain; }
+.plate.mono {
+  color: #fff;
+  font-weight: 600;
+  font-size: calc(var(--icon) * .44);
+  line-height: 1;
+  letter-spacing: -.02em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .18);
+}
+.plate.mono.emoji { font-size: calc(var(--icon) * .5); text-shadow: none; }
+.plate.mono.two { font-size: calc(var(--icon) * .34); }
+.plate.glyph { background: linear-gradient(160deg, #8e8e98, #5d5d66); color: #fff; }
+
+/* ---------- Dossiers (aperçu façon iOS) ---------- */
+.plate.folder-plate {
+  --fp: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--fp), 1fr);
+  grid-auto-rows: 1fr;
+  gap: calc(var(--icon) * .075);
+  padding: calc(var(--icon) * .14);
+  place-items: stretch;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(22px) saturate(170%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .14);
+}
+:root[data-fp="9"] .plate.folder-plate { --fp: 3; gap: calc(var(--icon) * .06); padding: calc(var(--icon) * .12); }
+.plate.mini {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  border-radius: 26%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
+  transition: none;
+}
+.plate.mini.mono { font-size: calc(var(--icon) * .17); }
+:root[data-fp="9"] .plate.mini.mono { font-size: calc(var(--icon) * .12); }
+.plate.mini.fav img { width: 60%; height: 60%; }
+.plate.mini.pad img { width: 70%; height: 70%; }
+.plate.mini-folder { background: rgba(255, 255, 255, .35); color: rgba(0, 0, 0, .55); }
+.plate.mini-folder svg { width: 60%; height: 60%; }
+.folder-empty { grid-column: 1 / -1; grid-row: 1 / -1; display: grid; place-items: center; color: var(--ink-2); }
+.folder-empty svg { width: 46%; height: 46%; }
+.tile.folder .count {
+  position: absolute;
+  top: -2px;
+  right: calc(50% - var(--icon) / 2 - 8px);
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 11px;
+  background: rgba(0, 0, 0, .55);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: scale(.8);
+  transition: opacity .15s, transform .15s;
+}
+.tile.folder:hover .count { opacity: 1; transform: none; }
+
+/* ---------- Tuile « Ajouter » ---------- */
+.plate.add-plate {
+  background: transparent;
+  border: 2px dashed var(--ink-2);
+  box-shadow: none;
+  color: var(--ink-2);
+  opacity: .7;
+}
+.tile.add:hover .plate { opacity: 1; background: var(--glass); box-shadow: none; }
+:root[data-add="off"] .tile.add { display: none; }
+
+/* ---------- Style « Cartes » (façon Vivaldi) ---------- */
+:root[data-tile-style="cards"] .grid:not(.compact) { --tile-w: max(calc(var(--icon) * 1.85 + 12px), 84px); }
+:root[data-tile-style="cards"] .grid:not(.compact) .tile {
+  gap: 12px;
+  padding: calc(var(--icon) * .26) 10px 12px;
+  border-radius: 18px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px) saturate(160%);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, .12);
+  transition: background .15s, transform .2s;
+}
+:root[data-tile-style="cards"] .grid:not(.compact) .tile:hover { background: var(--glass-strong); transform: translateY(-2px); }
+:root[data-tile-style="cards"] .grid:not(.compact) .tile:hover .plate { transform: none; }
+:root[data-tile-style="cards"] .grid:not(.compact) .tile .label { text-shadow: none; font-weight: 600; }
+/* Sans les noms, l'icône est centrée : même marge en haut et en bas */
+:root[data-tile-style="cards"][data-titles="off"] .grid:not(.compact) .tile { padding-bottom: calc(var(--icon) * .26); }
+:root[data-tile-style="cards"] .grid:not(.compact) .plate.folder-plate { background: rgba(255, 255, 255, .18); }
+:root[data-tile-style="cards"] .grid:not(.compact) .tile.add { background: transparent; border-style: dashed; box-shadow: none; }
+
+/* ---------- Glisser-déposer ---------- */
+.tile.dragging { opacity: .28; }
+.tile.dragging .plate { transform: none !important; }
+.tile.drop-into .plate { transform: scale(1.14); box-shadow: 0 0 0 3px var(--accent), 0 12px 30px rgba(0, 0, 0, .3); }
+body.is-dragging .tile:hover .plate { transform: none; }
+/* Glisser au doigt (js/grid.js) : la tuile se soulève à l'appui long, puis une copie suit le doigt */
+.tile.pressed .plate { transform: scale(1.1); box-shadow: 0 4px 8px rgba(0, 0, 0, .18), 0 16px 34px rgba(0, 0, 0, .3); }
+.plate.touch-ghost {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 950;
+  margin: 0;
+  pointer-events: none;
+  transition: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .18), 0 18px 40px rgba(0, 0, 0, .35);
+}
+
+/* ---------- Sections complémentaires ---------- */
+#extras { width: 100%; }
+.extra-section { margin-top: 44px; }
+/* Même typographie que les onglets et le fil d'Ariane */
+.section-title {
+  margin: 0 0 16px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--ink-2);
+  text-shadow: var(--ink-shadow);
+}
+.plate.window-plate { background: linear-gradient(160deg, #5e5ce6, #3634a3); color: #fff; }
+.plate.window-plate svg { width: 46%; height: 46%; }
+
+/* ---------- Badges ---------- */
+.tile .badge {
+  position: absolute;
+  top: 0;
+  left: calc(50% + var(--icon) / 2 - 14px);
+  padding: 1px 5px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, .6);
+  color: #fff;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
