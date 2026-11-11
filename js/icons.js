@@ -317,7 +317,7 @@ function paintWebBrandIcon(plate, item) {
   img.alt = '';
   img.draggable = false;
   img.decoding = 'async';
-  img.loading = 'lazy';
+  // Load speed-dial icons immediately. Lazy loading can stall small tiles on mobile browsers.
   img.referrerPolicy = 'no-referrer';
   plate.append(img);
 
@@ -330,6 +330,17 @@ function paintWebBrandIcon(plate, item) {
   let advancing = false;
 
   const stillCurrent = () => plate.dataset.url === item.url && plate.contains(img) && plate.isConnected;
+  let iconLoadTimer = null;
+  const clearIconLoadTimer = () => {
+    if (iconLoadTimer) clearTimeout(iconLoadTimer);
+    iconLoadTimer = null;
+  };
+  const armIconLoadTimer = () => {
+    clearIconLoadTimer();
+    iconLoadTimer = setTimeout(() => {
+      if (stillCurrent()) img.onerror?.(new Event('error'));
+    }, 9000);
+  };
   const commitImage = () => {
     if (!stillCurrent()) return;
     const src = img.currentSrc || img.src;
@@ -338,12 +349,13 @@ function paintWebBrandIcon(plate, item) {
       webIconMisses.delete(host);
     }
     plate.className = [...plate.classList].filter((c) => KEEP.has(c)).concat('web-svg-icon').join(' ');
-    plate.style.background = '#fff';
+    plate.style.background = 'transparent';
     plate.replaceChildren(img);
   };
   const setSlug = (slug, file = 'default.svg') => {
     const src = iconCdnUrl(slug, file);
     triedIconUrls.add(src);
+    armIconLoadTimer();
     img.src = src;
   };
 
@@ -390,6 +402,7 @@ function paintWebBrandIcon(plate, item) {
       if (siteIndex < siteUrls.length) {
         const url = siteUrls[siteIndex++];
         advancing = false;
+        armIconLoadTimer();
         img.src = url;
         return;
       }
@@ -400,14 +413,16 @@ function paintWebBrandIcon(plate, item) {
     }
   };
 
-  img.onload = commitImage;
+  img.onload = () => { clearIconLoadTimer(); commitImage(); };
   img.onerror = () => {
+    clearIconLoadTimer();
     if (host && webIconCache.get(host) === img.src) webIconCache.delete(host);
     void advance();
   };
 
   const cached = host && webIconCache.get(host);
   if (cached) {
+    armIconLoadTimer();
     img.src = cached;
     return;
   }

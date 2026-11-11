@@ -12,12 +12,30 @@
   <link rel="stylesheet" href="css/tiles.css">
   <link rel="stylesheet" href="css/ui.css">
   <script src="js/web-compat.js"></script>
-  <script>if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('./pwa-sw.js').catch(() => {});</script>
-  <script type="module" src="js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator && location.protocol === 'https:') {
+      navigator.serviceWorker.register('./pwa-sw.js').catch((error) => console.error('Cadran service worker:', error));
+    }
+    window.addEventListener('error', (event) => {
+      if (event.target && event.target !== window && /\.js(?:$|\?)/.test(event.target.src || '')) {
+        showStartupError('A JavaScript file failed to load. Check the deployed GitHub Pages files, then reload.');
+      }
+    }, true);
+    window.addEventListener('unhandledrejection', (event) => {
+      console.error('Cadran startup error:', event.reason);
+    });
+    function showStartupError(message) {
+      const panel = document.getElementById('startup-error');
+      if (panel) { panel.hidden = false; panel.textContent = message; }
+    }
+    window.CadranStartupError = showStartupError;
+  </script>
+  <script type="module" src="js/app.js" onerror="window.CadranStartupError && window.CadranStartupError('Cadran could not load its app module. Check that all project files were uploaded, then reload.')" onload="document.getElementById('startup-error')?.setAttribute('hidden', '')"></script>
 </head>
 <body>
   <div id="wallpaper" aria-hidden="true"></div>
   <div id="dim" aria-hidden="true"></div>
+  <div id="startup-error" hidden role="alert">Cadran could not start. Check the deployed project files and reload.</div>
   <!-- Applique le fond et la mise en page mémorisés avant le premier affichage -->
   <script src="js/boot.js"></script>
 

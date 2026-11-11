@@ -20,8 +20,10 @@
     }
     var wp = document.getElementById('wallpaper');
     if (wp && v.bg) {
-      wp.style.background = v.bg;
-      if (v.filter) wp.style.filter = v.filter;
+      // The saved image background is a tiny preview (LQIP). Do not show it as the final
+      // wallpaper. The app module will load and apply the full-resolution image.
+      // If the module fails, keep the sharp CSS fallback instead of a blurred full-screen page.
+      if (!/url\([\"']?data:image\//i.test(v.bg)) wp.style.background = v.bg;
     }
     var dim = document.getElementById('dim');
     if (dim && typeof v.dim === 'number') dim.style.opacity = String(v.dim);

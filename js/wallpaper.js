@@ -240,7 +240,8 @@ export async function applyWallpaper(ws, textColor = 'auto', { scope = 'default'
     bootLum = forBoot ? forBoot.lum : null;
   }
 
-  el.style.filter = ws.blur ? `blur(${ws.blur}px)` : '';
+  // Keep the wallpaper sharp. Large CSS filters can soften the entire page on mobile GPUs.
+  el.style.filter = '';
   dimEl.style.opacity = String(ws.dim / 100);
   document.documentElement.dataset.ink = inkFor(baseLum, ws.dim, textColor);
 
@@ -249,7 +250,7 @@ export async function applyWallpaper(ws, textColor = 'auto', { scope = 'default'
   const isImage = bootBg.startsWith('url("data:');
   const boot = {
     bg: bootBg,
-    filter: isImage ? `blur(${Math.max(ws.blur, 14)}px)` : ws.blur ? `blur(${ws.blur}px)` : '',
+    filter: '',
     dim: ws.dim / 100,
     ink: inkFor(bootLum ?? baseLum, ws.dim, textColor),
   };

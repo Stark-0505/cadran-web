@@ -451,3 +451,33 @@ body.panel-open #corner { opacity: 0; pointer-events: none; }
   #corner { flex-direction: column-reverse; gap: 8px; }
   .import-bookmarks-btn { font-size: 22px; }
 }
+
+
+/* Mobile rendering hardening: keep content crisp on devices with limited GPU memory. */
+@media (max-width: 640px) {
+  #wallpaper, .wallpaper-ghost { filter: none !important; }
+  .search-box, #groups, .glass-panel, .group-tab,
+  :root[data-tile-style="cards"] .grid:not(.compact) .tile,
+  .plate.folder-plate {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
+
+
+/* Startup diagnostics: show a readable error instead of an empty, blurred page. */
+#startup-error:not([hidden]) {
+  position: fixed;
+  z-index: 10000;
+  left: 16px;
+  right: 16px;
+  top: max(16px, env(safe-area-inset-top));
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 14px;
+  background: #202126;
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(0,0,0,.3);
+  font-size: 14px;
+  line-height: 1.5;
+}
